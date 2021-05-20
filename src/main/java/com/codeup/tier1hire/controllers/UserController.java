@@ -35,6 +35,6 @@ public class UserController {
     public String getOneUser(@PathVariable long id, Model model) {
         User user = usersDao.getOne(id);
         model.addAttribute("user", user);
-        return "/users";
+        return "/profile";
     }
 }
