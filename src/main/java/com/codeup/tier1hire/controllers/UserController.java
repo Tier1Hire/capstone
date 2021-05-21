@@ -1,15 +1,12 @@
 package com.codeup.tier1hire.controllers;
 
-import com.codeup.tier1hire.models.Education;
 import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
 import com.codeup.tier1hire.repositories.UserRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,4 +34,26 @@ public class UserController {
         model.addAttribute("user", user);
         return "/profile";
     }
+
+    @GetMapping("users/register")
+    public String createUser(@ModelAttribute User user) {
+        usersDao.save(user);
+        return "/profile";
+    }
+
+    @GetMapping("users/{id}/edit")
+    public String updateUser(@PathVariable long id, Model model) {
+        User updateUser = usersDao.getOne(id);
+        model.addAttribute("users", updateUser);
+        return "users/edit";
+    }
+
+    @PostMapping("users/edit/{id}")
+    public String updateUser(@ModelAttribute User user) {
+        usersDao.save(user);
+        return "redirect:/profile";
+    }
+
+
+
 }
