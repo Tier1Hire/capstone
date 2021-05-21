@@ -1,10 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
 <body>
+<div>
+  <div>
+    <div>
+      <section>
+        <div class="container px-4 mx-auto">
+          <nav class="flex items-center py-6">
+            <a class="text-3xl font-semibold leading-none" href="#"><img src="https://static.shuffle.dev/uploads/files/a3/a3ccfb53681d326317e0a7c4341b1d8b46f892c5/verticle-logo.png" alt="" width="200"></a>
+            <div class="lg:hidden ml-auto">
+              <button class="navbar-burger flex items-center py-2 px-3 text-blue-600 hover:text-blue-700 rounded border border-blue-200 hover:border-blue-300">
+                <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <title>Mobile menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+              </button>
+            </div>
+            <ul class="hidden lg:flex items-center space-x-12 ml-auto mr-12">
+              <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">Product</a></li>
+              <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">Tier One Difference</a></li>
+              <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">About Us</a></li>
+              <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">Partners</a></li>
+            </ul>
+            <div class="hidden lg:block"><a class="mr-2 inline-block px-4 py-3 text-xs text-red-900 hover:text-red-900 font-semibold leading-none border border-red-900 hover:border-red-900 rounded" href="#">Log In</a><a class="inline-block px-4 py-3 text-xs font-semibold leading-none bg-red-900 hover:bg-blue-700 text-white rounded" href="#">Sign Up</a></div>
+          </nav>
+        </div>
+        <div class="hidden navbar-menu relative z-50">
+          <div class="navbar-backdrop fixed inset-0 bg-blueGray-800 opacity-25"></div>
+          <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+            <div class="flex items-center mb-8">
+              <a class="mr-auto text-3xl font-semibold leading-none" href="#"><img src="https://static.shuffle.dev/uploads/files/a3/a3ccfb53681d326317e0a7c4341b1d8b46f892c5/verticle-logo.png" alt="" width="200"></a>
+              <button class="navbar-close">
+                <svg class="h-6 w-6 text-blueGray-400 cursor-pointer hover:text-blueGray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div>
+              <ul>
+                <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">Product</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">Company</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">About Us</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">Features</a></li>
+              </ul>
+              <div class="mt-4 pt-6 border-t border-blueGray-100"><a class="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded" href="#">Sign Up</a><a class="block px-4 py-3 mb-2 text-xs text-center text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded" href="#">Log In</a></div>
+            </div>
+            <div class="mt-auto">
+              <p class="my-4 text-xs text-blueGray-400">
+                <span>Get in Touch</span>
+                <a class="text-blue-600 hover:text-blue-600 underline" href="#">info@example.com</a>
+              </p>
+              <a class="inline-block px-1" href="#"><img src="../img-assets/icons/facebook-blue.svg" alt=""></a><a class="inline-block px-1" href="#"><img src="../img-assets/icons/twitter-blue.svg" alt=""></a><a class="inline-block px-1" href="#"><img src="../img-assets/icons/instagram-blue.svg" alt=""></a>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </div>
 
+    <div class="py-12 text-center">
+      <div class="max-w-lg mx-auto mb-8">
+        <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading">
+          <span>Welcome to </span>
+          <span class="text-red-900">the future</span>
+          <span>of hiring and career services</span>
+        </h2>
+        <p class="text-blueGray-400 leading-relaxed">Pre-screening top tier candidates to get people to work quicker. </p>
+      </div>
+      <div><a class="block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none rounded bg-red-900 hover:bg-red-900" href="#">Log In</a><a class="block sm:inline-block py-4 px-8 text-xs hover:text-blueGray-600 text-center font-semibold leading-none bg-white rounded text-red-900" href="#">Sign Up</a></div>
+    </div>
+    <div class="relative max-w-3xl mt-6 mb-8 mx-auto">
+      <div class="relative" style="padding-bottom: 56.25%">
+        <iframe src="//player.vimeo.com/video/419833985?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1" frameborder="0" class="absolute w-full h-full" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      </div>
+      <div class="absolute" style="top: 3%; left: 9%; width: 82%; height: 90%;"></div>
+    </div>
+    <div class="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-12">
+      <div class="w-1/2 md:w-1/3 lg:w-1/5 px-3 mb-8"><img class="mx-auto" src="../img-assets/logos/brands/tesla.svg" alt=""></div>
+      <div class="w-1/2 md:w-1/3 lg:w-1/5 px-3 mb-8"><img class="mx-auto" src="../img-assets/logos/brands/facebook.svg" alt=""></div>
+      <div class="w-1/2 md:w-1/3 lg:w-1/5 px-3 mb-8"><img class="mx-auto" src="../img-assets/logos/brands/marvel.svg" alt=""></div>
+      <div class="w-1/2 md:w-1/3 lg:w-1/5 px-3 mb-8"><img class="mx-auto" src="../img-assets/logos/brands/nike.svg" alt=""></div>
+      <div class="hidden md:block w-1/2 md:w-1/3 lg:w-1/5 px-3 mb-8"><img class="mx-auto" src="../img-assetslogos/brands/airbnb.svg" alt=""></div>
+    </div>
+  </div>
+  <div class="hidden navbar-menu relative z-50">
+    <div class="navbar-backdrop fixed inset-0 bg-blueGray-800 opacity-25"></div>
+    <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+      <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-semibold leading-none" href="#"><img class="h-10" src="../img-assets/logos/metis/metis.svg" alt="" width="auto"></a>
+        <button class="navbar-close">
+          <svg class="h-6 w-6 text-blueGray-400 cursor-pointer hover:text-blueGray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">Profile</a></li>
+          <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">The Tier One Difference</a></li>
+          <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">About Us</a></li>
+          <li class="mb-1"><a class="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600" href="#">Partners</a></li>
+        </ul>
+        <div class="mt-4 pt-6 border-t border-blueGray-100"><a class="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded" href="#">Sign Up</a><a class="block px-4 py-3 mb-2 text-xs text-center text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded" href="#">Log In</a></div>
+      </div>
+      <div class="mt-auto">
+        <p class="my-4 text-xs text-blueGray-400">
+          <span>Get in Touch</span>
+          <a class="text-blue-600 hover:text-blue-600 underline" href="#">info@example.com</a>
+        </p>
+        <a class="inline-block px-1" href="#"><img src="../img-assets/icons/facebook-blue.svg" alt=""></a><a class="inline-block px-1" href="#"><img src="../img-assets/icons/twitter-blue.svg" alt=""></a><a class="inline-block px-1" href="#"><img src="../img-assets/icons/instagram-blue.svg" alt=""></a>
+      </div>
+    </nav>
+  </div>
+
+</div>
 </body>
 </html>
