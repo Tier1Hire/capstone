@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head(title)">
+<head>
   <meta charset="UTF-8">
-  <title>Navbar</title>
+  <title>Title</title>
 </head>
 <body>
-<nav th:fragment="navbar" class="navbar navbar-expand-lg  bg-dark text-light">
-  <div class="nav-container container-fluid">
-    <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <div class="logo-image">
-              <img src="../img-assets/logos/vert-logo" class="img-fluid" alt="logo">
-        </div>
-          </a>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">About</a></li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#post">Our Partners</a></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </nav>
-  </div>
+<nav th:fragment="nav">
+  <ul class="nav bg-dark">
+    <li class="nav-item">
+      <a class="nav-link text-light" th:href="@{/home}">Home Page</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" th:href="@{/create}">Create Account</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" th:href="@{/posts/login}">Log-in</a>
+    </li>
+    <li class="nav-item ml-auto">
+      <a class="nav-link text-light" th:href="@{/contact}">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" th:href="@{/Pricing}">Pricing</a>
+    </li>
+    <li class="nav-item">
+      <form th:action="@{/logout}" th:method="post">
+        <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+      </form>
+    </li>
+  </ul>
 </nav>
 </body>
 </html>
