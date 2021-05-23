@@ -2,10 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>TierOne</title>
 </head>
 <body>
 <nav th:fragment="nav">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container"><a class="navbar-brand logo"><img id="logo" src="/static/img/Tier-1-clear.jpg"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link active" th:href="@{/landing}">Home Page</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/Pricing}">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/create}">Create Account</a>
+          <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/posts/login}">Log-in</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <ul class="nav bg-dark">
     <li class="nav-item">
       <a class="nav-link text-light" th:href="@{/home}">Home Page</a>
