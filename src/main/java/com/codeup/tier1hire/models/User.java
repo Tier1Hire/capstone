@@ -155,7 +155,7 @@ public class User {
         this.createAt = createAt;
     }
 
-    public boolean isHr() {
+    public boolean getIsHr() {
         return isHr;
     }
 

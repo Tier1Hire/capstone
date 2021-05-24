@@ -1,5 +1,6 @@
 USE tier1hire_db;
 
+describe users;
 insert into users (address, alias, city, company, country_code, create_at, date_of_birth, email, first_name, is_hr, last_name, password, phone_number, postal_code, region, username) values ('01889 Eastwood Drive', null, 'São Miguel', 'Kazu', 'PT', '2020-12-09 11:44:12', '1984-06-23 05:05:39', 'bcrust0@twitter.com', 'Burke', true, 'Crust', 'PzN7d1V', '+351 902 353 5444', '4415-761', '13', 'bcrust0');
 insert into users (address, alias, city, company, country_code, create_at, date_of_birth, email, first_name, is_hr, last_name, password, phone_number, postal_code, region, username) values ('1 Service Court', null, 'Lincuo', 'Quimba', 'CN', '2020-05-29 18:54:06', '1980-08-16 22:37:59', 'astockings1@cbslocal.com', 'Aeriell', true, 'Stockings', 'mUjBOB8JXo', '+86 635 764 5153', null, null, 'astockings1');
 insert into users (address, alias, city, company, country_code, create_at, date_of_birth, email, first_name, is_hr, last_name, password, phone_number, postal_code, region, username) values ('4247 Alpine Junction', null, 'San Jose', 'Leenti', 'US', '2020-08-21 22:26:38', '1963-12-21 02:09:06', 'acatherall2@pcworld.com', 'Anallese', false, 'Catherall', '06YkYVl', '+1 408 664 6355', '95128', 'CA', 'acatherall2');
