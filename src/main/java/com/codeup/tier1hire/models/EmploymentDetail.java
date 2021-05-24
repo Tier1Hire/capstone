@@ -18,19 +18,22 @@ public class EmploymentDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private long userId;
 
     @Column(nullable = false)
     private String previousEmployment;
 
+    @Column
+    private String employer;
+
     @Column(nullable = false)
-    private String previousEmployer;
+    private boolean previousEmployed;
 
     @Column(nullable = false)
     private String country;
 
-    @Column(nullable = false)
+    @Column
     private String region;
 
     @Column(nullable = false)
@@ -60,11 +63,12 @@ public class EmploymentDetail {
     @Column(nullable = false)
     private String phoneNumber;
 
-    public EmploymentDetail(long id, long userId, String previousEmployment, String previousEmployer, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+    public EmploymentDetail(long id, long userId, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
         this.id = id;
         this.userId = userId;
         this.previousEmployment = previousEmployment;
-        this.previousEmployer = previousEmployer;
+        this.employer = employer;
+        this.previousEmployed = previousEmployed;
         this.country = country;
         this.region = region;
         this.city = city;
@@ -84,7 +88,8 @@ public class EmploymentDetail {
                 "id=" + id +
                 ", userId=" + userId +
                 ", previousEmployment='" + previousEmployment + '\'' +
-                ", previousEmployer='" + previousEmployer + '\'' +
+                ", employer= '" + employer + '\'' +
+                ", previousEmployed='" + previousEmployed + '\'' +
                 ", country='" + country + '\'' +
                 ", region='" + region + '\'' +
                 ", city='" + city + '\'' +
