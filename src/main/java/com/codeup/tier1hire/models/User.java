@@ -52,7 +52,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String phoneNumber;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "varchar(200) default 'N/A'")
     private String alias;
 
     @Column(nullable = false)
@@ -64,10 +64,10 @@ public class User {
     @Column(nullable = false)
     private String city;
 
-    @Column(nullable = false)
+    @Column
     private String region;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "varchar(100) default 'N/A'")
     private String postalCode;
 
     public User(long id, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode) {
