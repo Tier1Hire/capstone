@@ -17,6 +17,18 @@
   <div class="row">
     <div class="col">
 
+      <div class="lg:col-span-4 col-span-full flex flex-wrap items-start justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+        <h1 style="text-align: center; font-weight: bold; color: white" >Upload A Resume!</h1>
+        <form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}" class=" space-y-6 w-full">
+          <input type="file" id="resume" name="file" required class="bg-white appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
+          <label for="title" class="sr-only">Title</label>
+          <input type="text" th:field="*{title}" placeholder="Title" id="title" required class="appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
+          <label for="description" class="sr-only">description</label>
+          <textarea th:field="*{description}" placeholder="Description" id="description" class="appearance-none resize-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"></textarea>
+          <input type="submit" value="Upload" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"/>
+        </form>
+      </div>
+
     </div>
   </div>
 </div>
