@@ -18,8 +18,8 @@ public class Education {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, unique = true)
-    private long userId;
+    @ManyToOne
+    private User user;
 
     @Column(nullable = false)
     private String school;
@@ -54,9 +54,9 @@ public class Education {
     @Column(nullable = false)
     private Date presentlyEnrolled;
 
-    public Education(long id, long userId, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, Date presentlyEnrolled) {
+    public Education(long id, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, Date presentlyEnrolled) {
         this.id = id;
-        this.userId = userId;
+        this.user = user;
         this.school = school;
         this.degree = degree;
         this.country = country;
@@ -74,7 +74,7 @@ public class Education {
     public String toString() {
         return "Education{" +
                 "id=" + id +
-                ", userId=" + userId +
+                ", user=" + user +
                 ", school='" + school + '\'' +
                 ", degree='" + degree + '\'' +
                 ", country='" + country + '\'' +
