@@ -1,6 +1,7 @@
 package com.codeup.tier1hire.models;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 //import javax.util.List;
 
 @Getter
@@ -70,25 +72,17 @@ public class User {
     @Column(columnDefinition = "varchar(100) default 'N/A'")
     private String postalCode;
 
-    public User(long id, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode) {
-        this.id = id;
-        this.createAt = createAt;
-        this.isHr = isHr;
-        this.company = company;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.phoneNumber = phoneNumber;
-        this.alias = alias;
-        this.countryCode = countryCode;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    @JsonManagedReference
+    private List<Education> education;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    @JsonManagedReference
+    private List<EmploymentDetail> employment;
+
+
 
     public User(User copy) {
         this.id = copy.id; // This line is SUPER important! Many things won't work if it's absent
