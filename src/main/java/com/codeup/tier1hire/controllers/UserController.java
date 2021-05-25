@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.PasswordAuthentication;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -40,18 +38,18 @@ public class UserController {
         return "/profile";
     }
 
-    @GetMapping("/users/register")
+    @GetMapping("/users/account-signup")
     public String createUser(Model model) {
         model.addAttribute("user", new User());
-        return "users/create";
+        return "users/account-signup";
     }
 
-    @PostMapping("/users/register")
+    @PostMapping("/users/account-signup")
     public String saveUser(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDao.save(user);
-        return "redirect:/login";
+        return "redirect:/users/login";
     }
 
     @GetMapping("/users/{id}/edit")

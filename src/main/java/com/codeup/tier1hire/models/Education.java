@@ -30,7 +30,7 @@ public class Education {
     @Column(nullable = false)
     private String country;
 
-    @Column(nullable = false)
+    @Column
     private String region;
 
     @Column(nullable = false)
@@ -52,9 +52,13 @@ public class Education {
     private Date graduationDate;
 
     @Column(nullable = false)
-    private Date presentlyEnrolled;
+    private boolean presentlyEnrolled;
 
+<<<<<<< HEAD
     public Education(long id, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, Date presentlyEnrolled) {
+=======
+    public Education(long id, long userId, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
+>>>>>>> main
         this.id = id;
         this.user = user;
         this.school = school;
