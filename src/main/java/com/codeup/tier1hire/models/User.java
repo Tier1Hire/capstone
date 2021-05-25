@@ -21,13 +21,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column
     private Date createAt;
 
-    @Column(nullable = false)
+    @Column
     private boolean isHr;
 
-    @Column(nullable = false)
+    @Column
     private String company;
 
     @Column(nullable = false, unique = true)
@@ -46,7 +46,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private Date dateOfBirth;
 
     @Column(nullable = false, unique = true)
@@ -55,13 +55,13 @@ public class User {
     @Column(columnDefinition = "varchar(200) default 'N/A'")
     private String alias;
 
-    @Column(nullable = false)
+    @Column
     private String countryCode;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private String address;
 
-    @Column(nullable = false)
+    @Column
     private String city;
 
     @Column
