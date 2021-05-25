@@ -52,17 +52,19 @@ public class UserController {
         return "redirect:/users/login";
     }
 
-    @GetMapping("/users/{id}/edit")
-    public String updateUser(@PathVariable long id, Model model) {
-        User updateUser = usersDao.getOne(id);
+    @GetMapping("/users/{userId}/edit")
+    public String updateUser(@PathVariable long userId, Model model) {
+        User updateUser = usersDao.getOne(userId);
         model.addAttribute("users", updateUser);
         return "users/edit";
     }
 
-    @PostMapping("users/edit/{id}")
+    @PostMapping("users/edit/{userId}")
     public String updateUser(@ModelAttribute User updateUser) {
         usersDao.save(updateUser);
         return "redirect:/profile";
     }
+
+
 
 }
