@@ -18,7 +18,7 @@ public class Education {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private long userId;
 
     @Column(nullable = false)
@@ -30,7 +30,7 @@ public class Education {
     @Column(nullable = false)
     private String country;
 
-    @Column(nullable = false)
+    @Column
     private String region;
 
     @Column(nullable = false)
@@ -52,9 +52,9 @@ public class Education {
     private Date graduationDate;
 
     @Column(nullable = false)
-    private Date presentlyEnrolled;
+    private boolean presentlyEnrolled;
 
-    public Education(long id, long userId, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, Date presentlyEnrolled) {
+    public Education(long id, long userId, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
         this.id = id;
         this.userId = userId;
         this.school = school;
