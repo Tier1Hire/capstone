@@ -17,7 +17,7 @@ public class EmploymentDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long employmentId;
 
     @ManyToOne
     @JoinColumn(name = "id")
@@ -66,8 +66,8 @@ public class EmploymentDetail {
     @Column
     private String phoneNumber;
 
-    public EmploymentDetail(long id, User user, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
-        this.id = id;
+    public EmploymentDetail(long employmentId, User user, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+        this.employmentId = employmentId;
         this.user = user;
         this.previousEmployment = previousEmployment;
         this.employer = employer;
@@ -88,7 +88,7 @@ public class EmploymentDetail {
     @Override
     public String toString() {
         return "EmploymentDetail{" +
-                "id=" + id +
+                "employmentId=" + employmentId +
                 ", user=" + user +
                 ", previousEmployment='" + previousEmployment + '\'' +
                 ", employer='" + employer + '\'' +
