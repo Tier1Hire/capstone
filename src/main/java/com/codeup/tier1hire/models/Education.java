@@ -1,5 +1,6 @@
 package com.codeup.tier1hire.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,46 +20,44 @@ public class Education {
     private long id;
 
     @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonBackReference
     private User user;
 
-    @Column(nullable = false)
+    @Column
     private String school;
 
-    @Column(nullable = false)
+    @Column
     private String degree;
 
-    @Column(nullable = false)
+    @Column
     private String country;
 
     @Column
     private String region;
 
-    @Column(nullable = false)
+    @Column
     private String city;
 
-    @Column(nullable = false)
+    @Column
     private String major;
 
-    @Column(nullable = false)
+    @Column
     private Date startDate;
 
-    @Column(nullable = false)
+    @Column
     private Date endDate;
 
-    @Column(nullable = false)
+    @Column
     private Date graduated;
 
-    @Column(nullable = false)
+    @Column
     private Date graduationDate;
 
-    @Column(nullable = false)
+    @Column
     private boolean presentlyEnrolled;
 
-<<<<<<< HEAD
-    public Education(long id, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, Date presentlyEnrolled) {
-=======
-    public Education(long id, long userId, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
->>>>>>> main
+    public Education(long id, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
         this.id = id;
         this.user = user;
         this.school = school;
