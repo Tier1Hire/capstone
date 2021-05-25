@@ -9,8 +9,19 @@ import java.util.List;
 
 public interface UserRepo extends JpaRepository<User, Long> {
 
-    @Query("FROM User u where u.username LIKE %:term%")
-    List<User> getUserByUsername(@Param("term")String term);
+    @Query("select u from User u where u.username = ?1")
+    User findByUsername(String username);
+
+    // unsure if use placeholder ? within wildcards for like
+    @Query("FROM User u WHERE u.firstName LIKE ?1 OR u.lastName LIKE ?2")
+    List<User> getUserByFirstNameAndLastName(String firstName, String lastName);
+
+    @Query("FROM User u WHERE u.firstName LIKE ?1")
+    List<User> getUserByFirstName(String firstName);
+
+    @Query("FROM User u WHERE u.lastName LIKE ?1")
+    List<User> getUserByLastName(String lastName);
+
 
 
 
