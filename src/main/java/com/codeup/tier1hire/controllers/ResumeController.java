@@ -45,10 +45,10 @@ public class ResumeController {
         try {
             uploadFile.transferTo(destinationFile);
             resumeDao.save(resume);
-            model.addAttribute("message", "File successfully uploaded!");
+            model.addAttribute("message", "File successfully uploaded");
         } catch (IOException e) {
             e.printStackTrace();
-            model.addAttribute("message", "Oops! Something went wrong! " + e);
+            model.addAttribute("message", "Something went wrong! " + e);
         }
         return "redirect:/profile";
     }
