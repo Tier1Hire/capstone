@@ -21,7 +21,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long userId;
 
     @Column
     private Date createAt;
@@ -85,7 +85,7 @@ public class User {
 
 
     public User(User copy) {
-        this.id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        this.userId = copy.userId; // This line is SUPER important! Many things won't work if it's absent
         this.email = copy.email;
         this.username = copy.username;
         this.password = copy.password;
@@ -105,7 +105,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "userId=" + userId +
                 ", createAt=" + createAt +
                 ", isHr=" + isHr +
                 ", company='" + company + '\'' +
@@ -133,12 +133,12 @@ public class User {
         this.username = username;
     }
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public Date getCreateAt() {

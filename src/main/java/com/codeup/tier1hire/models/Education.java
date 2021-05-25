@@ -17,10 +17,10 @@ public class Education {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long educationId;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
 
@@ -57,8 +57,8 @@ public class Education {
     @Column
     private boolean presentlyEnrolled;
 
-    public Education(long id, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
-        this.id = id;
+    public Education(long educationId, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
+        this.educationId = educationId;
         this.user = user;
         this.school = school;
         this.degree = degree;
@@ -76,7 +76,7 @@ public class Education {
     @Override
     public String toString() {
         return "Education{" +
-                "id=" + id +
+                "educationId=" + educationId +
                 ", user=" + user +
                 ", school='" + school + '\'' +
                 ", degree='" + degree + '\'' +
