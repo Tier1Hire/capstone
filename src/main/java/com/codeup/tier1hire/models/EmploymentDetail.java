@@ -1,5 +1,6 @@
 package com.codeup.tier1hire.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,54 +19,56 @@ public class EmploymentDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
-    private long userId;
+    @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonBackReference
+    private User user;
 
-    @Column(nullable = false)
+    @Column
     private String previousEmployment;
 
     @Column
     private String employer;
 
-    @Column(nullable = false)
+    @Column
     private boolean previousEmployed;
 
-    @Column(nullable = false)
+    @Column
     private String country;
 
     @Column
     private String region;
 
-    @Column(nullable = false)
+    @Column
     private String city;
 
-    @Column(nullable = false)
+    @Column
     private Date startDate;
 
-    @Column(nullable = false)
+    @Column
     private Date endDate;
 
-    @Column(nullable = false)
+    @Column
     private boolean presentlyEmployed;
 
-    @Column(nullable = false)
+    @Column
     private String positions;
 
-    @Column(nullable = false)
+    @Column
     private String supervisor;
 
-    @Column(nullable = false)
+    @Column
     private String reasonForLeaving;
 
-    @Column(nullable = false)
+    @Column
     private boolean okToCall;
 
-    @Column(nullable = false)
+    @Column
     private String phoneNumber;
 
-    public EmploymentDetail(long id, long userId, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+    public EmploymentDetail(long id, User user, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
         this.id = id;
-        this.userId = userId;
+        this.user = user;
         this.previousEmployment = previousEmployment;
         this.employer = employer;
         this.previousEmployed = previousEmployed;
@@ -86,10 +89,10 @@ public class EmploymentDetail {
     public String toString() {
         return "EmploymentDetail{" +
                 "id=" + id +
-                ", userId=" + userId +
+                ", user=" + user +
                 ", previousEmployment='" + previousEmployment + '\'' +
-                ", employer= '" + employer + '\'' +
-                ", previousEmployed='" + previousEmployed + '\'' +
+                ", employer='" + employer + '\'' +
+                ", previousEmployed=" + previousEmployed +
                 ", country='" + country + '\'' +
                 ", region='" + region + '\'' +
                 ", city='" + city + '\'' +
