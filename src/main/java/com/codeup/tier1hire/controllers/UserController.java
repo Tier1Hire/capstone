@@ -4,6 +4,7 @@ import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
 import com.codeup.tier1hire.repositories.UserRepo;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,15 +26,16 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
+
     @GetMapping("/users")
     @ResponseBody
     public List<User> getAllUsers() {
         return usersDao.findAll();
     }
 
-    @GetMapping("/users/{userId}/profile")
-    public String getOneUser(@PathVariable long userId, Model model) {
-        User user = usersDao.getOne(userId);
+    @GetMapping("/profile")
+    public String getOneUser(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", user);
         return "users/profile";
     }
