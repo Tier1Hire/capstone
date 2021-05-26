@@ -3,7 +3,6 @@ package com.codeup.tier1hire.models;
 
 import jdk.jfr.Name;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -69,6 +67,9 @@ public class User {
 
     @Column(nullable = false)
     private String postalCode;
+
+    public User() {
+    }
 
     public User(long id, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode) {
         this.id = id;
