@@ -31,11 +31,11 @@ public class UserController {
         return usersDao.findAll();
     }
 
-    @GetMapping("/users/{id}")
-    public String getOneUser(@PathVariable long id, Model model) {
-        User user = usersDao.getOne(id);
+    @GetMapping("/users/{userId}")
+    public String getOneUser(@PathVariable long userId, Model model) {
+        User user = usersDao.getOne(userId);
         model.addAttribute("user", user);
-        return "/profile";
+        return "users/profile";
     }
 
     @GetMapping("/users/account-signup")
