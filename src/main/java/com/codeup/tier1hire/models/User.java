@@ -73,20 +73,43 @@ public class User {
     private String postalCode;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     @JsonManagedReference
     private List<Education> education;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     @JsonManagedReference
     private List<EmploymentDetail> employment;
 
 
+    public User(long userId, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode, List<Education> education, List<EmploymentDetail> employment) {
+        this.userId = userId;
+        this.createAt = createAt;
+        this.isHr = isHr;
+        this.company = company;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.alias = alias;
+        this.countryCode = countryCode;
+        this.address = address;
+        this.city = city;
+        this.region = region;
+        this.postalCode = postalCode;
+        this.education = education;
+        this.employment = employment;
+    }
 
     public User(User copy) {
         this.userId = copy.userId; // This line is SUPER important! Many things won't work if it's absent
-        this.email = copy.email;
+        this.createAt = copy.createAt;
+        this.isHr = copy.isHr;
+        this.company = copy.company;
         this.username = copy.username;
         this.password = copy.password;
         this.firstName = copy.firstName;
@@ -100,6 +123,8 @@ public class User {
         this.city = copy.city;
         this.region = copy.region;
         this.postalCode = copy.postalCode;
+        this.education = copy.education;
+        this.employment = copy.employment;
     }
 
     @Override

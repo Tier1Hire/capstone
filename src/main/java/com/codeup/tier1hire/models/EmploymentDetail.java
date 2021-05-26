@@ -20,7 +20,7 @@ public class EmploymentDetail {
     private long employmentId;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
 
