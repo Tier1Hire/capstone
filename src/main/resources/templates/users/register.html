@@ -22,7 +22,7 @@
         <h2 class="text-info">Registration</h2>
         <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
       </div>
-        <form th:action="@{/users/account-signup}" method="POST" th:object="${user}">
+        <form th:action="@{/users/register}" method="POST" th:object="${user}">
 
           <label for="username">Username</label>
           <input id="username" th:field="*{username}" />

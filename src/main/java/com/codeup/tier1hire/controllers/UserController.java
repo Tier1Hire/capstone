@@ -31,25 +31,11 @@ public class UserController {
         return usersDao.findAll();
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/users/{userId}/profile")
     public String getOneUser(@PathVariable long userId, Model model) {
         User user = usersDao.getOne(userId);
         model.addAttribute("user", user);
         return "users/profile";
-    }
-
-    @GetMapping("/users/account-signup")
-    public String createUser(Model model) {
-        model.addAttribute("user", new User());
-        return "users/account-signup";
-    }
-
-    @PostMapping("/users/account-signup")
-    public String saveUser(@ModelAttribute User user) {
-        String hash = passwordEncoder.encode(user.getPassword());
-        user.setPassword(hash);
-        usersDao.save(user);
-        return "redirect:/users/login";
     }
 
     @GetMapping("/users/{userId}/edit")
