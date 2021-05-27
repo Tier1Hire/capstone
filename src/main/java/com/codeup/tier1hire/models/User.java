@@ -4,7 +4,6 @@ package com.codeup.tier1hire.models;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jdk.jfr.Name;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -14,7 +13,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -82,6 +80,8 @@ public class User {
     @JsonManagedReference
     private List<EmploymentDetail> employment;
 
+    public User() {
+    }
 
     public User(long userId, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode, List<Education> education, List<EmploymentDetail> employment) {
         this.userId = userId;
