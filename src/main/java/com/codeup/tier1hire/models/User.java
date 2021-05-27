@@ -2,7 +2,6 @@ package com.codeup.tier1hire.models;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -79,6 +78,9 @@ public class User {
     @JoinColumn(name = "user_id")
     @JsonManagedReference
     private List<EmploymentDetail> employment;
+
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<Resume> resumes;
 
     public User() {
     }
@@ -285,4 +287,12 @@ public class User {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
+
+//    public List<Resume> getResumes() {
+//        return resumes;
+//    }
+//
+//    public void setResumes(List<Resume> resumes) {
+//        this.resumes = resumes;
+//    }
 }
