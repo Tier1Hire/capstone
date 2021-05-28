@@ -24,20 +24,20 @@ public class Education {
     @JsonBackReference
     private User user;
 
+    // Searchable
     @Column
     private String school;
 
     @Column
     private String degree;
 
+    // # and street name
     @Column
-    private String country;
+    private String address1;
 
+    // city, state, zip
     @Column
-    private String region;
-
-    @Column
-    private String city;
+    private String address2;
 
     @Column
     private String major;
@@ -45,32 +45,24 @@ public class Education {
     @Column
     private Date startDate;
 
+    // display "current" when no value
     @Column
     private Date endDate;
 
     @Column
-    private Date graduated;
+    private boolean graduated;
 
-    @Column
-    private Date graduationDate;
-
-    @Column
-    private boolean presentlyEnrolled;
-
-    public Education(long educationId, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
+    public Education(long educationId, User user, String school, String degree, String address1, String address2, String major, Date startDate, Date endDate, boolean graduated) {
         this.educationId = educationId;
         this.user = user;
         this.school = school;
         this.degree = degree;
-        this.country = country;
-        this.region = region;
-        this.city = city;
+        this.address1 = address1;
+        this.address2 = address2;
         this.major = major;
         this.startDate = startDate;
         this.endDate = endDate;
         this.graduated = graduated;
-        this.graduationDate = graduationDate;
-        this.presentlyEnrolled = presentlyEnrolled;
     }
 
     @Override
@@ -80,15 +72,12 @@ public class Education {
                 ", user=" + user +
                 ", school='" + school + '\'' +
                 ", degree='" + degree + '\'' +
-                ", country='" + country + '\'' +
-                ", region='" + region + '\'' +
-                ", city='" + city + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
                 ", major='" + major + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", graduated=" + graduated +
-                ", graduationDate=" + graduationDate +
-                ", presentlyEnrolled=" + presentlyEnrolled +
                 '}';
     }
 }
