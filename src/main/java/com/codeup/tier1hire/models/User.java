@@ -72,9 +72,6 @@ public class User {
     @JsonManagedReference
     private List<EmploymentDetail> employment;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<Resume> resumes;
-
     public User() {
     }
 
