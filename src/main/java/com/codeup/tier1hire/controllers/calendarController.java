@@ -11,8 +11,8 @@ public class calendarController {
         return "/calendar";
     }
 
-    @GetMapping("/calendar")
-    public String createNew() {
-        @event = Event.new
-    }
+//    @GetMapping("/calendar")
+//    public String createNew() {
+//        @event = Event.new
+//    }
 }
