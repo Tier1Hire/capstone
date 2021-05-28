@@ -40,19 +40,27 @@ public class UserController {
         return "users/profile";
     }
 
-    @GetMapping("/users/{userId}/edit")
-    public String updateUser(@PathVariable long userId, Model model) {
-        User updateUser = usersDao.getOne(userId);
-        model.addAttribute("users", updateUser);
-        return "users/edit";
+//    @GetMapping("/users/{userId}/edit")
+//    public String updateUser(@PathVariable long userId, Model model) {
+//        User updateUser = usersDao.getOne(userId);
+//        model.addAttribute("users", updateUser);
+//        return "users/edit";
+//    }
+//
+//    @PostMapping("users/edit/{userId}")
+//    public String updateUser(@ModelAttribute User updateUser) {
+//        usersDao.save(updateUser);
+//        return "redirect:/profile";
+//    }
+
+    @PostMapping("/profile")
+    public String updateUser(@ModelAttribute("user") User user, Model model) {
+        User updatedUser = usersDao.findById(user.getUserId()).get();
+        updatedUser.setEmail(user.getEmail());
+        updatedUser.setFirstName(user.getFirstName());
+        updatedUser.setLastName(user.getLastName());
+        usersDao.save(updatedUser);
+        return "users/profile";
     }
-
-    @PostMapping("users/edit/{userId}")
-    public String updateUser(@ModelAttribute User updateUser) {
-        usersDao.save(updateUser);
-        return "redirect:/profile";
-    }
-
-
 
 }

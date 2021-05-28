@@ -10,4 +10,9 @@ public class calendarController {
     public String calender() {
         return "/calendar";
     }
+
+    @GetMapping("/calendar")
+    public String createNew() {
+        @event = Event.new
+    }
 }
