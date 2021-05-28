@@ -262,17 +262,4 @@ public class User {
     public void setEmployment(List<EmploymentDetail> employment) {
         this.employment = employment;
     }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-//    public List<Resume> getResumes() {
-    //    public List<Resume> getResumes() {
-//        return resumes;
-//    }
-//
-//    public void setResumes(List<Resume> resumes) {
-//        this.resumes = resumes;
-//    }
 }
