@@ -1,83 +1,83 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
 
-<div class="container mt-4" style="background-color: azure; height: 90vh">
-    <div class="row justify-content-center align-items-center" style="height: 90vh">
-        <form class="col-8" th:action="@{|/users/edit/${id}|}" th:method="POST" th:object="${users}">
-            <h1 class="text-center mb-5">Create a new Post</h1>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                UserName: <input th:field="*{username}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="title">Title</label>-->
-                First Name: <input th:field="*{firstName}" class="form-control" type="text" > <!-- adding  to field to make sure it's not left empty by user -->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Last Name: <input th:field="*{lastName}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Email: <input th:field="*{email}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Password; <input th:field="*{password}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Address: <input th:field="*{address}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Alias: <input th:field="*{alias}" class="form-control"> <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                City: <input th:field="*{city}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Company: <input th:field="*{company}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Country Code: <input th:field="*{countryCode}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
+<!--<div class="container mt-4" style="background-color: azure; height: 90vh">-->
+<!--    <div class="row justify-content-center align-items-center" style="height: 90vh">-->
+<!--        <form class="col-8" th:action="@{|/users/edit/${id}|}" th:method="POST" th:object="${users}">-->
+<!--            <h1 class="text-center mb-5">Create a new Post</h1>-->
 <!--            <div class="form-group">-->
 <!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
-<!--                Created At: <input th:field="*{createAt}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--                UserName: <input th:field="*{username}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="title">Title</label>&ndash;&gt;-->
+<!--                First Name: <input th:field="*{firstName}" class="form-control" type="text" > &lt;!&ndash; adding  to field to make sure it's not left empty by user &ndash;&gt;-->
 <!--            </div>-->
 <!--            <div class="form-group">-->
 <!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
-<!--                Date Of Birth: <input th:field="*{dateOfBirth}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--                Last Name: <input th:field="*{lastName}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
 <!--            </div>-->
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Is Hr: <input th:field="*{isHr}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Phone Number: <input th:field="*{phoneNumber}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                 Postal Code: <input th:field="*{postalCode}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <div class="form-group">
-                <!--                <label for="body">Body</label>-->
-                Region: <input th:field="*{region}" class="form-control" > <!-- adding  to field to make sure it's not left empty by user-->
-            </div>
-            <input type="submit" class="btn btn-block btn-primary" value="Edit">
-        </form>
-    </div>
-</div>
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Email: <input th:field="*{email}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Password; <input th:field="*{password}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Address: <input th:field="*{address}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Alias: <input th:field="*{alias}" class="form-control"> &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                City: <input th:field="*{city}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Company: <input th:field="*{company}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Country Code: <input th:field="*{countryCode}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                Created At: <input th:field="*{createAt}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                Date Of Birth: <input th:field="*{dateOfBirth}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Is Hr: <input th:field="*{isHr}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Phone Number: <input th:field="*{phoneNumber}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                 Postal Code: <input th:field="*{postalCode}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                &lt;!&ndash;                <label for="body">Body</label>&ndash;&gt;-->
+<!--                Region: <input th:field="*{region}" class="form-control" > &lt;!&ndash; adding  to field to make sure it's not left empty by user&ndash;&gt;-->
+<!--            </div>-->
+<!--            <input type="submit" class="btn btn-block btn-primary" value="Edit">-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->
