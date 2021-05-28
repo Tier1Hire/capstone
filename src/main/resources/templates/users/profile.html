@@ -14,25 +14,19 @@
                 <h2 class="text-info">Profile</h2>
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
-                <div class="card" sec:authorize="isAuthenticated()">
-                    <h3 class="card-header" th:text="*{user.address}"></h3>
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="*{user.alias}"></h5>
-                        <p class="card-text" th:text="*{user.city}"></p>
-                        <p class="card-text" th:text="*{user.company}"></p>
-                        <p class="card-text" th:text="*{user.countryCode}"></p>
-                        <p class="card-text" th:text="*{user.createAt}"></p>
-                        <p class="card-text" th:text="*{user.dateOfBirth}"></p>
-                        <p class="card-text" th:text="*{user.email}"></p>
-                        <p class="card-text" th:text="*{user.firstName}"></p>
-                        <p class="card-text" th:text="*{user.isHr}"></p>
-                        <p class="card-text" th:text="*{user.lastName}"></p>
-                        <p class="card-text" th:text="*{user.phoneNumber}"></p>
-                        <p class="card-text" th:text="*{user.postalCode}"></p>
-                        <p class="card-text" th:text="*{user.region}"></p>
-                        <p class="card-text" th:text="*{user.username}"></p>
-                    </div>
+            <div class="card" sec:authorize="isAuthenticated()">
+                <h3 class="card-header" th:text="*{user.address1}"></h3>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="*{user.alias}"></h5>
+                    <p class="card-text" th:text="*{user.createAt}"></p>
+                    <p class="card-text" th:text="*{user.dateOfBirth}"></p>
+                    <p class="card-text" th:text="*{user.email}"></p>
+                    <p class="card-text" th:text="*{user.firstName}"></p>
+                    <p class="card-text" th:text="*{user.lastName}"></p>
+                    <p class="card-text" th:text="*{user.phoneNumber}"></p>
+                    <p class="card-text" th:text="*{user.username}"></p>
                 </div>
+            </div>
         </div>
 
         <div class="grid grid-cols-12 flex-grow">
