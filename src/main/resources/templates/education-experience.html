@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <div align="center">
-        <h1>Job Experience Form</h1>
-        <div class="card" sec:authorize="isAuthenticated()">
-        <form th:action="@{/job-experience}" method="POST" th:object="${employment_detail}">
+<div align="center">
+    <h1>Education Experience Form</h1>
+    <div class="card" sec:authorize="isAuthenticated()">
+        <form th:action="@{/education-experience}" method="POST" th:object="${education_detail}">
 
-            <label>Employer</label>
-            <input type="text" th:field="*{employer}">
+            <label>School</label>
+            <input type="text" th:field="*{school}">
             <br>
 
             <label>Address1</label>
@@ -33,30 +33,23 @@
             <input type="text" th:field="*{endDate}">
             <br>
 
-            <label>Supervisor</label>
-            <input type="text" th:field="*{supervisor}">
+            <label>Degree</label>
+            <input type="text" th:field="*{degree}">
             <br>
 
-            <label>Reason For Leaving</label>
-            <input type="text" th:field="*{reasonForLeaving}">
-            <br>
-
-            <label>Ok to Call?</label>
-            <input type="text" th:field="*{okToCall}">
-            <br>
-
-            <label>Phone Number</label>
-            <input type="text" th:field="*{phoneNumber}">
+            <label>Graduated</label>
+            <input type="text" th:field="*{graduated}">
             <br>
 
             <button type="submit">Send form</button>
 
         </form>
     </div>
+</div>
 
 
-<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
 </body>
 </html>
