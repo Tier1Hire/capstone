@@ -1,18 +1,25 @@
-package com.codeup.tier1hire.controllers;
+// package com.codeup.tier1hire.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.stereotype.Controller;
+// import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class calendarController {
+// @Controller
+// public class calendarController {
 
-    @GetMapping("/calendar")
-    public String calender() {
-        return "/calendar";
-    }
+//     @GetMapping("/calendar")
+//     public String calender() {
+//         return "/calendar";
+//     }
 
-//    @GetMapping("/calendar")
-//    public String createNew() {
-//        @event = Event.new
-//    }
-}
+// <<<<<<< navbar
+//     @GetMapping("/calendar")
+//     public String createNew() {
+//         @event = Event.new
+//     }
+// =======
+// //    @GetMapping("/calendar")
+// //    public String createNew() {
+// //        @event = Event.new
+// //    }
+// >>>>>>> main
+// }
