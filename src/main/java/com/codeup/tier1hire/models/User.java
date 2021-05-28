@@ -263,9 +263,9 @@ public class User {
         this.employment = employment;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
+//    public void setPostalCode(String postalCode) {
+//        this.postalCode = postalCode;
+//    }
 
 //    public List<Resume> getResumes() {
     //    public List<Resume> getResumes() {
