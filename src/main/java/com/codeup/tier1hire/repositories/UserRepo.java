@@ -15,6 +15,7 @@ public interface UserRepo extends JpaRepository<User, Long> {
     @Query("FROM User u JOIN u.education e WHERE e.school = ?1")
     List<User> findAllByEducation(String school);
 
-    @Query("FROM ")
+    @Query("FROM User u JOIN u.employment e WHERE e.employer = ?1")
+    List<User> findAllByEmployment(String employer);
 
 }
