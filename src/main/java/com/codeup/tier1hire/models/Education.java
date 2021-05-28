@@ -65,5 +65,19 @@ public class Education {
         this.graduated = graduated;
     }
 
-
+    @Override
+    public String toString() {
+        return "Education{" +
+                "educationId=" + educationId +
+                ", user=" + user +
+                ", school='" + school + '\'' +
+                ", degree='" + degree + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", major='" + major + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", graduated=" + graduated +
+                '}';
+    }
 }
