@@ -27,10 +27,12 @@ public class UserController {
     }
 
 
-    @GetMapping("/users")
-    @ResponseBody
-    public List<User> getAllUsers() {
-        return usersDao.findAll();
+    @GetMapping("/index")
+    public String getAllUsers(Model model) {
+
+        model.addAttribute("users", usersDao.findAll());
+
+        return "/index";
     }
 
     @GetMapping("/profile")
@@ -39,6 +41,12 @@ public class UserController {
         model.addAttribute("user", user);
         return "users/profile";
     }
+
+//    @GetMapping("/search-results/{name}")
+//    @ResponseBody
+//    public List<User> searchByNames(Model model, @PathVariable String first) {
+//        return usersDao.findAllByFirstNameIsLikeOrLastNameIsLike(name);
+//    }
 
 //    @GetMapping("/users/{userId}/edit")
 //    public String updateUser(@PathVariable long userId, Model model) {
