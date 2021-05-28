@@ -24,20 +24,20 @@ public class Education {
     @JsonBackReference
     private User user;
 
+    // Searchable
     @Column
     private String school;
 
     @Column
     private String degree;
 
+    // # and street name
     @Column
-    private String country;
+    private String address1;
 
+    // city, state, zip
     @Column
-    private String region;
-
-    @Column
-    private String city;
+    private String address2;
 
     @Column
     private String major;
@@ -45,17 +45,12 @@ public class Education {
     @Column
     private Date startDate;
 
+    // display "current" when no value
     @Column
     private Date endDate;
 
     @Column
-    private Date graduated;
-
-    @Column
-    private Date graduationDate;
-
-    @Column
-    private boolean presentlyEnrolled;
+    private boolean graduated;
 
     public Education(long educationId, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
         this.educationId = educationId;

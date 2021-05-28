@@ -25,31 +25,21 @@ public class EmploymentDetail {
     private User user;
 
     @Column
-    private String previousEmployment;
-
-    @Column
     private String employer;
 
+    // # and street name
     @Column
-    private boolean previousEmployed;
+    private String address1;
 
+    // city, state, zip
     @Column
-    private String country;
-
-    @Column
-    private String region;
-
-    @Column
-    private String city;
+    private String address2;
 
     @Column
     private Date startDate;
 
     @Column
     private Date endDate;
-
-    @Column
-    private boolean presentlyEmployed;
 
     @Column
     private String positions;

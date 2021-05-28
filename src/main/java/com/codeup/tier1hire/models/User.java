@@ -24,10 +24,10 @@ public class User {
     private Date createAt;
 
     @Column
-    private boolean isHr;
+    private boolean isAdmin;
 
     @Column
-    private String company;
+    private boolean isVerified;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -54,20 +54,13 @@ public class User {
     @Column(columnDefinition = "varchar(200) default 'N/A'")
     private String alias;
 
+    // # and street name
     @Column
-    private String countryCode;
+    private String address1;
 
+    // city, state, zip
     @Column
-    private String address;
-
-    @Column
-    private String city;
-
-    @Column
-    private String region;
-
-    @Column(columnDefinition = "varchar(100) default 'N/A'")
-    private String postalCode;
+    private String address2;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -85,11 +78,11 @@ public class User {
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isHr, String company, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String countryCode, String address, String city, String region, String postalCode, List<Education> education, List<EmploymentDetail> employment) {
+    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment) {
         this.userId = userId;
         this.createAt = createAt;
-        this.isHr = isHr;
-        this.company = company;
+        this.isAdmin = isAdmin;
+        this.isVerified = isVerified;
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -98,11 +91,8 @@ public class User {
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.alias = alias;
-        this.countryCode = countryCode;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
+        this.address1 = address1;
+        this.address2 = address2;
         this.education = education;
         this.employment = employment;
     }
@@ -110,8 +100,8 @@ public class User {
     public User(User copy) {
         this.userId = copy.userId; // This line is SUPER important! Many things won't work if it's absent
         this.createAt = copy.createAt;
-        this.isHr = copy.isHr;
-        this.company = copy.company;
+        this.isAdmin = copy.isAdmin;
+        this.isVerified = copy.isVerified;
         this.username = copy.username;
         this.password = copy.password;
         this.firstName = copy.firstName;
@@ -120,11 +110,8 @@ public class User {
         this.dateOfBirth = copy.dateOfBirth;
         this.phoneNumber = copy.phoneNumber;
         this.alias = copy.alias;
-        this.countryCode = copy.countryCode;
-        this.address = copy.address;
-        this.city = copy.city;
-        this.region = copy.region;
-        this.postalCode = copy.postalCode;
+        this.address1 = copy.address1;
+        this.address2 = copy.address2;
         this.education = copy.education;
         this.employment = copy.employment;
     }
@@ -134,8 +121,8 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", createAt=" + createAt +
-                ", isHr=" + isHr +
-                ", company='" + company + '\'' +
+                ", isAdmin=" + isAdmin +
+                ", isVerified=" + isVerified +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
@@ -144,20 +131,11 @@ public class User {
                 ", dateOfBirth=" + dateOfBirth +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", alias='" + alias + '\'' +
-                ", countryCode='" + countryCode + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", region='" + region + '\'' +
-                ", postalCode='" + postalCode + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", education=" + education +
+                ", employment=" + employment +
                 '}';
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public long getUserId() {
@@ -176,20 +154,28 @@ public class User {
         this.createAt = createAt;
     }
 
-    public boolean getIsHr() {
-        return isHr;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setHr(boolean hr) {
-        isHr = hr;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
-    public String getCompany() {
-        return company;
+    public boolean isVerified() {
+        return isVerified;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setVerified(boolean verified) {
+        isVerified = verified;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -248,47 +234,39 @@ public class User {
         this.alias = alias;
     }
 
-    public String getCountryCode() {
-        return countryCode;
+    public String getAddress1() {
+        return address1;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddress2() {
+        return address2;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
-    public String getCity() {
-        return city;
+    public List<Education> getEducation() {
+        return education;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setEducation(List<Education> education) {
+        this.education = education;
     }
 
-    public String getRegion() {
-        return region;
+    public List<EmploymentDetail> getEmployment() {
+        return employment;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setEmployment(List<EmploymentDetail> employment) {
+        this.employment = employment;
     }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-//    public List<Resume> getResumes() {
+    //    public List<Resume> getResumes() {
 //        return resumes;
 //    }
 //
