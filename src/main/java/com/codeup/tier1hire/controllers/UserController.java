@@ -42,6 +42,13 @@ public class UserController {
         return "users/profile";
     }
 
+    @GetMapping("/search-results/{name}")
+    public List<User> searchByName(@PathVariable String name, Model model) {
+
+        model.addAttribute("users", usersDao.findAllByFirstNameIsLikeOrLastNameIsLike(name, name));
+        return "/search-results";
+    }
+
 //    @GetMapping("/search-results/{name}")
 //    @ResponseBody
 //    public List<User> searchByNames(Model model, @PathVariable String first) {
