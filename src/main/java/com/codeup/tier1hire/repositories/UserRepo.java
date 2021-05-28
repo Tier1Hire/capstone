@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UserRepo extends JpaRepository<User, Long> {
+
     User findByEmail(String email);
     User findByUsername(String username);
+
 
     List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
 
