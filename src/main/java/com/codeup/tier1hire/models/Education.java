@@ -52,38 +52,18 @@ public class Education {
     @Column
     private boolean graduated;
 
-    public Education(long educationId, User user, String school, String degree, String country, String region, String city, String major, Date startDate, Date endDate, Date graduated, Date graduationDate, boolean presentlyEnrolled) {
+    public Education(long educationId, User user, String school, String degree, String address1, String address2, String major, Date startDate, Date endDate, boolean graduated) {
         this.educationId = educationId;
         this.user = user;
         this.school = school;
         this.degree = degree;
-        this.country = country;
-        this.region = region;
-        this.city = city;
+        this.address1 = address1;
+        this.address2 = address2;
         this.major = major;
         this.startDate = startDate;
         this.endDate = endDate;
         this.graduated = graduated;
-        this.graduationDate = graduationDate;
-        this.presentlyEnrolled = presentlyEnrolled;
     }
 
-    @Override
-    public String toString() {
-        return "Education{" +
-                "educationId=" + educationId +
-                ", user=" + user +
-                ", school='" + school + '\'' +
-                ", degree='" + degree + '\'' +
-                ", country='" + country + '\'' +
-                ", region='" + region + '\'' +
-                ", city='" + city + '\'' +
-                ", major='" + major + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", graduated=" + graduated +
-                ", graduationDate=" + graduationDate +
-                ", presentlyEnrolled=" + presentlyEnrolled +
-                '}';
-    }
+
 }
