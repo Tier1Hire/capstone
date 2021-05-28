@@ -56,18 +56,14 @@ public class EmploymentDetail {
     @Column
     private String phoneNumber;
 
-    public EmploymentDetail(long employmentId, User user, String previousEmployment, String employer, boolean previousEmployed, String country, String region, String city, Date startDate, Date endDate, boolean presentlyEmployed, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+    public EmploymentDetail(long employmentId, User user, String employer, String address1, String address2, Date startDate, Date endDate, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
         this.employmentId = employmentId;
         this.user = user;
-        this.previousEmployment = previousEmployment;
         this.employer = employer;
-        this.previousEmployed = previousEmployed;
-        this.country = country;
-        this.region = region;
-        this.city = city;
+        this.address1 = address1;
+        this.address2 = address2;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.presentlyEmployed = presentlyEmployed;
         this.positions = positions;
         this.supervisor = supervisor;
         this.reasonForLeaving = reasonForLeaving;
@@ -80,15 +76,11 @@ public class EmploymentDetail {
         return "EmploymentDetail{" +
                 "employmentId=" + employmentId +
                 ", user=" + user +
-                ", previousEmployment='" + previousEmployment + '\'' +
                 ", employer='" + employer + '\'' +
-                ", previousEmployed=" + previousEmployed +
-                ", country='" + country + '\'' +
-                ", region='" + region + '\'' +
-                ", city='" + city + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", presentlyEmployed=" + presentlyEmployed +
                 ", positions='" + positions + '\'' +
                 ", supervisor='" + supervisor + '\'' +
                 ", reasonForLeaving='" + reasonForLeaving + '\'' +
