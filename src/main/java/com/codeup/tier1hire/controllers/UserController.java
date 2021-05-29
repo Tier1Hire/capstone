@@ -42,12 +42,6 @@ public class UserController {
         return "users/profile";
     }
 
-//    @GetMapping("/search-results/{name}")
-//    @ResponseBody
-//    public List<User> searchByNames(Model model, @PathVariable String first) {
-//        return usersDao.findAllByFirstNameIsLikeOrLastNameIsLike(name);
-//    }
-
 //    @GetMapping("/users/{userId}/edit")
 //    public String updateUser(@PathVariable long userId, Model model) {
 //        User updateUser = usersDao.getOne(userId);

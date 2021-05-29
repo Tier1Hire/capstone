@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org"
-      layout:decorate="~{fragments/layout}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="">
 <head>
-  <title>Index</title>
+  <div th:replace="partials :: head"></div>
+  <title>Landing</title>
+
 </head>
+
+    <nav th:replace="partials/navbar :: navbar"></nav>
+</div>
 <body>
 <div layout:fragment="content" th:remove="tag">
   <body>
-  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-    <div class="container"><a class="navbar-brand logo"><img id="logo" src="assets/img/Tier-1-clear.jpg"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
   <main class="page landing-page">
-    <section class="clean-block clean-hero" style="color: rgba(9, 162, 255, 0.85);background: url(&quot;assets/img/tech/intervew-pic.jpeg&quot;), #621708;background-size: cover, auto;">
+    <section class="clean-block clean-hero" style="color: rgba(9, 162, 255, 0.85);background: url(../static/img/tech/interview-pic.jpeg), #621708;background-size: cover, auto;">
       <div class="text">
         <h2><strong>Welcome to&nbsp;the future&nbsp;of hiring and career services</strong></h2>
         <p>Pre-screening top tier candidates to get people to work quicker.<br></p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
-      </div><img src="assets/img/avatars/avatar3.jpg">
+      </div><img src="../assets/img/avatars/avatar3.jpg">
     </section>
     <section class="clean-block clean-info dark">
       <div class="container">
@@ -199,6 +187,7 @@
                     <div><span>San Antonio TX, 78209</span></div>
                     <div><abbr data-toggle="tooltip" data-placement="top" title="Office Phone: 555-867-5309">O:</abbr> 210-555-5555</div>
                     <hr class="d-sm-none">
+
                   </div>
                 </div>
               </div>
@@ -210,63 +199,15 @@
             <div class="modal-content">
               <div class="modal-header">
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="page-footer dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <h5>Get started</h5>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sign up</a></li>
-            <li></li>
-          </ul>
-        </div>
-        <div class="col-sm-3">
-          <h5>About us</h5>
-          <ul>
-            <li><a href="#">Company Information</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Reviews</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-3">
-          <h5>Support</h5>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li></li>
-            <li><a href="#">Forums</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-3">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>© 2021 TierOne Capstone</p>
-    </div>
-  </footer>
-  <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
-  <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
-  <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
-  <head th:replace="partials/scripts :: scripts">
-
-  </head>
   </body>
-
+  <footer th:replace="partials :: footer"></footer>
+  <div th:replace="partials :: scripts"></div>
 </div>
-</body>
-</html>
-
 

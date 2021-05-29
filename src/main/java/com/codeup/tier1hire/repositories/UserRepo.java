@@ -10,14 +10,14 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
     User findByEmail(String email);
     User findByUsername(String username);
-
+//    List<User> findAllByEducationContaining
 
     List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
 
-    @Query("FROM User u JOIN u.education e WHERE e.school = ?1")
+    @Query("FROM User u JOIN u.educationHistory e WHERE e.school = ?1")
     List<User> findAllByEducation(String school);
 
-    @Query("FROM User u JOIN u.employment e WHERE e.employer = ?1")
+    @Query("FROM User u JOIN u.employmentHistory e WHERE e.employer = ?1")
     List<User> findAllByEmployment(String employer);
 
 }
