@@ -12,7 +12,7 @@
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Profile</h2>
-                <div class="alert alert-danger" th:if="${user.isAdmin()}">
+                <div class="alert alert-danger" th:if="${}">
                     <form action="/profile/admin" method="POST">
                         <button type="submit">Toggle Admin</button>
                     </form>
