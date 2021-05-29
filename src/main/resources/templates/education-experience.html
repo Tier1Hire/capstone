@@ -11,7 +11,7 @@
 <div align="center">
     <h1>Education Experience Form</h1>
     <div class="card" sec:authorize="isAuthenticated()">
-        <form th:action="@{/education-experience}" method="POST" th:object="${education_detail}">
+        <form th:action="@{/education-experience}" method="POST" th:object="${education}">
 
             <label>School</label>
             <input type="text" th:field="*{school}">
