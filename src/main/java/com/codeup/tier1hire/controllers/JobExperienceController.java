@@ -28,14 +28,11 @@ public class JobExperienceController {
 
     @PostMapping("/job-experience")
     public String addJobExperienceForm(
-            @ModelAttribute("employment_detail") EmploymentDetail employmentDetail,
-            @RequestParam(name="startDate") String startDate,
-            @RequestParam(name="endDate") String endDate) {
-        System.out.println(startDate);
+            @ModelAttribute("employment_detail") EmploymentDetail employmentDetail) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         employmentDetail.setUser(user);
         employmentDetailDao.save(employmentDetail);
-        return "redirect:/users/profile";
+        return "redirect:/profile";
     }
 
 
