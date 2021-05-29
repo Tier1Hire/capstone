@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="partials/head :: head('Profile')"></head>
+<head th:replace="partials/head :: head"></head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
@@ -26,10 +26,11 @@
                     <p class="card-text" th:text="*{user.phoneNumber}"></p>
                     <p class="card-text" th:text="*{user.username}"></p>
                 </div>
-                <div class="card">
-                    <h5 class="card-title" th:text="*{user.employment.phoneNumber}"></h5>
-                    <p class="card-text" th:text="*{employmentDetail.address1}"></p>
-                    <p class="card-text" th:text="*{employmentDetail.address2}"></p>
+                Employment Detail
+                <div class="card" th:each="employment : ${user.employmentHistory}">
+                    <h5 class="card-title" th:text="*{employment.phoneNumber}"></h5>
+                    <p class="card-text" th:text="*{employment.address1}"></p>
+                    <p class="card-text" th:text="*{employment.address2}"></p>
                 </div>
             </div>
 
@@ -53,7 +54,6 @@
                     </button>
                 </form>
             </div>
-
 
     </section>
 </main>

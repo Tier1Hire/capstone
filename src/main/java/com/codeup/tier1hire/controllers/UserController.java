@@ -38,7 +38,7 @@ public class UserController {
     @GetMapping("/profile")
     public String getOneUser(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("user", user);
+        model.addAttribute("user", usersDao.getOne(user.getUserId()));
         return "users/profile";
     }
 
