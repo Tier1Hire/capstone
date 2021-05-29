@@ -19,6 +19,12 @@
             </div>
             <div class="card-body">
                 <p class="card-text" th:text="${user.lastName} + '...'"></p>
+                <div th:each="employment : ${user.employmentHistory}">
+                    <p th:text="${employment.employer}" />
+                </div>
+                <div th:each="education : ${user.educationHistory}">
+                    <p th:text="${education.school}" />
+                </div>
             </div>
         </div>
     </div>

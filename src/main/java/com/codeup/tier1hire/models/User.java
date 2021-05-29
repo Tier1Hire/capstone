@@ -65,17 +65,17 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     @JsonManagedReference
-    private List<Education> education;
+    private List<Education> educationHistory;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     @JsonManagedReference
-    private List<EmploymentDetail> employment;
+    private List<EmploymentDetail> employmentHistory;
 
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment) {
+    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
         this.userId = userId;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
@@ -90,8 +90,8 @@ public class User {
         this.alias = alias;
         this.address1 = address1;
         this.address2 = address2;
-        this.education = education;
-        this.employment = employment;
+        this.educationHistory = educationHistory;
+        this.employmentHistory = employmentHistory;
     }
 
     public User(User copy) {
@@ -109,8 +109,8 @@ public class User {
         this.alias = copy.alias;
         this.address1 = copy.address1;
         this.address2 = copy.address2;
-        this.education = copy.education;
-        this.employment = copy.employment;
+        this.educationHistory = copy.educationHistory;
+        this.employmentHistory = copy.employmentHistory;
     }
 
     @Override
@@ -130,8 +130,8 @@ public class User {
                 ", alias='" + alias + '\'' +
                 ", address1='" + address1 + '\'' +
                 ", address2='" + address2 + '\'' +
-                ", education=" + education +
-                ", employment=" + employment +
+                ", education=" + educationHistory +
+                ", employment=" + employmentHistory +
                 '}';
     }
 
@@ -247,19 +247,19 @@ public class User {
         this.address2 = address2;
     }
 
-    public List<Education> getEducation() {
-        return education;
+    public List<Education> getEducationHistory() {
+        return educationHistory;
     }
 
-    public void setEducation(List<Education> education) {
-        this.education = education;
+    public void setEducationHistory(List<Education> education) {
+        this.educationHistory = education;
     }
 
-    public List<EmploymentDetail> getEmployment() {
-        return employment;
+    public List<EmploymentDetail> getEmploymentHistory() {
+        return employmentHistory;
     }
 
-    public void setEmployment(List<EmploymentDetail> employment) {
-        this.employment = employment;
+    public void setEmploymentHistory(List<EmploymentDetail> employment) {
+        this.employmentHistory = employment;
     }
 }
