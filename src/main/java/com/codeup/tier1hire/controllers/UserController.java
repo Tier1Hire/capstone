@@ -65,4 +65,10 @@ public class UserController {
         return "users/profile";
     }
 
+    @GetMapping("/profile/{id}")
+    public String viewProfile(@PathVariable long id, Model model) {
+        model.addAttribute("user", usersDao.getOne(id));
+        return "/display-profile";
+    }
+
 }
