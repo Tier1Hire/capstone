@@ -26,7 +26,13 @@
                     <p class="card-text" th:text="*{user.phoneNumber}"></p>
                     <p class="card-text" th:text="*{user.username}"></p>
                 </div>
+                <div class="card">
+                    <h5 class="card-title" th:text="*{user.employment.phoneNumber}"></h5>
+                    <p class="card-text" th:text="*{employmentDetail.address1}"></p>
+                    <p class="card-text" th:text="*{employmentDetail.address2}"></p>
+                </div>
             </div>
+
         </div>
 
         <div class="grid grid-cols-12 flex-grow">
