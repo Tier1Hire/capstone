@@ -40,7 +40,7 @@ public class EducationController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         education.setUser(user);
         educationDao.save(education);
-        return "redirect:../profile";
+        return "redirect:/profile";
     }
 
 
