@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -36,9 +37,11 @@ public class EmploymentDetail {
     private String address2;
 
     @Column
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date startDate;
 
     @Column
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date endDate;
 
     @Column
