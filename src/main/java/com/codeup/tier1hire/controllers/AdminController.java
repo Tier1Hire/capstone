@@ -48,5 +48,12 @@ public class AdminController {
         return "redirect:/profile/" + id;
     }
 
+    @PostMapping("/profile/delete//{id}")
+    public String deleteJobExperience(@PathVariable long id) {
+
+        userDao.deleteById(id);
+
+        return "redirect:/profile";
+    }
 
 }
