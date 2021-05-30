@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       lang="en">
-<head th:replace="partials/head :: head"></head>
+<head>
+    <th:block th:replace="partials/head :: head('Login')"/>
+</head>
 <body>
-<nav th:replace="partials/navbar :: navbar"></nav>
+<nav th:replace="partials/navbar :: navbar" />
 <h1>Log-In</h1>
-<form th:action="@{/login}" th:method="post">
-  <label for="username">Username</label>
-  <input id="username" name="username" type="text" />
+<form th:action="@{/login}" method="POST">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text"/>
 
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" />
-  <input type="submit" value="Log In" />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password"/>
+    <input type="submit" value="Log In"/>
 </form>
 
-<div th:replace="partials/scripts :: scripts"></div>
+<th:block th:replace="partials/scripts :: scripts"/>
 </body>
 </html>
