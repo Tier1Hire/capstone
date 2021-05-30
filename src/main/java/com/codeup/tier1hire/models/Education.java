@@ -31,13 +31,17 @@ public class Education {
     @Column
     private String degree;
 
-    // # and street name
     @Column
-    private String address1;
+    private String streetAddress;
 
-    // city, state, zip
     @Column
-    private String address2;
+    private String city;
+
+    @Column
+    private String state;
+
+    @Column
+    private String zipcode;
 
     @Column
     private String major;
@@ -52,13 +56,15 @@ public class Education {
     @Column
     private boolean graduated;
 
-    public Education(long educationId, User user, String school, String degree, String address1, String address2, String major, Date startDate, Date endDate, boolean graduated) {
+    public Education(long educationId, User user, String school, String degree, String streetAddress, String city, String state, String zipcode, String major, Date startDate, Date endDate, boolean graduated) {
         this.educationId = educationId;
         this.user = user;
         this.school = school;
         this.degree = degree;
-        this.address1 = address1;
-        this.address2 = address2;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
         this.major = major;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -72,8 +78,10 @@ public class Education {
                 ", user=" + user +
                 ", school='" + school + '\'' +
                 ", degree='" + degree + '\'' +
-                ", address1='" + address1 + '\'' +
-                ", address2='" + address2 + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
                 ", major='" + major + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
@@ -113,20 +121,36 @@ public class Education {
         this.degree = degree;
     }
 
-    public String getAddress1() {
-        return address1;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
     }
 
-    public String getAddress2() {
-        return address2;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress2(String address2) {
-        this.address2 = address2;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getMajor() {

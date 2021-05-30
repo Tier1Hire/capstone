@@ -13,7 +13,7 @@
              th:each="user : ${users}">
             <div class="card-header">
                 <h3 class="card-title">
-                    <a th:href="'/user/' + ${user.userId}" th:text="${user.firstName}"
+                    <a th:href="'/profile/' + ${user.userId}" th:text="${user.firstName}"
                        class="stretched-link"></a>
                 </h3>
             </div>

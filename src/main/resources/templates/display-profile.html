@@ -26,7 +26,7 @@
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
             <div class="card">
-                <h3 class="card-header" th:text="*{user.address1}"></h3>
+                <h3 class="card-header" th:text="*{user.streetAddress}"></h3>
                 <div class="card-body">
                     <h5 class="card-title" th:text="*{user.alias}"></h5>
                     <p class="card-text" th:text="*{user.createAt}"></p>
@@ -40,8 +40,8 @@
                 <h3>Employment Detail</h3>
                 <div class="card" th:each="employment : ${user.employmentHistory}">
                     <h5 class="card-title" th:text="*{employment.employer}"></h5>
-                    <p class="card-text" th:text="*{employment.address1}"></p>
-                    <p class="card-text" th:text="*{employment.address2}"></p>
+                    <p class="card-text" th:text="*{employment.streetAddress}"></p>
+                    <p class="card-text" th:text="*{employment.city}"></p>
                     <p class="card-text" th:text="*{employment.startDate}"></p>
                     <p class="card-text" th:text="*{employment.endDate}"></p>
                     <p class="card-text" th:text="*{employment.positions}"></p>
@@ -53,8 +53,8 @@
                 <h3>Education</h3>
                 <div class="card" th:each="education : ${user.educationHistory}">
                     <h5 class="card-title" th:text="*{education.school}"></h5>
-                    <p class="card-text" th:text="*{education.address1}"></p>
-                    <p class="card-text" th:text="*{education.address2}"></p>
+                    <p class="card-text" th:text="*{education.streetAddress}"></p>
+                    <p class="card-text" th:text="*{education.city}"></p>
                     <p class="card-text" th:text="*{education.degree}"></p>
                     <p class="card-text" th:text="*{education.major}"></p>
                     <p class="card-text" th:text="*{education.startDate}"></p>

@@ -15,7 +15,7 @@
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
             <div class="card" sec:authorize="isAuthenticated()">
-                <h3 class="card-header" th:text="*{user.address1}"></h3>
+                <h3 class="card-header" th:text="*{user.streetAddress}"></h3>
                 <div class="card-body">
                     <h5 class="card-title" th:text="*{user.alias}"></h5>
                     <p class="card-text" th:text="*{user.createAt}"></p>
