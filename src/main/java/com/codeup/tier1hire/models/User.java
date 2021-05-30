@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.awt.*;
+import java.net.URL;
 import java.util.Date;
 import java.util.List;
 //import javax.util.List;
@@ -54,13 +56,20 @@ public class User {
     @Column(columnDefinition = "varchar(200) default 'N/A'")
     private String alias;
 
-    // # and street name
     @Column
-    private String address1;
+    private String streetAddress;
 
-    // city, state, zip
     @Column
-    private String address2;
+    private String city;
+
+    @Column
+    private String state;
+
+    @Column
+    private String zipcode;
+
+    @Column
+    private URL profileImage;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -75,7 +84,7 @@ public class User {
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
+    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String streetAddress, String city, String state, String zipcode, URL profileImage, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
         this.userId = userId;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
@@ -88,8 +97,11 @@ public class User {
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.alias = alias;
-        this.address1 = address1;
-        this.address2 = address2;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
+        this.profileImage = profileImage;
         this.educationHistory = educationHistory;
         this.employmentHistory = employmentHistory;
     }
@@ -107,8 +119,11 @@ public class User {
         this.dateOfBirth = copy.dateOfBirth;
         this.phoneNumber = copy.phoneNumber;
         this.alias = copy.alias;
-        this.address1 = copy.address1;
-        this.address2 = copy.address2;
+        this.streetAddress = copy.streetAddress;
+        this.city = copy.city;
+        this.state = copy.state;
+        this.zipcode = copy.zipcode;
+        this.profileImage = copy.profileImage;
         this.educationHistory = copy.educationHistory;
         this.employmentHistory = copy.employmentHistory;
     }
@@ -128,10 +143,12 @@ public class User {
                 ", dateOfBirth=" + dateOfBirth +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", alias='" + alias + '\'' +
-                ", address1='" + address1 + '\'' +
-                ", address2='" + address2 + '\'' +
-                ", education=" + educationHistory +
-                ", employment=" + employmentHistory +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", educationHistory=" + educationHistory +
+                ", employmentHistory=" + employmentHistory +
                 '}';
     }
 
@@ -211,6 +228,22 @@ public class User {
         return dateOfBirth;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
@@ -231,20 +264,20 @@ public class User {
         this.alias = alias;
     }
 
-    public String getAddress1() {
-        return address1;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
+    public void setStreetAddress(String address1) {
+        this.streetAddress = address1;
     }
 
-    public String getAddress2() {
-        return address2;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress2(String address2) {
-        this.address2 = address2;
+    public void setCity(String address2) {
+        this.city = address2;
     }
 
     public List<Education> getEducationHistory() {

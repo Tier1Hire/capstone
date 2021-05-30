@@ -28,13 +28,17 @@ public class EmploymentDetail {
     @Column
     private String employer;
 
-    // # and street name
     @Column
-    private String address1;
+    private String streetAddress;
 
-    // city, state, zip
     @Column
-    private String address2;
+    private String city;
+
+    @Column
+    private String state;
+
+    @Column
+    private String zipcode;
 
     @Column
     @DateTimeFormat(pattern = "dd/mm/yyyy")
@@ -59,12 +63,14 @@ public class EmploymentDetail {
     @Column
     private String phoneNumber;
 
-    public EmploymentDetail(long employmentId, User user, String employer, String address1, String address2, Date startDate, Date endDate, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+    public EmploymentDetail(long employmentId, User user, String employer, String streetAddress, String city, String state, String zipcode, Date startDate, Date endDate, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
         this.employmentId = employmentId;
         this.user = user;
         this.employer = employer;
-        this.address1 = address1;
-        this.address2 = address2;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
         this.startDate = startDate;
         this.endDate = endDate;
         this.positions = positions;
@@ -80,8 +86,10 @@ public class EmploymentDetail {
                 "employmentId=" + employmentId +
                 ", user=" + user +
                 ", employer='" + employer + '\'' +
-                ", address1='" + address1 + '\'' +
-                ", address2='" + address2 + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", positions='" + positions + '\'' +
@@ -91,4 +99,6 @@ public class EmploymentDetail {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+
 }
