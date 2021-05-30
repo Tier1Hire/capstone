@@ -16,7 +16,7 @@
                     <form th:action="${'/profile/admin/' + user.userId}" method="POST">
                         <button type="submit">Admin</button>
                     </form>
-                        <form class="success" th:action="${'/profile/verify' + user.userId}" method="POST">
+                        <form class="success" th:action="${'/profile/verify/' + user.userId}" method="POST">
                             <button type="submit">Verify</button>
                         </form>
                 </div>
