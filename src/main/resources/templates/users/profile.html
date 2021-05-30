@@ -28,6 +28,9 @@
                 </div>
                 <h3>Employment Detail</h3>
                 <div class="card" th:each="employment : ${user.employmentHistory}">
+                    <form class="alert alert-danger" th:action="${'/profile/delete/job/' + user.userId}" method="POST">
+                        <button type="submit">Remove Job</button>
+                    </form>
                     <h5 class="card-title" th:text="*{employment.employer}"></h5>
                     <p class="card-text" th:text="*{employment.address1}"></p>
                     <p class="card-text" th:text="*{employment.address2}"></p>
@@ -41,6 +44,9 @@
                 </div>
                 <h3>Education</h3>
                 <div class="card" th:each="education : ${user.educationHistory}">
+                    <form class="alert alert-danger" th:action="${'/profile/delete/education/' + user.userId}" method="POST">
+                        <button type="submit">Remove Education</button>
+                    </form>
                     <h5 class="card-title" th:text="*{education.school}"></h5>
                     <p class="card-text" th:text="*{education.address1}"></p>
                     <p class="card-text" th:text="*{education.address2}"></p>
