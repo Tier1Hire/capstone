@@ -47,4 +47,6 @@ public class AdminController {
         userDao.save(userEdit);
         return "redirect:/profile/" + id;
     }
+
+
 }
