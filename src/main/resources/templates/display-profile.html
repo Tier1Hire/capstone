@@ -12,12 +12,12 @@
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Profile</h2>
-                <div class="alert alert-danger" th:if="${}">
-                    <form action="/profile/admin" method="POST">
-                        <button type="submit">Toggle Admin</button>
+                <div class="alert alert-danger" th:if="${currentUser.isAdmin()}">
+                    <form th:action="${'/profile/admin/' + user.userId}" method="POST">
+                        <button type="submit">Admin</button>
                     </form>
                 </div>
-                <div class="success" th:if="${user.isAdmin()}">
+                <div class="success" th:if="${currentUser.isAdmin()}">
                     <form action="/profile/verify" method="POST">
                         <button type="submit">Verify</button>
                     </form>

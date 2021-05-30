@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -67,6 +68,9 @@ public class UserController {
 
     @GetMapping("/profile/{id}")
     public String viewProfile(@PathVariable long id, Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User currentUser = usersDao.getOne(user.getUserId());
+        model.addAttribute("currentUser", currentUser);
         model.addAttribute("user", usersDao.getOne(id));
         return "/display-profile";
     }

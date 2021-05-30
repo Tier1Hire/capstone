@@ -25,13 +25,16 @@ public class AdminController {
 //        return "/profile";
 //    }
 
-    @PostMapping("/profile/admin")
-    public String adminButton(@ModelAttribute User user) {
-        if (user.isAdmin()) {
-            user.setAdmin(false);
+    @PostMapping("/profile/admin/{id}")
+    public String adminButton(@PathVariable long id) {
+
+        User userEdit = userDao.getOne(id);
+        if (userEdit.isAdmin()) {
+            userEdit.setAdmin(false);
         } else {
-            user.setAdmin(true);
+            userEdit.setAdmin(true);
         }
-        return "/profile";
+        userDao.save(userEdit);
+        return "redirect:/profile/" + id;
     }
 }
