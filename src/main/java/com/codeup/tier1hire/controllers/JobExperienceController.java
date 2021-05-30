@@ -6,10 +6,7 @@ import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class JobExperienceController {
@@ -35,14 +32,15 @@ public class JobExperienceController {
         return "redirect:/profile";
     }
 
+    @PostMapping("/profile/delete/job/{id}")
+    public String deleteJobExperience(@PathVariable long id) {
 
-//    @GetMapping("/job-experience")
-//    public String getOneEmployment(Model model) {
-//        EmploymentDetail employmentDetail = (EmploymentDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("employment_detail", employmentDetail);
-//        return "job-experience";
-//    }
-//
+        employmentDetailDao.deleteById(id);
+
+        return "redirect:/profile";
+    }
+
+
 //    @PostMapping("/job-experience")
 //    public String updateEmployment(@ModelAttribute("employment_detail") EmploymentDetail employmentDetail) {
 //        EmploymentDetail updatedEmployment = employmentDetailDao.findById(employmentDetail.getEmploymentId()).get();
