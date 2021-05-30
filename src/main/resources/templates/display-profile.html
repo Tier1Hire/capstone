@@ -16,11 +16,9 @@
                     <form th:action="${'/profile/admin/' + user.userId}" method="POST">
                         <button type="submit">Admin</button>
                     </form>
-                </div>
-                <div class="success" th:if="${currentUser.isAdmin()}">
-                    <form action="/profile/verify" method="POST">
-                        <button type="submit">Verify</button>
-                    </form>
+                        <form class="success" th:action="${'/profile/verify' + user.userId}" method="POST">
+                            <button type="submit">Verify</button>
+                        </form>
                 </div>
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
