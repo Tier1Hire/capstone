@@ -9,54 +9,54 @@
 <div align="center">
     <h1>Job Experience Form</h1>
     <div class="card" sec:authorize="isAuthenticated()">
-        <form th:action="@{/edit/job/} " method="POST" th:object="${employmentDetail}">
+        <form th:action="@{|/edit/job/${job.id}|}" method="POST" th:object="${job}">
 
             <label>Employer</label>
-            <input type="text" th:field="*{employer}" th:value="*{job.employer}">
+            <input type="text" th:field="*{employer}">
             <br>
 
             <label>Position</label>
-            <input type="text" th:field="*{positions}" th:value="*{job.positions}">
+            <input type="text" th:field="*{positions}" >
             <br>
 
             <label>Street Address</label>
-            <input type="text" th:field="*{streetAddress}" th:value="*{job.streetAddress}">
+            <input type="text" th:field="*{streetAddress}">
             <br>
 
             <label>City</label>
-            <input type="text" th:field="*{city}" th:value="*{job.city}">
+            <input type="text" th:field="*{city}" >
             <br>
 
             <label>State</label>
-            <input type="text" th:field="*{state}" th:value="*{job.state}">
+            <input type="text" th:field="*{state}" >
             <br>
 
             <label>Zipcode</label>
-            <input type="text" th:field="*{zipcode}" th:value="*{job.zipcode}">
+            <input type="text" th:field="*{zipcode}">
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:fields="*{startDate}" th:value="*{job.startDate}">
+            <input type="text" th:fields="*{startDate}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:fields="*{endDate}" th:value="*{job.endDate}">
+            <input type="text" th:fields="*{endDate}">
             <br>
 
             <label>Supervisor</label>
-            <input type="text" th:field="*{supervisor}" th:value="*{job.supervisor}">
+            <input type="text" th:field="*{supervisor}" >
             <br>
 
             <label>Reason For Leaving</label>
-            <input type="text" th:field="*{reasonForLeaving}" th:value="*{job.reasonForLeaving}">
+            <input type="text" th:field="*{reasonForLeaving}">
             <br>
 
             <label>Ok to Call?</label>
-            <input type="text" th:field="*{okToCall}" th:value="*{job.okToCall}">
+            <input type="text" th:field="*{okToCall}">
             <br>
 
             <label>Phone Number</label>
-            <input type="text" th:field="*{phoneNumber}" th:value="*{job.phoneNumber}">
+            <input type="text" th:field="*{phoneNumber}">
             <br>
 
             <button type="submit">Send form</button>
