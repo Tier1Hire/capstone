@@ -15,15 +15,24 @@ public class SearchController {
         this.usersDao = usersDao;
     }
 
-    //    // Must make separate views for results as using same seems to throw "ambiguous error"
-    @GetMapping("/search/{name}")
-    public String searchByName(@PathVariable String name, Model model) {
+    @GetMapping("/search/{keyword}")
+    public String search(@PathVariable String keyword, Model model) {
 
-        model.addAttribute("users", usersDao.findAllByFirstNameIsLikeOrLastNameIsLike(name, name));
+        model.addAttribute("users", usersDao.search(keyword));
 //        model.addAttribute("users", usersDao.findAllByEducation(name));
 //        model.addAttribute("users", usersDao.findAllByEmployment(name));
         return "/search-results";
     }
+
+    //    // Must make separate views for results as using same seems to throw "ambiguous error"
+//    @GetMapping("/search/{name}")
+//    public String searchByName(@PathVariable String name, Model model) {
+//
+//        model.addAttribute("users", usersDao.findAllByFirstNameIsLikeOrLastNameIsLike(name, name));
+////        model.addAttribute("users", usersDao.findAllByEducation(name));
+////        model.addAttribute("users", usersDao.findAllByEmployment(name));
+//        return "/search-results";
+//    }
 
 //    @GetMapping("/search-results/{school}")
 //    public String searchBySchool(@PathVariable String school, Model model) {
