@@ -15,11 +15,11 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
 //    List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
 
-    @Query("FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?2%")
-    List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
-
     @Query("FROM User u JOIN u.educationHistory ed JOIN u.employmentHistory e WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR ed.school LIKE %?1% OR e.employer LIKE %?1%")
     List<User> search(String keyword);
+
+    @Query("FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1%")
+    List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String name);
 
     @Query("FROM User u JOIN u.educationHistory e WHERE e.school = ?1")
     List<User> findAllByEducation(String school);
