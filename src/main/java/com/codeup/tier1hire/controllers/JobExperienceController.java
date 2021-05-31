@@ -26,7 +26,7 @@ public class JobExperienceController {
     @PostMapping("/profile/add/job")
     public String addJobButton() {
 
-        return "job-experience";
+        return "redirect:/job-experience";
     }
 
 

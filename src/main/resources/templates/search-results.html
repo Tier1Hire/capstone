@@ -12,12 +12,13 @@
              th:each="user : ${users}">
             <div class="card-header">
                 <h3 class="card-title">
-                    <a th:href="'/users/' + ${user.userId}" th:text="${user.firstName}"
-                       class="stretched-link"></a>
+                    <a th:href="'/users/' + ${user.userId}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+                       class="stretched-link text-white"></a>
                 </h3>
             </div>
             <div class="card-body">
-                <p class="card-text" th:text="${user.lastName} + '...'"></p>
+                <p class="card-text" th:text="${user.phoneNumber}"></p>
+                <p class="card-text" th:text="${user.email}"></p>
                 <div th:each="employment : ${user.employmentHistory}">
                     <p th:text="${employment.employer}" />
                 </div>

@@ -33,7 +33,7 @@ public class EducationController {
     @PostMapping("/profile/add/education")
     public String addEducationButton() {
 
-        return "education-experience";
+        return "redirect:/education-experience";
     }
 
 //    @PostMapping("/education-experience")

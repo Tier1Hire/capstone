@@ -41,11 +41,9 @@ public class EmploymentDetail {
     private String zipcode;
 
     @Column
-    @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date startDate;
 
     @Column
-    @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date endDate;
 
     @Column
