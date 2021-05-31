@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:replace="partials/head :: head('All Users')"/>
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar" />
@@ -13,16 +12,19 @@
              th:each="user : ${users}">
             <div class="card-header">
                 <h3 class="card-title">
-                    <a th:href="'/profile/' + ${user.userId}" th:text="${user.firstName}"
-                       class="stretched-link"></a>
+                    <a th:href="'/profile/' + ${user.userId}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+                       class="stretched-link text-white"></a>
                 </h3>
             </div>
             <div class="card-body">
-                <p class="card-text" th:text="${user.lastName} + '...'"></p>
+                <p class="card-text" th:text="${user.phoneNumber}"></p>
+                <p class="card-text" th:text="${user.email}"></p>
             </div>
         </div>
     </div>
 </main>
 
+<th:block th:replace="partials/footer :: footer"/>
+<th:block th:replace="partials/scripts :: scripts"/>
 </body>
 </html>

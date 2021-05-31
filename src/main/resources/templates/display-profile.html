@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="partials/head :: head ('Profile')"></head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
+
+
+<!--
+
+    Need access through security I believe if visitors
+    will view profiles from index page
+
+-->
+
 
 <main class="page profile-page">
     <section class="clean-block clean-form dark">
@@ -69,30 +77,10 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-12 flex-grow">
-            <div sec:authorize="isAuthenticated()">
-                <h4>Edit Account</h4>
-                <form th:action="@{/profile}" th:method="post" th:object="${user}">
-                    <label for="email" class="w-full">
-                        <input id="email" th:field="*{email}"/>
-                    </label>
-                    <label for="first" class="w-full">
-                        <input id="first" th:field="*{firstName}"/>
-                    </label>
-                    <label for="last" class="w-full">
-                        <input id="last" th:field="*{lastName}"/>
-                    </label>
-                    <input th:field="*{userId}" type="hidden"/>
-                    <button type="submit" value="Update" style="background-color: #F5CB5C"
-                            class="w-full text-grey-800 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
-                        Edit Profile
-                    </button>
-                </form>
-            </div>
-        </div>
-
     </section>
 </main>
+
+<th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>
 

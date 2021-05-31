@@ -13,6 +13,9 @@ public interface UserRepo extends JpaRepository<User, Long> {
     User findByIsAdmin(boolean isAdmin);
 //    List<User> findAllByEducationContaining
 
+//    List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
+
+    @Query("FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?2%")
     List<User> findAllByFirstNameIsLikeOrLastNameIsLike(String firstName, String lastName);
 
     @Query("FROM User u JOIN u.educationHistory e WHERE e.school = ?1")
