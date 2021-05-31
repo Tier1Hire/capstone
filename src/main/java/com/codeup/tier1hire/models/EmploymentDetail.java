@@ -97,5 +97,21 @@ public class EmploymentDetail {
                 '}';
     }
 
+    public void updateContents(EmploymentDetail updatedEmploymentDetail) {
+        this.id = updatedEmploymentDetail.id;
+        this.employer = updatedEmploymentDetail.employer;
+        this.streetAddress = updatedEmploymentDetail.streetAddress;
+        this.city = updatedEmploymentDetail.city;
+        this.state = updatedEmploymentDetail.state;
+        this.zipcode = updatedEmploymentDetail.zipcode;
+        this.startDate = updatedEmploymentDetail.startDate;
+        this.endDate = updatedEmploymentDetail.endDate;
+        this.positions = updatedEmploymentDetail.positions;
+        this.supervisor = updatedEmploymentDetail.supervisor;
+        this.reasonForLeaving = updatedEmploymentDetail.reasonForLeaving;
+        this.okToCall = updatedEmploymentDetail.okToCall;
+        this.phoneNumber = updatedEmploymentDetail.phoneNumber;
+    }
+
 
 }
