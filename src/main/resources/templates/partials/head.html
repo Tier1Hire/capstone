@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <th:block th:fragment="styles">
-    <link href="/../css/main-css/.css" rel="stylesheet">
+  <title th:text="${title}">Home</title>
+  <th:block>
+<!--    <link href="/../css/main-css/.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
   </th:block>
 </head>
+<body>
+
+</body>
 </html>
+
+
+
+
+
+

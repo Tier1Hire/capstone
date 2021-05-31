@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <title>Fill out form for job experience</title>
-    <link th:rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css} "/>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <th:block th:replace="partials/head :: head('Add Job')"/>
 </head>
 <body>
+<nav th:replace="partials/navbar :: navbar"/>
 
-    <div align="center">
-        <h1>Job Experience Form</h1>
-        <div class="card" sec:authorize="isAuthenticated()">
+<div align="center">
+    <h1>Job Experience Form</h1>
+    <div class="card" sec:authorize="isAuthenticated()">
         <form th:action="@{/job-experience}" method="POST" th:object="${employment_detail}">
 
             <label>Employer</label>
             <input type="text" th:field="*{employer}">
             <br>
 
-            <label>Address1</label>
-            <input type="text" th:field="*{address1}">
+            <label>Street Address</label>
+            <input type="text" th:field="*{streetAddress}">
             <br>
 
-            <label>Address2</label>
-            <input type="text" th:field="*{address2}">
+            <label>City</label>
+            <input type="text" th:field="*{city}">
+            <br>
+
+            <label>State</label>
+            <input type="text" th:field="*{state}">
+            <br>
+
+            <label>Zipcode</label>
+            <input type="text" th:field="*{zipcode}">
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:fields="*{startDate}" >
+            <input type="text" th:fields="*{startDate}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:fields="*{endDate}" >
+            <input type="text" th:fields="*{endDate}">
             <br>
 
             <label>Supervisor</label>
@@ -53,10 +59,10 @@
 
         </form>
     </div>
+</div>
 
 
-<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+<th:block th:replace="partials/footer :: footer"/>
+<th:block th:replace="partials/scripts :: scripts"/>
 </body>
 </html>

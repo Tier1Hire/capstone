@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="partials/head :: head"></head>
+<head th:replace="partials/head :: head('User Profile')"></head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<div th:replace="partials/scripts :: scripts"></div>
-</body>
 <main class="page profile-page">
     <section class="clean-block clean-form dark">
         <div class="container">
@@ -15,41 +13,50 @@
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
             <div class="card" sec:authorize="isAuthenticated()">
-                <h3 class="card-header" th:text="*{user.streetAddress}"></h3>
+                <h3 class="card-header"><img th:src="*{user.profileImage}" alt="Profile Image"></h3>
                 <div class="card-body">
-                    <h5 class="card-title" th:text="*{user.alias}"></h5>
-                    <p class="card-text" th:text="*{user.createAt}"></p>
-                    <p class="card-text" th:text="*{user.dateOfBirth}"></p>
-                    <p class="card-text" th:text="*{user.email}"></p>
+                    <p class="card-text" th:text="*{user.username}"></p>
                     <p class="card-text" th:text="*{user.firstName}"></p>
                     <p class="card-text" th:text="*{user.lastName}"></p>
+                    <h5 class="card-title" th:text="*{user.alias}"></h5>
                     <p class="card-text" th:text="*{user.phoneNumber}"></p>
-                    <p class="card-text" th:text="*{user.username}"></p>
+                    <p class="card-text" th:text="*{user.email}"></p>
+                    <p class="card-text" th:text="*{user.streetAddress}"></p>
+                    <p class="card-text" th:text="*{user.city}"></p>
+                    <p class="card-text" th:text="*{user.state}"></p>
+                    <p class="card-text" th:text="*{user.zipcode}"></p>
+                    <p class="card-text" th:text="*{user.dateOfBirth}"></p>
                 </div>
                 <h3>Employment Detail</h3>
                 <div class="card" th:each="employment : ${user.employmentHistory}">
-                    <form class="alert alert-danger" th:action="${'/profile/delete/job/' + employment.employmentId}" method="POST">
+                    <form class="alert alert-danger" th:action="${'/profile/delete/job/' + employment.employmentId}"
+                          method="POST">
                         <button type="submit">Remove Job</button>
                     </form>
                     <h5 class="card-title" th:text="*{employment.employer}"></h5>
-                    <p class="card-text" th:text="*{employment.address1}"></p>
-                    <p class="card-text" th:text="*{employment.address2}"></p>
+                    <p class="card-text" th:text="*{employment.streetAddress}"></p>
+                    <p class="card-text" th:text="*{employment.city}"></p>
+                    <p class="card-text" th:text="*{employment.state}"></p>
+                    <p class="card-text" th:text="*{employment.zipcode}"></p>
+                    <p class="card-text" th:text="*{employment.phoneNumber}"></p>
                     <p class="card-text" th:text="*{employment.startDate}"></p>
                     <p class="card-text" th:text="*{employment.endDate}"></p>
                     <p class="card-text" th:text="*{employment.positions}"></p>
                     <p class="card-text" th:text="*{employment.supervisor}"></p>
                     <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>
                     <p class="card-text" th:text="*{employment.okToCall}"></p>
-                    <p class="card-text" th:text="*{employment.phoneNumber}"></p>
                 </div>
                 <h3>Education</h3>
                 <div class="card" th:each="education : ${user.educationHistory}">
-                    <form class="alert alert-danger" th:action="${'/profile/delete/education/' + education.educationId}" method="POST">
+                    <form class="alert alert-danger" th:action="${'/profile/delete/education/' + education.educationId}"
+                          method="POST">
                         <button type="submit">Remove Education</button>
                     </form>
                     <h5 class="card-title" th:text="*{education.school}"></h5>
-                    <p class="card-text" th:text="*{education.address1}"></p>
-                    <p class="card-text" th:text="*{education.address2}"></p>
+                    <p class="card-text" th:text="*{education.streetAddress}"></p>
+                    <p class="card-text" th:text="*{education.city}"></p>
+                    <p class="card-text" th:text="*{education.state}"></p>
+                    <p class="card-text" th:text="*{education.zipcode}"></p>
                     <p class="card-text" th:text="*{education.degree}"></p>
                     <p class="card-text" th:text="*{education.major}"></p>
                     <p class="card-text" th:text="*{education.startDate}"></p>
@@ -83,5 +90,9 @@
 
     </section>
 </main>
+
+<th:block th:replace="partials/footer :: footer"/>
+<th:block th:replace="partials/scripts :: scripts"/>
+</body>
 
 </html>
