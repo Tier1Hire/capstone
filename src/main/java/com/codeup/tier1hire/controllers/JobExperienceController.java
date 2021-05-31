@@ -23,6 +23,13 @@ public class JobExperienceController {
         return "job-experience";
     }
 
+    @PostMapping("/profile/add/job")
+    public String addJobButton() {
+
+        return "job-experience";
+    }
+
+
     @PostMapping("/job-experience")
     public String addJobExperienceForm(
             @ModelAttribute("employment_detail") EmploymentDetail employmentDetail) {

@@ -30,6 +30,12 @@ public class EducationController {
         return "education-experience";
     }
 
+    @PostMapping("/profile/add/education")
+    public String addEducationButton() {
+
+        return "education-experience";
+    }
+
 //    @PostMapping("/education-experience")
 //    public String addJobExperienceForm(@ModelAttribute("education") Education education) {
 //        educationDao.save(education);
