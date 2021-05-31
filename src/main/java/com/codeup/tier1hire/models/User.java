@@ -20,7 +20,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private long id;
 
     @Column
     private Date createAt;
@@ -71,21 +71,21 @@ public class User {
     @Column
     private URL profileImage;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    @JoinTable(name = "user")
     @JsonManagedReference
     private List<Education> educationHistory;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    @JoinTable(name = "user")
     @JsonManagedReference
     private List<EmploymentDetail> employmentHistory;
 
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String streetAddress, String city, String state, String zipcode, URL profileImage, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
-        this.userId = userId;
+    public User(long id, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String streetAddress, String city, String state, String zipcode, URL profileImage, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
+        this.id = id;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
         this.isVerified = isVerified;
@@ -107,7 +107,7 @@ public class User {
     }
 
     public User(User copy) {
-        this.userId = copy.userId; // This line is SUPER important! Many things won't work if it's absent
+        this.id = copy.id; // This line is SUPER important! Many things won't work if it's absent
         this.createAt = copy.createAt;
         this.isAdmin = copy.isAdmin;
         this.isVerified = copy.isVerified;
@@ -131,7 +131,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "id=" + id +
                 ", createAt=" + createAt +
                 ", isAdmin=" + isAdmin +
                 ", isVerified=" + isVerified +
@@ -152,12 +152,20 @@ public class User {
                 '}';
     }
 
-    public long getUserId() {
-        return userId;
+    public long getId() {
+        return id;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public URL getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(URL profileImage) {
+        this.profileImage = profileImage;
     }
 
     public Date getCreateAt() {

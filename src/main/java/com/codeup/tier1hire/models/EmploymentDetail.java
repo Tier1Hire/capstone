@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,7 +17,7 @@ public class EmploymentDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long employmentId;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -61,8 +60,8 @@ public class EmploymentDetail {
     @Column
     private String phoneNumber;
 
-    public EmploymentDetail(long employmentId, User user, String employer, String streetAddress, String city, String state, String zipcode, Date startDate, Date endDate, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
-        this.employmentId = employmentId;
+    public EmploymentDetail(long id, User user, String employer, String streetAddress, String city, String state, String zipcode, Date startDate, Date endDate, String positions, String supervisor, String reasonForLeaving, boolean okToCall, String phoneNumber) {
+        this.id = id;
         this.user = user;
         this.employer = employer;
         this.streetAddress = streetAddress;
@@ -81,7 +80,7 @@ public class EmploymentDetail {
     @Override
     public String toString() {
         return "EmploymentDetail{" +
-                "employmentId=" + employmentId +
+                "employmentId=" + id +
                 ", user=" + user +
                 ", employer='" + employer + '\'' +
                 ", streetAddress='" + streetAddress + '\'' +

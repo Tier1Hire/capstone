@@ -1,6 +1,8 @@
 package com.codeup.tier1hire.controllers;
 
+import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.UserRepo;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +21,8 @@ public class SearchController {
     public String search(@PathVariable String keyword, Model model) {
 
         model.addAttribute("users", usersDao.search(keyword));
-//        model.addAttribute("users", usersDao.findAllByEducation(name));
-//        model.addAttribute("users", usersDao.findAllByEmployment(name));
+//        model.addAttribute("education", );
+//        model.addAttribute("employment", );
         return "/search-results";
     }
 

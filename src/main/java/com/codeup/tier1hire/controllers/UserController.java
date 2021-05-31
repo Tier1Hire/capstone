@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("/profile")
     public String getOneUser(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("user", usersDao.getOne(user.getUserId()));
+        model.addAttribute("user", usersDao.getOne(user.getId()));
         return "users/profile";
     }
 
@@ -58,7 +58,7 @@ public class UserController {
 
     @PostMapping("/profile")
     public String updateUser(@ModelAttribute("user") User user, Model model) {
-        User updatedUser = usersDao.findById(user.getUserId()).get();
+        User updatedUser = usersDao.findById(user.getId()).get();
         updatedUser.setEmail(user.getEmail());
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
@@ -69,7 +69,7 @@ public class UserController {
     @GetMapping("/profile/{id}")
     public String viewProfile(@PathVariable long id, Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User currentUser = usersDao.getOne(user.getUserId());
+        User currentUser = usersDao.getOne(user.getId());
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("user", usersDao.getOne(id));
         return "/display-profile";
