@@ -19,13 +19,13 @@
             <div class="block-heading">
                 <h2 class="text-info">Profile</h2>
                 <div class="warning" th:if="${currentUser.isAdmin()}">
-                    <form th:action="${'/profile/admin/' + user.userId}" method="POST">
+                    <form th:action="${'/profile/admin/' + user.id}" method="POST">
                         <button type="submit">Admin</button>
                     </form>
-                    <form class="success" th:action="${'/profile/verify/' + user.userId}" method="POST">
+                    <form class="success" th:action="${'/profile/verify/' + user.id}" method="POST">
                         <button type="submit">Verify</button>
                     </form>
-                    <form class="alert-danger alert" th:action="${'/profile/delete/' + user.userId}" method="POST">
+                    <form class="alert-danger alert" th:action="${'/profile/delete/' + user.id}" method="POST">
                         <button type="submit">Delete User</button>
                     </form>
                 </div>

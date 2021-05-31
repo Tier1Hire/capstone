@@ -17,7 +17,7 @@ public class Education {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long educationId;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -56,8 +56,8 @@ public class Education {
     @Column
     private boolean graduated;
 
-    public Education(long educationId, User user, String school, String degree, String streetAddress, String city, String state, String zipcode, String major, Date startDate, Date endDate, boolean graduated) {
-        this.educationId = educationId;
+    public Education(long id, User user, String school, String degree, String streetAddress, String city, String state, String zipcode, String major, Date startDate, Date endDate, boolean graduated) {
+        this.id = id;
         this.user = user;
         this.school = school;
         this.degree = degree;
@@ -74,7 +74,7 @@ public class Education {
     @Override
     public String toString() {
         return "Education{" +
-                "educationId=" + educationId +
+                "id=" + id +
                 ", user=" + user +
                 ", school='" + school + '\'' +
                 ", degree='" + degree + '\'' +
@@ -89,12 +89,12 @@ public class Education {
                 '}';
     }
 
-    public long getEducationId() {
-        return educationId;
+    public long getId() {
+        return id;
     }
 
-    public void setEducationId(long educationId) {
-        this.educationId = educationId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public User getUser() {
