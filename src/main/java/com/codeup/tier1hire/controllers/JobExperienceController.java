@@ -48,15 +48,14 @@ public class JobExperienceController {
     }
 
 
-//    @PostMapping("/job-experience")
-//    public String updateEmployment(@ModelAttribute("employment_detail") EmploymentDetail employmentDetail) {
-//        EmploymentDetail updatedEmployment = employmentDetailDao.findById(employmentDetail.getEmploymentId()).get();
-//        updatedEmployment.setEmployer(employmentDetail.getEmployer());
-//        updatedEmployment.setAddress1(employmentDetail.getAddress1());
-//        updatedEmployment.setAddress2(employmentDetail.getAddress2());
-//        updatedEmployment.setPositions(employmentDetail.getPositions());
-//        employmentDetailDao.save(updatedEmployment);
-//        return "users/profile";
-//    }
+    @PostMapping("/profile/edit/job")
+    public String updateEmployment() {
+        return "redirect:/profile";
+    }
 
+    @GetMapping("/profile/edit/job/{id}")
+    public String editJobForm(@PathVariable long id, Model model) {
+        model.addAttribute("job", employmentDetailDao.getOne(id));
+        return "/edit-job";
+    }
 }
