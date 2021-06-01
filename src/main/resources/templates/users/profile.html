@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="partials/head :: head('Profile')"></head>
+<head th:replace="partials/head :: head('Profile')">
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 <div th:replace="partials/scripts :: scripts"></div>
-</body>
+<!--<div th:replace="partials/partials :: partials"></div>-->
+
 <main class="page profile-page">
     <section class="clean-block clean-form dark">
         <div class="container">
@@ -48,8 +49,28 @@
                 </form>
             </div>
 
+                <div class="col-6">
+                    <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
+                    <input type="hidden" id="fileupload" value="" name="uploadedImage">
+                </div>
+
+            <section id="welcome">
+                <div class="container">
+                    <div class="welcome text-center">
+                        <img th:src="${userImage}" th:alt="${user.username}" class="rounded-circle promoImage">
+                        <h1 th:text="${user.username}"></h1>
+                        <p th:text="${user.firstName} + ' ' + ${user.lastName}" class="text-uppsercase"></p>
+                    </div>
+                </div>
+            </section>
+
 
     </section>
 </main>
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js" defer></script>
+<script src="/static/js/keys.js"></script>
+<script type="text/javascript" th:src="@{/js/main.js}" defer></script>
 
+</head>
+</body>
 </html>

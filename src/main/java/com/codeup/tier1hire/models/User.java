@@ -23,6 +23,9 @@ public class User {
     @Column
     private Date createAt;
 
+//    @Column(name = "profile_pic")
+//    private String profilePic;
+
     @Column
     private boolean isAdmin;
 
@@ -62,6 +65,9 @@ public class User {
     @Column
     private String address2;
 
+    @OneToMany(mappedBy = "owner")
+    private List<Image> images;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     @JsonManagedReference
@@ -75,7 +81,7 @@ public class User {
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment) {
+    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment, List<Image> images) {
         this.userId = userId;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
@@ -92,6 +98,8 @@ public class User {
         this.address2 = address2;
         this.education = education;
         this.employment = employment;
+        this.images = images;
+
     }
 
     public User(User copy) {
@@ -111,6 +119,8 @@ public class User {
         this.address2 = copy.address2;
         this.education = copy.education;
         this.employment = copy.employment;
+        this.images = copy.images;
+
     }
 
     @Override
@@ -261,6 +271,14 @@ public class User {
 
     public void setEmployment(List<EmploymentDetail> employment) {
         this.employment = employment;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 
 //    public void setPostalCode(String postalCode) {

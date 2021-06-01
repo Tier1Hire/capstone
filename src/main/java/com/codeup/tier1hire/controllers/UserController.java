@@ -1,8 +1,10 @@
 package com.codeup.tier1hire.controllers;
 
+import com.codeup.tier1hire.models.Image;
 import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
+import com.codeup.tier1hire.repositories.ImageRepository;
 import com.codeup.tier1hire.repositories.UserRepo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,14 +20,25 @@ public class UserController {
     private final EducationDetailRepo educationDao;
     private final EmploymentDetailRepo employmentDao;
     private final PasswordEncoder passwordEncoder;
+    private final ImageRepository imageDao;
 
-    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder, ImageRepository imageDao) {
         this.usersDao = usersDao;
         this.educationDao = educationDao;
         this.employmentDao = employmentDao;
         this.passwordEncoder = passwordEncoder;
+        this.imageDao = imageDao;
+
     }
 
+    private String fileStackApiKey;
+
+    @RequestMapping(path = "/static/js/keys.js", produces = "application/javascript")
+    @ResponseBody
+    public String apikey(){
+        System.out.println(fileStackApiKey);
+        return "const filestackAPIKey = `" + fileStackApiKey + "`";
+    }
 
     @GetMapping("/users")
     @ResponseBody
@@ -54,12 +67,16 @@ public class UserController {
 //    }
 
     @PostMapping("/profile")
-    public String updateUser(@ModelAttribute("user") User user, Model model) {
+    public String updateUser(@ModelAttribute("user") User user, Model model, @RequestParam(name="uploadedImage") String uploadedImage) {
         User updatedUser = usersDao.findById(user.getUserId()).get();
         updatedUser.setEmail(user.getEmail());
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
         usersDao.save(updatedUser);
+        Image profileImage = new Image(true, uploadedImage, user);
+        imageDao.save(profileImage);
+        Image userImage = imageDao.findByOwner(user);
+        model.addAttribute("userImage", userImage.getImageURL());
         return "users/profile";
     }
 
