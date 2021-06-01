@@ -22,11 +22,6 @@
             </div>
         </div>
     </div>
-  <div class="card">
-    <div sec:authorize="isVerified()" th:if="${user.isVerified}">
-      <span class="badge badge-success">Verified User</span>
-    </div>
-  </div>
 </main>
 
 <th:block th:replace="partials/footer :: footer"/>
