@@ -31,9 +31,14 @@
                 </div>
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
-
+// I would imagine that I could visualize the users profile picture square being here.
             <div class="card">
                 <h3 class="card-header"><img th:src="*{user.profileImage}" alt="Profile Image"></h3>
+              <div class="card">
+                <div sec:authorize="isVerified()" th:if="${user.isVerified}">
+                  <span class="badge badge-success">Verified User</span>
+                </div>
+              </div>
                 <div class="card-body">
                     <p class="card-text" th:text="*{user.username}"></p>
                     <p class="card-text" th:text="*{user.firstName}"></p>
