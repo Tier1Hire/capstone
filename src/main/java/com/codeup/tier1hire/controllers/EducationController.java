@@ -56,5 +56,21 @@ public class EducationController {
         return "redirect:/profile";
     }
 
+    @GetMapping("/profile/edit/education/{id}")
+    public String editJobForm(@PathVariable long id, Model model) {
+
+        model.addAttribute("education", educationDao.getOne(id));
+        return "/edit-education";
+    }
+
+    @PostMapping("/edit/education/{id}")
+    public String editJobChange(@PathVariable long id, @ModelAttribute("education") Education education) {
+
+        Education educationToUpdate = educationDao.getOne(id);
+        educationToUpdate.updateContents(education);
+        educationDao.save(educationToUpdate);
+
+        return "redirect:/profile";
+    }
 
 }
