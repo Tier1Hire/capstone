@@ -113,5 +113,4 @@ public class EmploymentDetail {
         this.phoneNumber = updatedEmploymentDetail.phoneNumber;
     }
 
-
 }

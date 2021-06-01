@@ -89,6 +89,20 @@ public class Education {
                 '}';
     }
 
+    public void updateContents(Education updateEducation) {
+        this.id = updateEducation.id;
+        this.school = updateEducation.school;
+        this.degree = updateEducation.degree;
+        this.streetAddress = updateEducation.streetAddress;
+        this.city = updateEducation.city;
+        this.state = updateEducation.state;
+        this.zipcode = updateEducation.zipcode;
+        this.major = updateEducation.major;
+        this.startDate = updateEducation.startDate;
+        this.endDate = updateEducation.endDate;
+        this.graduated = updateEducation.graduated;
+    }
+
     public long getId() {
         return id;
     }
