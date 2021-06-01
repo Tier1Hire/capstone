@@ -107,10 +107,20 @@
         </div>
 
     </section>
+
+    <div class="col-6">
+        <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
+        <input type="hidden" id="fileupload" value="" name="uploadedImage">
+    </div>
+
 </main>
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js" defer></script>
+<script src="/static/js/keys.js"></script>
+<script type="text/javascript" th:src="@{/js/main.js}" defer></script>
 
 </body>
 
