@@ -29,6 +29,10 @@ public class SearchController {
     @PostMapping("/search")
     public String search(@Param("keyword") String keyword, Model model) {
 
+        if (keyword == null) {
+            return "index";
+        }
+
         model.addAttribute("keyword", keyword);
         model.addAttribute("users", usersDao.search(keyword));
         return "search-results";
