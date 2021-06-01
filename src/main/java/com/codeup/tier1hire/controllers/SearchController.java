@@ -26,7 +26,7 @@ public class SearchController {
 //        return "search-results";
 //    }
 
-    @PostMapping("/search")
+    @PostMapping("/search/")
     public String search(@Param("keyword") String keyword, Model model) {
 
         if (keyword == null) {
