@@ -21,6 +21,11 @@
                 <p class="card-text" th:text="${user.email}"></p>
             </div>
         </div>
+      <div class="card">
+        <div sec:authorize="isVerified()" th:if="${user.isVerified}">
+          <span class="badge badge-success">Verified User</span>
+        </div>
+      </div>
     </div>
 </main>
 
