@@ -65,8 +65,8 @@ public class User {
     @Column
     private String address2;
 
-    @OneToMany(mappedBy = "owner")
-    private List<Image> images;
+//    @OneToMany(mappedBy = "owner")
+//    private List<Image> images;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -81,7 +81,7 @@ public class User {
     public User() {
     }
 
-    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment, List<Image> images) {
+    public User(long userId, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String address1, String address2, List<Education> education, List<EmploymentDetail> employment) {
         this.userId = userId;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
@@ -98,7 +98,7 @@ public class User {
         this.address2 = address2;
         this.education = education;
         this.employment = employment;
-        this.images = images;
+//        this.images = images;
 
     }
 
@@ -119,7 +119,7 @@ public class User {
         this.address2 = copy.address2;
         this.education = copy.education;
         this.employment = copy.employment;
-        this.images = copy.images;
+//        this.images = copy.images;
 
     }
 
@@ -273,13 +273,13 @@ public class User {
         this.employment = employment;
     }
 
-    public List<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(List<Image> images) {
-        this.images = images;
-    }
+//    public List<Image> getImages() {
+//        return images;
+//    }
+//
+//    public void setImages(List<Image> images) {
+//        this.images = images;
+//    }
 
 //    public void setPostalCode(String postalCode) {
 //        this.postalCode = postalCode;
