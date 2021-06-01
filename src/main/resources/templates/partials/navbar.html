@@ -40,21 +40,21 @@
     <div class="container navbar-brand logo"><img id="logo"
                                                   src="https://static.shuffle.dev/uploads/files/85/85351a3dca13a21ed9de64731ceaca8c5a881ea2/Tier-1-clear.png"
                                                   alt="Tier One" width="100">
-        <!--    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span-->
-        <!--            class="navbar-toggler-icon"></span></button>-->
-        <!--    <div class="collapse navbar-collapse" id="nav col-1">-->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link active" th:href="@{/landing}">Home Page</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/Pricing}">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/register}">Create Account</a>
-            <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/login}">Log-in</a>
-                <!--          <form class="form-inline my-2 my-md-0" th:action="${}" method="POST">-->
-                <!--            <input class="form-control" type="text" placeholder="Search">-->
-                <!--            <button type="submit">Search</button>-->
-                <!--          </form>-->
-        </ul>
-        <!--    </div>-->
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="nav col-1">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" th:href="@{/landing}">Home Page</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/Pricing}">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/register}">Create Account</a>
+                <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/login}">Log-in</a>
+                    <form class="form-inline my-2 my-md-0" th:action="@{/search}" method="POST">
+                        <input class="form-control" type="text" id="keyword" name="keyword" placeholder="Search">
+                        <button type="submit">Search</button>
+                    </form>
+            </ul>
+        </div>
     </div>
     <!--  <form action="#" th:action="@{/}" th:object="${search}">-->
     <!--      <label for="search-candidates">Search:</label> <input name="search"-->
