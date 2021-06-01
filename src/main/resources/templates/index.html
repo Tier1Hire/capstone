@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="">
 <head>
     <th:block th:replace="partials/head :: head('All Users')"/>
 </head>
@@ -22,6 +22,11 @@
             </div>
         </div>
     </div>
+  <div class="card">
+    <div sec:authorize="isVerified()" th:if="${user.isVerified}">
+      <span class="badge badge-success">Verified User</span>
+    </div>
+  </div>
 </main>
 
 <th:block th:replace="partials/footer :: footer"/>
