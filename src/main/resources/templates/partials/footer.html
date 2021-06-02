@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+  <div th:include="partials/head.html :: head"></div>
+</head>
 <body>
+<nav th:replace="partials/navbar :: navbar"/>
 <th:block th:fragment="footer" class="footer type here page-footer dark" style="margin-top: 100px">
-
-
     <div>
         <div class="container">
             <div class="row">
