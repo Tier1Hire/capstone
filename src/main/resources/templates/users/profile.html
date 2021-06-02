@@ -96,6 +96,10 @@
                     <label for="last" class="w-full">
                         <input id="last" th:field="*{lastName}"/>
                     </label>
+                    <div class="col-6">
+                        <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
+                        <input type="hidden" th:field="*{profileImage}">
+                    </div>
                     <input th:field="*{id}" type="hidden"/>
                     <button type="submit" value="Update" style="background-color: #F5CB5C"
                             class="w-full text-grey-800 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
@@ -108,19 +112,29 @@
 
     </section>
 
-    <div class="col-6">
-        <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
-        <input type="hidden" id="fileupload" value="" name="uploadedImage">
-    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+
+                <!--Profile Photo-->
+                <!--Filestack-->
+                <div class="wrapper profile-img pl-2">
+                    <img id="profileImageDisplay" class="image--cover all-image-cover"
+                         th:src="*{user.profileImage}"
+                         style="border-radius: 50%; width: 200px; height: 200px"/>
+                </div>
+
+            </div>
 
 </main>
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
 
-<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js" defer></script>
-<script src="/static/js/keys.js"></script>
-<script type="text/javascript" th:src="@{/js/main.js}" defer></script>
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script src="js/keys.js"></script>
+<script type="text/javascript" th:src="@{/js/filestack.js}"></script>
+
 
 </body>
 

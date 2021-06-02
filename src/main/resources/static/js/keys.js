@@ -1,1 +1,1 @@
-const fileStackKey = 'At6QUBbjRyODtBxLK9KVJz';
+const FILESTACK_API_KEY = 'At6QUBbjRyODtBxLK9KVJz';
