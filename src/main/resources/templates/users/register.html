@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       lang="en">
 <head>
-  <div th:include="partials/head.html :: head"></div>
+  <th:block th:replace="partials/head :: head('Login')"/>
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
