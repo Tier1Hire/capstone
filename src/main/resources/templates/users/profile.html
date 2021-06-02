@@ -52,8 +52,10 @@
                     <p class="card-text" th:text="*{employment.state}"></p>
                     <p class="card-text" th:text="*{employment.zipcode}"></p>
                     <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>
-                    <p class="card-text" th:text="*{employment.startDate}"></p>
-                    <p class="card-text" th:text="*{employment.endDate}"></p>
+                    <p class="card-text" th:if="*{employment.startDate != null}" th:text="*{employment.getFormattedStartDate()}"></p>
+                    <p class="card-text" th:if="*{employment.startDate == null}" th:text="*{employment.startDate}"></p>
+                    <p class="card-text" th:if="*{employment.endDate != null}" th:text="*{employment.getFormattedEndDate()}"></p>
+                    <p class="card-text" th:if="*{employment.endDate == null}" th:text="*{employment.endDate}"></p>
                     <p class="card-text" th:text="*{employment.positions}"></p>
                     <p class="card-text" th:text="*{employment.supervisor}"></p>
                     <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>
@@ -80,8 +82,10 @@
                     <p class="card-text" th:text="*{education.zipcode}"></p>
                     <p class="card-text" th:text="*{education.degree}"></p>
                     <p class="card-text" th:text="*{education.major}"></p>
-                    <p class="card-text" th:text="*{education.getFormattedStartDate()}"></p>
-                    <p class="card-text" th:text="*{education.getFormattedEndDate()}"></p>
+                    <p class="card-text" th:if="*{education.startDate != null}" th:text="*{education.getFormattedStartDate()}"></p>
+                    <p class="card-text" th:if="*{education.startDate == null}" th:text="*{education.startDate}"></p>
+                    <p class="card-text" th:if="*{education.endDate != null}" th:text="*{education.getFormattedEndDate()}"></p>
+                    <p class="card-text" th:if="*{education.endDate == null}" th:text="*{education.endDate}"></p>
                     <p class="card-text" th:text="*{education.graduated}"></p>
                 </div>
             </div>

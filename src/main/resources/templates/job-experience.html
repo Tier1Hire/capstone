@@ -9,7 +9,7 @@
 <div align="center">
     <h1>Job Experience Form</h1>
     <div class="card" sec:authorize="isAuthenticated()">
-        <form th:action="@{/job-experience}" method="POST" th:object="${employment_detail}">
+        <form th:action="@{/job-experience}" method="POST" th:object="${job}">
 
             <label>Employer</label>
             <input type="text" th:field="*{employer}">
@@ -36,11 +36,11 @@
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:fields="*{startDate}">
+            <input type="date" name="jobStartDate" th:value="*{startDate}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:fields="*{endDate}">
+            <input type="date" name="jobEndDate" th:value="*{endDate}">
             <br>
 
             <label>Supervisor</label>

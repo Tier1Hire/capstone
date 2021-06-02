@@ -31,12 +31,20 @@
             <input type="text" th:field="*{zipcode}">
             <br>
 
-            <label>Start Date</label>
-            <input type="date" name="educationStartDate" th:value="${education.getFormattedStartDate()}">
+            <label th:if="${education.startDate != null}">Start Date</label>
+            <input type="date" name="educationStartDate" th:if="${education.startDate != null}" th:value="${education.getFormattedStartDate()}">
             <br>
 
-            <label>End Date</label>
-            <input type="date" name="educationEndDate" th:value="${education.getFormattedEndDate()}">
+            <label th:if="${education.startDate == null}">Start Date</label>
+            <input type="date" name="educationStartDate" th:if="${education.startDate == null}" th:value="*{startDate}">
+            <br>
+
+            <label th:if="${education.endDate != null}">End Date</label>
+            <input type="date" name="educationEndDate" th:if="${education.endDate != null}" th:value="${education.getFormattedEndDate()}">
+            <br>
+
+            <label th:if="${education.endDate == null}">End Date</label>
+            <input type="date" name="educationEndDate" th:if="${education.endDate == null}" th:value="*{endDate}">
             <br>
 
             <label>Degree</label>
