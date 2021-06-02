@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.net.URL;
 import java.util.Date;
 import java.util.List;
 //import javax.util.List;
@@ -69,7 +67,7 @@ public class User {
     private String zipcode;
 
     @Column
-    private URL profileImage;
+    private String profileImage;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 //    @JoinTable(name = "user")
@@ -84,7 +82,7 @@ public class User {
     public User() {
     }
 
-    public User(long id, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String streetAddress, String city, String state, String zipcode, URL profileImage, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
+    public User(long id, Date createAt, boolean isAdmin, boolean isVerified, String username, String password, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, String alias, String streetAddress, String city, String state, String zipcode, String profileImage, List<Education> educationHistory, List<EmploymentDetail> employmentHistory) {
         this.id = id;
         this.createAt = createAt;
         this.isAdmin = isAdmin;
@@ -175,11 +173,11 @@ public class User {
         this.id = id;
     }
 
-    public URL getProfileImage() {
+    public String getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(URL profileImage) {
+    public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
     }
 

@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
 <head>
-  <th:block th:replace="partials/head :: head('Register')"/>
+  <th:block th:replace="partials/head :: head('Login')"/>
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar" />
+<nav th:replace="partials/navbar :: navbar"/>
 
 <main class="page registration-page">
   <section class="clean-block clean-form dark">
@@ -39,9 +40,8 @@
   </section>
 </main>
 </body>
-
-<th:block th:replace="partials/footer :: footer"/>
+</html>
+<!--<th:block th:replace="partials/footer :: footer"/>-->
 <th:block th:replace="partials/scripts :: scripts"/>
-</html>
-</body>
-</html>
+
+
