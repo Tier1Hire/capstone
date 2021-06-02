@@ -1,5 +1,6 @@
 package com.codeup.tier1hire.controllers;
 
+import com.codeup.tier1hire.models.Education;
 import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
@@ -73,6 +74,23 @@ public class UserController {
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("user", usersDao.getOne(id));
         return "/display-profile";
+    }
+
+    @GetMapping("/profile/edit/profile/{id}")
+    public String editJobForm(@PathVariable long id, Model model) {
+
+        model.addAttribute("user", usersDao.getOne(id));
+        return "/edit-profile";
+    }
+
+    @PostMapping("/edit/profile/{id}")
+    public String editJobChange(@PathVariable long id, @ModelAttribute("user") User user) {
+
+        User userToUpdate = usersDao.getOne(id);
+        userToUpdate.updateContents(user);
+        usersDao.save(userToUpdate);
+
+        return "redirect:/profile";
     }
 
 }
