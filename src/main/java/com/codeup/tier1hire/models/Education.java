@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Getter
@@ -197,5 +199,17 @@ public class Education {
 
     public void setGraduated(boolean graduated) {
         this.graduated = graduated;
+    }
+
+    public String getFormattedStartDate() {
+
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(this.startDate);
+    }
+
+    public String getFormattedEndDate() {
+
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(this.endDate);
     }
 }

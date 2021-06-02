@@ -32,11 +32,11 @@
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:field="*{startDate}">
+            <input type="date" name="educationStartDate" th:value="${education.getFormattedStartDate()}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:field="*{endDate}">
+            <input type="date" name="educationEndDate" th:value="${education.getFormattedEndDate()}">
             <br>
 
             <label>Degree</label>

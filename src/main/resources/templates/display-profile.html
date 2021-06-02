@@ -35,7 +35,7 @@
             <div class="card">
                 <h3 class="card-header"><img th:src="*{user.profileImage}" alt="Profile Image"></h3>
               <div class="card">
-                <div sec:authorize="isVerified()" th:if="${user.isVerified}">
+                <div th:if="*{user.verified}">
                   <span class="badge badge-success">Verified User</span>
                 </div>
               </div>
