@@ -52,8 +52,8 @@
                     <p class="card-text" th:text="*{employment.state}"></p>
                     <p class="card-text" th:text="*{employment.zipcode}"></p>
                     <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>
-                    <p class="card-text" th:text="*{employment.startDate}"></p>
-                    <p class="card-text" th:text="*{employment.endDate}"></p>
+                    <p class="card-text" th:text="*{employment.getFormattedStartDate()}"></p>
+                    <p class="card-text" th:text="*{employment.getFormattedEndDate()}"></p>
                     <p class="card-text" th:text="*{employment.positions}"></p>
                     <p class="card-text" th:text="*{employment.supervisor}"></p>
                     <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>

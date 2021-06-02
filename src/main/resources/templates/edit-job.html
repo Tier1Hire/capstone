@@ -36,11 +36,11 @@
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:fields="*{startDate}">
+            <input type="date" name="jobStartDate" th:value="${job.getFormattedStartDate()}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:fields="*{endDate}">
+            <input type="date" name="jobEndDate" th:value="${job.getFormattedEndDate()}">
             <br>
 
             <label>Supervisor</label>
@@ -56,7 +56,7 @@
             <br>
 
             <label>Phone Number</label>
-            <input type="text" name="employmentPhoneNumber" th:value="${job.getFormattedPhone()}">
+            <input type="text" th:field="*{phoneNumber}">
             <br>
 
             <button type="submit">Send form</button>

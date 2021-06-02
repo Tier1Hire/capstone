@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 @Controller
 public class JobExperienceController {
 
@@ -19,7 +22,7 @@ public class JobExperienceController {
 
     @GetMapping("/job-experience")
     public String showJobExperienceForm(Model model) {
-        model.addAttribute("employment_detail", new EmploymentDetail());
+        model.addAttribute("job", new EmploymentDetail());
         return "job-experience";
     }
 
@@ -32,7 +35,11 @@ public class JobExperienceController {
 
     @PostMapping("/job-experience")
     public String addJobExperienceForm(
-            @ModelAttribute("employment_detail") EmploymentDetail employmentDetail) {
+            @ModelAttribute("employment_detail") EmploymentDetail employmentDetail,
+            @RequestParam("jobStartDate") String jobStartDate,
+            @RequestParam("jobEndDate") String jobEndDate) throws ParseException {
+        employmentDetail.setStartDate(new SimpleDateFormat("yyyy-MM-dd").parse(jobStartDate));
+        employmentDetail.setEndDate(new SimpleDateFormat("yyyy-MM-dd").parse(jobEndDate));
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         employmentDetail.setUser(user);
         employmentDetailDao.save(employmentDetail);
@@ -67,7 +74,12 @@ public class JobExperienceController {
     }
 
     @PostMapping("/edit/job/{id}")
-    public String editJobChange(@PathVariable long id, @ModelAttribute("job") EmploymentDetail employmentDetail) {
+    public String editJobChange(@PathVariable long id,
+                                @ModelAttribute("job") EmploymentDetail employmentDetail,
+                                @RequestParam("jobStartDate") String jobStartDate,
+                                @RequestParam("jobEndDate") String jobEndDate) throws ParseException {
+        employmentDetail.setStartDate(new SimpleDateFormat("yyyy-MM-dd").parse(jobStartDate));
+        employmentDetail.setEndDate(new SimpleDateFormat("yyyy-MM-dd").parse(jobEndDate));
 
         EmploymentDetail employmentDetailToUpdate = employmentDetailDao.getOne(id);
         employmentDetailToUpdate.updateContents(employmentDetail);
