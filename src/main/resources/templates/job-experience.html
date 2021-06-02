@@ -36,11 +36,11 @@
             <br>
 
             <label>Start Date</label>
-            <input type="text" th:fields="*{startDate}" name="jobStartDate">
+            <input type="date" name="jobStartDate" th:value="*{startDate}">
             <br>
 
             <label>End Date</label>
-            <input type="text" th:fields="*{endDate}" name="jobEndDate">
+            <input type="date" name="jobEndDate" th:value="*{endDate}">
             <br>
 
             <label>Supervisor</label>

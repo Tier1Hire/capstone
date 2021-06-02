@@ -35,12 +35,20 @@
             <input type="text" th:field="*{zipcode}">
             <br>
 
-            <label>Start Date</label>
-            <input type="date" name="jobStartDate" th:value="${job.getFormattedStartDate()}">
+            <label th:if="${job.startDate != null}">Start Date</label>
+            <input type="date" name="jobStartDate" th:if="${job.startDate != null}" th:value="${job.getFormattedStartDate()}">
             <br>
 
-            <label>End Date</label>
-            <input type="date" name="jobEndDate" th:value="${job.getFormattedEndDate()}">
+            <label th:if="${job.startDate == null}">Start Date</label>
+            <input type="date" name="jobStartDate" th:if="${job.startDate == null}" th:value="*{startDate}">
+            <br>
+
+            <label th:if="${job.endDate != null}">End Date</label>
+            <input type="date" name="jobEndDate" th:if="${job.endDate != null}" th:value="${job.getFormattedEndDate()}">
+            <br>
+
+            <label th:if="${job.endDate == null}">End Date</label>
+            <input type="date" name="jobEndDate" th:if="${job.endDate == null}" th:value="*{endDate}">
             <br>
 
             <label>Supervisor</label>

@@ -44,7 +44,13 @@ public class EducationController {
 //    }
 
     @PostMapping("/education-experience")
-    public String addJobExperienceForm(@ModelAttribute("education") Education education) {
+    public String addEducationExperienceForm(
+            @ModelAttribute("education") Education education,
+            @RequestParam("educationStartDate") String educationStartDate,
+            @RequestParam("educationEndDate") String educationEndDate) throws ParseException {
+
+        education.setStartDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationStartDate));
+        education.setEndDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationEndDate));
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         education.setUser(user);
         educationDao.save(education);
@@ -52,20 +58,20 @@ public class EducationController {
     }
 
     @PostMapping("/profile/delete/education/{id}")
-    public String deleteJobExperience(@PathVariable long id) {
+    public String deleteEducationExperience(@PathVariable long id) {
         educationDao.deleteById(id);
         return "redirect:/profile";
     }
 
     @GetMapping("/profile/edit/education/{id}")
-    public String editJobForm(@PathVariable long id, Model model) {
+    public String editEducationForm(@PathVariable long id, Model model) {
 
         model.addAttribute("education", educationDao.getOne(id));
         return "/edit-education";
     }
 
     @PostMapping("/edit/education/{id}")
-    public String editJobChange(
+    public String editEducationChange(
             @PathVariable long id,
             @ModelAttribute("education") Education education,
             @RequestParam("educationStartDate") String educationStartDate,
