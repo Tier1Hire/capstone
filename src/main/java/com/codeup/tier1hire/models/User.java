@@ -104,6 +104,21 @@ public class User {
         this.employmentHistory = employmentHistory;
     }
 
+    public void updateContents(User updatedUser) {
+        this.id = updatedUser.id;
+        this.username = updatedUser.username;
+        this.firstName = updatedUser.firstName;
+        this.lastName = updatedUser.lastName;
+        this.email = updatedUser.email;
+        this.dateOfBirth = updatedUser.dateOfBirth;
+        this.phoneNumber = updatedUser.phoneNumber;
+        this.alias = updatedUser.alias;
+        this.streetAddress = updatedUser.streetAddress;
+        this.city = updatedUser.city;
+        this.state = updatedUser.state;
+        this.zipcode = updatedUser.zipcode;
+    }
+
     public User(User copy) {
         this.id = copy.id; // This line is SUPER important! Many things won't work if it's absent
         this.createAt = copy.createAt;
@@ -300,5 +315,11 @@ public class User {
 
     public void setEmploymentHistory(List<EmploymentDetail> employment) {
         this.employmentHistory = employment;
+    }
+
+    public String getFormattedPhone() {
+
+        String formattedNumber = this.phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+        return formattedNumber;
     }
 }

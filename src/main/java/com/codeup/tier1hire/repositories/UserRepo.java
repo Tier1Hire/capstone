@@ -18,7 +18,7 @@ public interface UserRepo extends JpaRepository<User, Long> {
 //    @Query("FROM User u JOIN u.educationHistory ed JOIN u.employmentHistory e WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR ed.school LIKE %?1% OR e.employer LIKE %?1%")
 //    List<User> search(String keyword);
 
-    @Query("SELECT DISTINCT u FROM User u JOIN u.educationHistory ed JOIN u.employmentHistory e WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR ed.school LIKE %?1% OR e.employer LIKE %?1%")
+    @Query("SELECT DISTINCT u FROM User u JOIN u.educationHistory ed JOIN u.employmentHistory e WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR ed.school LIKE %?1% OR e.employer LIKE %?1% ORDER BY u.isVerified DESC")
     List<User> search(String keyword);
 
     @Query("FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1%")
