@@ -8,10 +8,11 @@ import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 public class EducationController {
@@ -64,8 +65,15 @@ public class EducationController {
     }
 
     @PostMapping("/edit/education/{id}")
-    public String editJobChange(@PathVariable long id, @ModelAttribute("education") Education education) {
+    public String editJobChange(
+            @PathVariable long id,
+            @ModelAttribute("education") Education education,
+            @RequestParam("educationStartDate") String educationStartDate,
+            @RequestParam("educationEndDate") String educationEndDate) throws ParseException {
 
+        education.setStartDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationStartDate));
+        education.setEndDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationEndDate));
+        System.out.println(educationEndDate);
         Education educationToUpdate = educationDao.getOne(id);
         educationToUpdate.updateContents(education);
         educationDao.save(educationToUpdate);

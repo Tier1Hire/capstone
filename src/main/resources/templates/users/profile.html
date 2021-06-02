@@ -23,7 +23,7 @@
                     <p class="card-text" th:text="*{user.firstName}"></p>
                     <p class="card-text" th:text="*{user.lastName}"></p>
                     <h5 class="card-title" th:text="*{user.alias}"></h5>
-                    <p class="card-text" th:text="*{user.phoneNumber}"></p>
+                    <p class="card-text" th:text="*{user.getFormattedPhone()}"></p>
                     <p class="card-text" th:text="*{user.email}"></p>
                     <p class="card-text" th:text="*{user.streetAddress}"></p>
                     <p class="card-text" th:text="*{user.city}"></p>
@@ -51,7 +51,7 @@
                     <p class="card-text" th:text="*{employment.city}"></p>
                     <p class="card-text" th:text="*{employment.state}"></p>
                     <p class="card-text" th:text="*{employment.zipcode}"></p>
-                    <p class="card-text" th:text="*{employment.phoneNumber}"></p>
+                    <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>
                     <p class="card-text" th:text="*{employment.startDate}"></p>
                     <p class="card-text" th:text="*{employment.endDate}"></p>
                     <p class="card-text" th:text="*{employment.positions}"></p>
@@ -80,8 +80,8 @@
                     <p class="card-text" th:text="*{education.zipcode}"></p>
                     <p class="card-text" th:text="*{education.degree}"></p>
                     <p class="card-text" th:text="*{education.major}"></p>
-                    <p class="card-text" th:text="*{education.startDate}"></p>
-                    <p class="card-text" th:text="*{education.endDate}"></p>
+                    <p class="card-text" th:text="*{education.getFormattedStartDate()}"></p>
+                    <p class="card-text" th:text="*{education.getFormattedEndDate()}"></p>
                     <p class="card-text" th:text="*{education.graduated}"></p>
                 </div>
             </div>
