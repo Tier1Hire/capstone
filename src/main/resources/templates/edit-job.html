@@ -56,7 +56,7 @@
             <br>
 
             <label>Phone Number</label>
-            <input type="text" th:field="*{phoneNumber}">
+            <input type="text" name="employmentPhoneNumber" th:value="${job.getFormattedPhone()}">
             <br>
 
             <button type="submit">Send form</button>

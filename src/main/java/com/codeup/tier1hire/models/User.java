@@ -318,4 +318,10 @@ public class User {
     public void setEmploymentHistory(List<EmploymentDetail> employment) {
         this.employmentHistory = employment;
     }
+
+    public String getFormattedPhone() {
+
+        String formattedNumber = this.phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+        return formattedNumber;
+    }
 }
