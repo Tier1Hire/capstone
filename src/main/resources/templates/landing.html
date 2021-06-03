@@ -6,17 +6,21 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<section class="clean-block clean-hero" style="color: rgba(9, 162, 255, 0.85);background: url('tech/intervew-pic.jpeg'), #621708;background-size: cover, auto;">
-  <div class="text">
-    <h2><strong>Welcome to the future of hiring and career services</strong></h2>
-    <p>Pre-screening top tier candidates to get people to work quicker.<br /></p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
-  </div><img src="img/avatars/avatar3.jpg"  alt=""/>
-</section>
-            <p>Pre-screening top tier candidates to get people to work quicker.<br></p>
+
+<main class="container-fluid">
+    <section class="clean-block clean-hero"
+             style="background: rgba(9, 162, 255, 0.5); background-size: cover, auto">
+        <img src="img/tech/interview-pic.jpeg" alt="" width="500px"/>
+        <div class="text">
+            <h2><strong>Welcome to the future of hiring and career services</strong></h2>
+            <p>Pre-screening top tier candidates to get people to work quicker.<br/></p>
             <button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
         </div>
-        <img src="img/avatars/avatar3.jpg">
+
+        <p>Pre-screening top tier candidates to get people to work quicker.<br></p>
+        <button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
     </section>
+
     <section class="clean-block clean-info dark">
         <div class="container">
             <div class="block-heading">
@@ -79,6 +83,7 @@
         </div>
     </section>
 </main>
+
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>
