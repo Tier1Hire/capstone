@@ -6,9 +6,11 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
 
-<main class="row">
-    <div class="col-12 d-flex flex-wrap justify-content-between align-items-middle">
-        <div class="card bg-secondary mt-2 mr-2 ml-2 mb-2 border border-dark" style="width: 24rem;"
+<main class="page service-page">
+  <section class="clean-block clean-services dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Service Page</h2>
              th:each="user : ${users}">
             <div class="card-header">
                 <h3 class="card-title">
@@ -16,16 +18,40 @@
                        class="stretched-link text-white"></a>
                 </h3>
             </div>
+
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image5.jpg">
             <div class="card-body">
-                <p class="card-text" th:text="${user.phoneNumber}"></p>
-                <p class="card-text" th:text="${user.email}"></p>
+              <h4 class="card-title">Lorem Ipsum</h4>
+              <p class="card-text" th:text="${user.phoneNumber}"></p>
+              <p class="card-text" th:text="${user.email}"></p>
             </div>
+<<<<<<< HEAD
+            </div>
+            <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
+            <div class="card">
+            <div sec:authorize="isVerified()" th:if="${user.isVerified}">
+              <span class="badge badge-success">Verified User</span>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+=======
             <div th:if="${user.verified}">
                 <span class="badge badge-success">Verified User</span>
             </div>
         </div>
     </div>
 </main>
+>>>>>>> 336894d9bd1c556fa1a549babf209d9865f87dda
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
