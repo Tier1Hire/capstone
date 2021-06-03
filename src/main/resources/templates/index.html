@@ -4,7 +4,7 @@
     <th:block th:replace="partials/head :: head('All Users')"/>
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar" />
+<nav th:replace="partials/navbar :: navbar"/>
 
 <main class="page service-page">
   <section class="clean-block clean-services dark">
@@ -30,6 +30,7 @@
               <p class="card-text" th:text="${user.phoneNumber}"></p>
               <p class="card-text" th:text="${user.email}"></p>
             </div>
+<<<<<<< HEAD
             </div>
             <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
             <div class="card">
@@ -43,6 +44,14 @@
 
 
 
+=======
+            <div th:if="${user.verified}">
+                <span class="badge badge-success">Verified User</span>
+            </div>
+        </div>
+    </div>
+</main>
+>>>>>>> 336894d9bd1c556fa1a549babf209d9865f87dda
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>

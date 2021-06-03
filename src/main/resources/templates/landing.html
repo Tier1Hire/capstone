@@ -6,19 +6,18 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<section class="clean-block clean-hero" style="color: rgba(9, 162, 255, 0.85);background: url('tech/intervew-pic.jpeg'), #621708;background-size: cover, auto;">
-  <div class="text">
-    <h2><strong>Welcome to the future of hiring and career services</strong></h2>
-    <p>Pre-screening top tier candidates to get people to work quicker.<br /></p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
-  </div><img src="img/avatars/avatar3.jpg"  alt=""/>
-</section>
-            <p>Pre-screening top tier candidates to get people to work quicker.<br></p>
-            <button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
+
+<main class="container-fluid ">
+    <section class="clean-block clean-hero text-center"
+             style="background: rgba(9, 162, 255, 0.5); background-size: cover, auto">
+        <img src="img/tech/interview-pic.jpeg" alt="" width="90%"/>
+        <div class="text">
+            <h2 class="mt-2"><strong>Welcome to the future of hiring and career services</strong></h2>
+            <p class="pb-4" >Pre-screening top tier candidates to get people to work quicker.<br/></p>
         </div>
-        <img src="img/avatars/avatar3.jpg">
     </section>
-    <section class="clean-block clean-info dark">
-        <div class="container">
+    <hr>
+    <section class="clean-block clean-info dark text-center">
             <div class="block-heading">
                 <h2 class="text-info">What does it mean to be Tier-1 Certified?</h2>
                 <p></p>
@@ -32,7 +31,9 @@
                             managers and recruiters, being Tier One certified helps you take care of the important
                             things instead of spending hours applying for new jobs.&nbsp;</p>
                     </div>
-                    <button class="btn btn-outline-primary btn-lg" type="button">Join Now</button>
+                    <form th:action="@{/register}" method="GET">
+                        <button class="btn btn-outline-primary btn-lg" type="submit">Join Now</button>
+                    </form>
                 </div>
                 <div class="col-md-6">
                     <h3 style="text-align: center;">Companies</h3>
@@ -42,43 +43,44 @@
                             company expectations or qualifications. Search our library of candidates who already have
                             background checks and verified education and credentials.&nbsp;</p>
                     </div>
-                    <button class="btn btn-outline-primary btn-lg" type="button">View Pricing</button>
+                    <form th:action="@{/pricing}" method="GET">
+                        <button class="btn btn-outline-primary btn-lg" type="submit">View Pricing</button>
+                    </form>
                 </div>
             </div>
-        </div>
     </section>
-    <section class="clean-block features">
-        <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">Features</h2>
+    <hr>
+    <section class="clean-block features text-center">
+        <div class="block-heading">
+            <h2 class="text-info">Features</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                mattis vitae leo.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                <h4>Credential Verification</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
                     mattis vitae leo.</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
-                    <h4>Credential Verification</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
-                    <h4>Pre-Background Check</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
-                    <h4>Schedule Interviews</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
-                    <h4>Upload Transcripts and Certifications</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
-                </div>
+            <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                <h4>Pre-Background Check</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p>
+            </div>
+            <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
+                <h4>Schedule Interviews</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p>
+            </div>
+            <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+                <h4>Upload Transcripts and Certifications</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p>
             </div>
         </div>
     </section>
 </main>
+
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>

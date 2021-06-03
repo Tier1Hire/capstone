@@ -43,20 +43,29 @@ public class UserController {
     public String getOneUser(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", usersDao.getOne(user.getId()));
-        model.addAttribute("apiKey", fileStackApiKey);
+        model.addAttribute("fileStackApiKey", fileStackApiKey);
         return "users/profile";
     }
 
-    @RequestMapping(path = "js/keys.js", produces = "application/javascript")
+    @RequestMapping(path = "/keys.js", produces = "application/javascript")
     @ResponseBody
     public String apikey(){
         System.out.println(fileStackApiKey);
         return "const FILESTACK_API_KEY = `" + fileStackApiKey + "`";
     }
 
-    @PostMapping("/profile")
+    @GetMapping("/profile/edit")
+    public String editUserProfile(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user", usersDao.getOne(user.getId()));
+        model.addAttribute("fileStackApiKey", fileStackApiKey);
+        return "/edit-profile";
+    }
+
+    @PostMapping("/profile/edit")
     public String updateUser(@ModelAttribute("user") User user, Model model) {
-        User updatedUser = usersDao.findById(user.getId()).get();
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User updatedUser = usersDao.getOne(currentUser.getId());
         updatedUser.setProfileImage(user.getProfileImage());
         //User Profile Photo Placeholder Image
         if(updatedUser.getProfileImage() == null){
@@ -79,21 +88,22 @@ public class UserController {
         return "/display-profile";
     }
 
-    @GetMapping("/profile/edit/profile/{id}")
-    public String editJobForm(@PathVariable long id, Model model) {
+//    @GetMapping("/profile/edit")
+//    public String editUserProfile(Model model) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", usersDao.getOne(user.getId()));
+//        model.addAttribute("fileStackApiKey", fileStackApiKey);
+//        return "/edit-profile";
+//    }
 
-        model.addAttribute("user", usersDao.getOne(id));
-        return "/edit-profile";
-    }
-
-    @PostMapping("/edit/profile/{id}")
-    public String editJobChange(@PathVariable long id, @ModelAttribute("user") User user) {
-
-        User userToUpdate = usersDao.getOne(id);
-        userToUpdate.updateContents(user);
-        usersDao.save(userToUpdate);
-
-        return "redirect:/profile";
-    }
+//    @PostMapping("/edit/profile/{id}")
+//    public String editJobChange(@PathVariable long id, @ModelAttribute("user") User user) {
+//
+//        User userToUpdate = usersDao.getOne(id);
+//        userToUpdate.updateContents(user);
+//        usersDao.save(userToUpdate);
+//
+//        return "redirect:/profile";
+//    }
 
 }
