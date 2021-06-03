@@ -5,11 +5,11 @@
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
-
+<main>
 <div align="center">
     <h1>Job Experience Form</h1>
     <div class="card" sec:authorize="isAuthenticated()">
-        <form th:action="@{|/edit/profile/${user.id}|}" method="POST" th:object="${user}">
+        <form th:action="@{/profile/edit}" method="POST" th:object="${user}">
 
             <label>User Name</label>
             <input type="text" th:field="*{username}">
@@ -53,14 +53,24 @@
 
 <!--  Profile Image somewhere in here          -->
 
+            <div class="col-6">
+                <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
+                <input type="hidden" th:field="*{profileImage}">
+            </div>
             <button type="submit">Send form</button>
 
         </form>
+
+
     </div>
 </div>
-
+</main>
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script src="/keys.js"></script>
+<script type="text/javascript" src="/js/filestack.js"></script>
+
 </body>
 </html>

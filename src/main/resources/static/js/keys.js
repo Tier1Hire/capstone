@@ -1,1 +1,0 @@
-const FILESTACK_API_KEY = 'At6QUBbjRyODtBxLK9KVJz';
