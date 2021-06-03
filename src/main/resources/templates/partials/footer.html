@@ -2,66 +2,55 @@
 <html xmlns:th="http://www.thymeleaf.org"
       lang="en">
 <head>
-  <div th:include="partials/head.html :: head"></div>
+    <div th:include="partials/head.html :: head"></div>
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
 <th:block th:fragment="footer" class="footer type here page-footer dark" style="margin-top: 100px">
-    <div>
+
+    <hr class="footer">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <section class="col-2">
                     <h2 class="h4"><i class="fa fa-user"></i> Our Info</h2>
                     <div><span><strong>Name</strong></span></div>
+                    <div><abbr data-toggle="tooltip" data-placement="top"
+                               title="Office Phone: 555-867-5309">O:</abbr> 210-555-5555
+                    </div>
                     <div><span>team@tierone.com</span></div>
                     <div><span>www.tierone.com</span></div>
                     <hr class="d-sm-none d-md-block d-lg-none">
-                </div>
-                <div class="col-sm-2">
+                </section>
+                <div class="col-2">
                     <h2 class="h4"><i class="fa fa-location-arrow"></i> Our Address</h2>
                     <div><span><strong>Office Name</strong></span></div>
                     <div><span>1234 Gold Standard Dr</span></div>
                     <div><span>San Antonio TX, 78209</span></div>
-                    <div><abbr data-toggle="tooltip" data-placement="top"
-                               title="Office Phone: 555-867-5309">O:</abbr> 210-555-5555
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Get started</h5>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Sign up</a></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>About us</h5>
-                        <ul>
-                            <li><a href="#">Company Information</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Reviews</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Support</h5>
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Forums</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Legal</h5>
-                        <ul>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
+                    <hr class="d-sm-none d-md-block d-lg-none">
+                </div>
+                <div class="footer-links col-8">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                            <div class="footer-link-cont">
+                                <a href="/">Home</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <div class="footer-link-cont">
+                                <a href="/register">Sign up</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <div class="footer-link-cont">
+                                <a href="/contact">Contact</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>© 2021 TierOne Capstone</p>
-            </div>
         </div>
+    </footer>
 </th:block>
 
 </body>
