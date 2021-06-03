@@ -54,9 +54,18 @@ public class UserController {
         return "const FILESTACK_API_KEY = `" + fileStackApiKey + "`";
     }
 
+    @GetMapping("/profile/edit")
+    public String editUserProfile(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user", usersDao.getOne(user.getId()));
+        model.addAttribute("fileStackApiKey", fileStackApiKey);
+        return "/edit-profile";
+    }
+
     @PostMapping("/profile/edit")
     public String updateUser(@ModelAttribute("user") User user, Model model) {
-        User updatedUser = usersDao.findById(user.getId()).get();
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User updatedUser = usersDao.getOne(currentUser.getId());
         updatedUser.setProfileImage(user.getProfileImage());
         //User Profile Photo Placeholder Image
         if(updatedUser.getProfileImage() == null){
@@ -79,13 +88,13 @@ public class UserController {
         return "/display-profile";
     }
 
-    @GetMapping("/profile/edit")
-    public String editUserProfile(Model model) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("user", usersDao.getOne(user.getId()));
-        model.addAttribute("fileStackApiKey", fileStackApiKey);
-        return "/edit-profile";
-    }
+//    @GetMapping("/profile/edit")
+//    public String editUserProfile(Model model) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("user", usersDao.getOne(user.getId()));
+//        model.addAttribute("fileStackApiKey", fileStackApiKey);
+//        return "/edit-profile";
+//    }
 
 //    @PostMapping("/edit/profile/{id}")
 //    public String editJobChange(@PathVariable long id, @ModelAttribute("user") User user) {
