@@ -1,59 +1,69 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <th:block th:replace="partials/head :: head('About Us')"/>
+    <th:block th:replace="partials/head :: head('About Us')"/>
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar" />
+<nav th:replace="partials/navbar :: navbar"/>
 
-<div class="block-heading">
-  <h2 class="text-info">Meet the Team</h2>
-  <p></p>
-</div>
-<section class="clean-block about-us">
-  <section class="team-grid">
-    <div class="container">
-      <div class="row people">
-        <div class="col-md-4 col-lg-3 item">
-          <div class="box" style="background-image: url(static/img/william-resize.jpg);">
-            <div class="cover">
-              <h3 class="name">William Baldridge</h3>
-              <p class="title">Developer</p>
-              <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3 item">
-          <div class="box" style="background-image: url(static/img/audi-pic.jpg);">
-            <div class="cover">
-              <h3 class="name">Audi Brattin</h3>
-              <p class="title">Developer/Designer</p>
-              <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3 item">
-          <div class="box" style="background-image: url(static/img/sam-resize.png);">
-            <div class="cover">
-              <h3 class="name">Sam Lansford</h3>
-              <p class="title">Development/ Data Base management</p>
-              <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3 item">
-          <div class="box" style="background-image: url(static/img/sergio.jpeg);">
-            <div class="cover">
-              <h3 class="name">Sergio Cazaresmuniz</h3>
-              <p class="title"><strong>DEVELOPMENT/ DATA BASE MANAGEMENT</strong></p>
-              <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
+<main class="container" style="height: 100vh">
+    <div class="block-heading">
+        <h2 class="text-info">Meet the Team</h2>
+        <p></p>
     </div>
-  </section>
-</section>
+    <section class="clean-block about-us">
+        <section class="team-grid">
+            <div class="container">
+                <div class="row people">
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image: url(static/img/william-resize.jpg);">
+                            <div class="cover">
+                                <h3 class="name">William Baldridge</h3>
+                                <p class="title">Developer</p>
+                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
+                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                        class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image: url(static/img/audi-pic.jpg);">
+                            <div class="cover">
+                                <h3 class="name">Audi Brattin</h3>
+                                <p class="title">Developer/Designer</p>
+                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
+                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                        class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image: url(static/img/sam-resize.png);">
+                            <div class="cover">
+                                <h3 class="name">Sam Lansford</h3>
+                                <p class="title">Development/ Data Base management</p>
+                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
+                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                        class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image: url(static/img/sergio.jpeg);">
+                            <div class="cover">
+                                <h3 class="name">Sergio Cazaresmuniz</h3>
+                                <p class="title"><strong>DEVELOPMENT/ DATA BASE MANAGEMENT</strong></p>
+                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
+                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                        class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
