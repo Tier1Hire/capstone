@@ -36,7 +36,7 @@ public class UserController {
 
         model.addAttribute("users", usersDao.findAll());
 
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/profile")
@@ -59,7 +59,7 @@ public class UserController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", usersDao.getOne(user.getId()));
         model.addAttribute("fileStackApiKey", fileStackApiKey);
-        return "/edit-profile";
+        return "edit-profile";
     }
 
     @PostMapping("/profile/edit")
@@ -74,6 +74,12 @@ public class UserController {
         updatedUser.setEmail(user.getEmail());
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
+        updatedUser.setUsername(user.getUsername());
+        updatedUser.setAlias(user.getAlias());
+        updatedUser.setStreetAddress(user.getStreetAddress());
+        updatedUser.setCity(user.getCity());
+        updatedUser.setState(user.getState());
+        updatedUser.setZipcode(user.getZipcode());
         usersDao.save(updatedUser);
         return "redirect:/profile";
 }
@@ -85,25 +91,7 @@ public class UserController {
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("user", usersDao.getOne(id));
         model.addAttribute("fileStackApiKey", fileStackApiKey);
-        return "/display-profile";
+        return "display-profile";
     }
-
-//    @GetMapping("/profile/edit")
-//    public String editUserProfile(Model model) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        model.addAttribute("user", usersDao.getOne(user.getId()));
-//        model.addAttribute("fileStackApiKey", fileStackApiKey);
-//        return "/edit-profile";
-//    }
-
-//    @PostMapping("/edit/profile/{id}")
-//    public String editJobChange(@PathVariable long id, @ModelAttribute("user") User user) {
-//
-//        User userToUpdate = usersDao.getOne(id);
-//        userToUpdate.updateContents(user);
-//        usersDao.save(userToUpdate);
-//
-//        return "redirect:/profile";
-//    }
 
 }
