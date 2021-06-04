@@ -59,7 +59,7 @@ public class JobExperienceController {
     public String editJobForm(@PathVariable long id, Model model) {
 
         model.addAttribute("job", employmentDetailDao.getOne(id));
-        return "/edit-job";
+        return "edit-job";
     }
 
     @PostMapping("/edit/job/{id}")

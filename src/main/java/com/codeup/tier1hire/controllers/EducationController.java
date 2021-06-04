@@ -37,12 +37,6 @@ public class EducationController {
         return "redirect:/education-experience";
     }
 
-//    @PostMapping("/education-experience")
-//    public String addJobExperienceForm(@ModelAttribute("education") Education education) {
-//        educationDao.save(education);
-//        return "redirect:/users/profile";
-//    }
-
     @PostMapping("/education-experience")
     public String addEducationExperienceForm(
             @ModelAttribute("education") Education education,
@@ -67,7 +61,7 @@ public class EducationController {
     public String editEducationForm(@PathVariable long id, Model model) {
 
         model.addAttribute("education", educationDao.getOne(id));
-        return "/edit-education";
+        return "edit-education";
     }
 
     @PostMapping("/edit/education/{id}")

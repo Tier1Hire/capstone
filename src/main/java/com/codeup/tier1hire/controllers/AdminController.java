@@ -16,11 +16,6 @@ public class AdminController {
         this.userDao = userDao;
     }
 
-//    @GetMapping("/profile/{id}")
-//    public String viewProfile(@PathVariable long id, Model model) {
-//        model.addAttribute("user", userDao.getOne(id));
-//        return "/profile";
-//    }
 
     @PostMapping("/profile/admin/{id}")
     public String adminButton(@PathVariable long id) {
