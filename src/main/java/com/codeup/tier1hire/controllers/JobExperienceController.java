@@ -54,18 +54,7 @@ public class JobExperienceController {
         return "redirect:/profile";
     }
 
-
-//    @PostMapping("/profile/edit/job")
-//    public String updateEmployment() {
-//        return "redirect:/profile";
-//    }
-
-//    @GetMapping("/profile/edit/job/{id}")
-//    public String editJobForm(@PathVariable long id, Model model) {
-//        model.addAttribute("job", employmentDetailDao.getOne(id));
-//        return "/edit-job";
-//    }
-
+    // Edit button does not have designated action like add job, might be reason styling is broken some
     @GetMapping("/profile/edit/job/{id}")
     public String editJobForm(@PathVariable long id, Model model) {
 
