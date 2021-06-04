@@ -44,7 +44,7 @@
                     </form>
 
                     <form class="alert alert-danger" th:action="${'/profile/edit/job/' + employment.id}"
-                          method="GET">
+                          method="POST">
                         <button type="submit">Edit Job</button>
                     </form>
                     <h5 class="card-title" th:text="*{employment.employer}"></h5>

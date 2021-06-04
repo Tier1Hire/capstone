@@ -4,31 +4,24 @@
     <th:block th:replace="partials/head :: head('Search Results')"/>
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar" />
+<nav th:replace="partials/navbar :: navbar"/>
 
-<main class="row">
-    <div class="col-12 d-flex flex-wrap justify-content-between align-items-middle">
-        <div class="card bg-secondary text-white mt-2 mr-2 ml-2 mb-2 border border-dark" style="width: 24rem;" th:each="user : ${users}">
+<main class="container-fluid">
+    <div class="row justify-content-around">
+        <div class="card col-sm-6 col-md-5 col-lg-3 bg-secondary mt-2 mr-2 ml-2 mb-2 border border-dark"
+             style="width: 24rem;" th:each="user : ${users}">
             <div class="card-header">
                 <h3 class="card-title">
                     <a th:href="'/profile/' + ${user.id}" th:text="${user.firstName} + ' ' + ${user.lastName}"
                        class="stretched-link text-white"></a>
                 </h3>
             </div>
-            <div class="card">
-                <div th:if="${user.verified}">
-                    <span class="badge badge-success">Verified User</span>
-                </div>
-            </div>
             <div class="card-body">
                 Phone<p class="card-text" th:text="${user.phoneNumber}"></p>
                 Email<p class="card-text" th:text="${user.email}"></p>
-                <div th:each="employment : ${user.employmentHistory}">
-                    <p th:text="${employment.employer}" />
-                </div>
-                <div th:each="education : ${user.educationHistory}">
-                    <p th:text="${education.school}" />
-                </div>
+            </div>
+            <div th:if="${user.verified}">
+                <span class="badge badge-success">Verified User</span>
             </div>
         </div>
     </div>
