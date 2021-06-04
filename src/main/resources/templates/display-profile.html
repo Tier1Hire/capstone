@@ -4,15 +4,6 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-
-<!--
-
-    Need access through security I believe if visitors
-    will view profiles from index page
-
--->
-
-
 <main class="page profile-page">
     <section class="clean-block clean-form dark">
         <div class="container">
@@ -29,9 +20,7 @@
                         <button type="submit">Delete User</button>
                     </form>
                 </div>
-                <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
-// I would imagine that I could visualize the users profile picture square being here.
             <div class="card">
                 <h3 class="card-header"><img th:src="*{user.profileImage}" alt="Profile Image"></h3>
               <div class="card">
@@ -86,7 +75,7 @@
     </section>
 </main>
 
-<th:block th:replace="partials/footer :: footer"/>
+<!--<th:block th:replace="partials/footer :: footer"/>-->
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>
 

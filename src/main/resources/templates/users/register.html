@@ -2,54 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org"
       lang="en">
 <head>
-  <th:block th:replace="partials/head :: head('Login')"/>
+    <th:block th:replace="partials/head :: head('Login')"/>
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
 
-<main class="page registration-page">
-  <section class="clean-block clean-form dark">
-    <div class="container">
-      <div class="block-heading">
-        <h2 class="text-info">Registration</h2>
-        <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
-      </div>
-        <form th:action="@{/users/register}" method="POST" th:object="${user}">
+<main class="container-fluid">
+    <h1 class="text-center">Registration</h1>
+    <div class="row d-flex justify-content-center">
+        <div class="card col-6">
+            <form th:action="@{/users/register}" method="POST" th:object="${user}">
 
-          <label for="username">Username</label>
-          <input id="username" th:field="*{username}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control form-control-lg" type="text" id="username" th:field="*{username}"/>
+                </div>
 
-          <label for="email">Email</label>
-          <input id="email" th:field="*{email}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control form-control-lg" type="text" id="email" th:field="*{email}"/>
+                </div>
 
-          <label for="password">Password</label>
-          <input id="password" type="password" th:field="*{password}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control form-control-lg" id="password" type="password" th:field="*{password}"/>
+                </div>
 
-          <label for="firstName">First Name</label>
-          <input id="firstName" th:field="*{firstName}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input class="form-control form-control-lg" type="text" id="firstName" th:field="*{firstName}"/>
+                </div>
 
-          <label for="lastName">Last Name</label>
-          <input id="lastName" th:field="*{lastName}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input class="form-control form-control-lg" type="text" id="lastName" th:field="*{lastName}"/>
+                </div>
 
-          <label for="phoneNumber">Phone Number</label>
-          <input id="phoneNumber" th:field="*{phoneNumber}" />
+                <div class="col-12 mt-3">
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                    <input class="form-control form-control-lg" type="text" id="phoneNumber" th:field="*{phoneNumber}"/>
+                </div>
 
-          <div class="col-6">
-            <button class="btn btn-pill btn-info" type="button" id="picker">Profile Picture</button>
-            <input type="hidden" th:field="*{profileImage}">
-          </div>
-          <input value="Sign me up!" type="submit" />
-        </form>
+                <div class="col-12 mt-3">
+                    <input class="btn btn-pill btn-primary mb-2" value="Sign me up!" type="submit"/>
+                </div>
+            </form>
+        </div>
     </div>
-  </section>
 </main>
-</body>
-</html>
+
 <!--<th:block th:replace="partials/footer :: footer"/>-->
 <th:block th:replace="partials/scripts :: scripts"/>
-<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-<script src="/keys.js"></script>
-<script type="text/javascript" src="/js/filestack.js"></script>
+</body>
+</html>
+
 
 
 
