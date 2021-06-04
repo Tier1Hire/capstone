@@ -47,7 +47,8 @@ public class AuthenticationController {
         return "users/register";
     }
 
-    @PostMapping("/users/register")
+    // is modelattribute mixing up with Model above?
+    @PostMapping("/register")
     public String saveUser(@ModelAttribute User user) {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
