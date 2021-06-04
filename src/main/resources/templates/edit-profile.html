@@ -7,7 +7,7 @@
 <nav th:replace="partials/navbar :: navbar"/>
 <main>
 <div align="center">
-    <h1>Job Experience Form</h1>
+    <h1>Edit Profile Form</h1>
     <div class="card" sec:authorize="isAuthenticated()">
         <form th:action="@{/profile/edit}" method="POST" th:object="${user}">
 
