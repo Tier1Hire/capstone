@@ -6,12 +6,12 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
 
-<main class="container-fluid">
+<main class="container">
     <section class="clean-block about-us">
         <h1 class="mt-4 ml-5 text-info">About Us</h1>
         <div class="row">
-            <div class="card mt-4 col-sm-12 col-md-6 col-lg-6">
-                <div class="text-center clean-card"><img class="card-img-top w-100"
+            <div class="mt-4 col-sm-12 col-md-6 col-lg-6">
+                <div class="text-center"><img class="card-img-top w-50"
                                                      style="border-radius: 25%"
                                                      src="img/sam-resize.png">
                     <div class="card-body info">
@@ -28,8 +28,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-4 col-sm-12 col-md-6 col-lg-6">
-                <div class="text-center clean-card"><img class="card-img-top w-100 d-block"
+            <div class="mt-4 col-sm-12 col-md-6 col-lg-6">
+                <div class="text-center"><img class="card-img-top w-50"
                                                      style="border-radius: 25%" src="img/audi-pic.jpg">
                     <div class="card-body info">
                         <h4 class="card-title">Audi Brattin</h4>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-4 col-sm-12 col-md-6 col-lg-6">
-                <div class="text-center clean-card"><img class="card-img-top w-100"
+            <div class="mt-4 col-sm-12 col-md-6 col-lg-6">
+                <div class="text-center"><img class="card-img-top w-50"
                                                      style="border-radius: 25%" src="img/sergio.jpeg">
                     <div class="card-body info">
                         <h4 class="card-title">Sergio Cazaresmuniz</h4>
@@ -62,8 +62,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-4 col-sm-12 col-md-6 col-lg-6">
-                <div class="text-center clean-card"><img class="card-img-top w-100"
+            <div class="mt-4 col-sm-12 col-md-6 col-lg-6">
+                <div class="text-center"><img class="card-img-top w-50"
                                                      style="border-radius: 25%"
                                                      src="img/william-resize.jpg">
                     <div class="card-body info">
@@ -84,7 +84,7 @@
     </section>
 </main>
 
-<th:block th:replace="partials/footer :: footer"/>
+<!--<th:block th:replace="partials/footer :: footer"/>-->
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>
 </html>
