@@ -74,6 +74,12 @@ public class UserController {
         updatedUser.setEmail(user.getEmail());
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
+        updatedUser.setUsername(user.getUsername());
+        updatedUser.setAlias(user.getAlias());
+        updatedUser.setStreetAddress(user.getStreetAddress());
+        updatedUser.setCity(user.getCity());
+        updatedUser.setState(user.getState());
+        updatedUser.setZipcode(user.getZipcode());
         usersDao.save(updatedUser);
         return "redirect:/profile";
 }
