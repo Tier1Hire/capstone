@@ -36,7 +36,7 @@ public class UserController {
 
         model.addAttribute("users", usersDao.findAll());
 
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/profile")
@@ -59,7 +59,7 @@ public class UserController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", usersDao.getOne(user.getId()));
         model.addAttribute("fileStackApiKey", fileStackApiKey);
-        return "/edit-profile";
+        return "edit-profile";
     }
 
     @PostMapping("/profile/edit")
@@ -85,7 +85,7 @@ public class UserController {
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("user", usersDao.getOne(id));
         model.addAttribute("fileStackApiKey", fileStackApiKey);
-        return "/display-profile";
+        return "display-profile";
     }
 
 //    @GetMapping("/profile/edit")

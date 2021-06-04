@@ -13,12 +13,12 @@
                 <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>
             </div>
             <div class="card" sec:authorize="isAuthenticated()">
-                <h3 class="card-header"><img th:src="*{user.profileImage}"  style="border-radius: 50%; width: 200px; height: 200px" alt="Profile Image" ></h3>
-                <form class="alert alert-danger" th:action="${'/profile/edit'}"
+                <h3><img th:src="*{user.profileImage}"  style="border-radius: 50%; width: 200px; height: 200px" alt="Profile Image" ></h3>
+                <form th:action="${'/profile/edit'}"
                       method="GET">
                     <button type="submit">Edit Profile</button>
                 </form>
-                <div class="card-body">
+                <div class="col-4">
                     <p class="card-text" th:text="*{user.username}"></p>
                     <p class="card-text" th:text="*{user.firstName}"></p>
                     <p class="card-text" th:text="*{user.lastName}"></p>
@@ -31,11 +31,12 @@
                     <p class="card-text" th:text="*{user.zipcode}"></p>
                     <p class="card-text" th:text="*{user.dateOfBirth}"></p>
                 </div>
-                <h3>Employment History</h3>
+                <div class="col-6" ><h3>Employment History</h3>
                 <form class="success btn-success" th:action="${'/profile/add/job'}"
                       method="POST">
                     <button type="submit">Add Job</button>
                 </form>
+                </div>
                 <div class="card" th:each="employment : ${user.employmentHistory}">
                     <form class="alert alert-danger" th:action="${'/profile/delete/job/' + employment.id}"
                           method="POST">

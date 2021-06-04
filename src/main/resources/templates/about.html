@@ -6,64 +6,82 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"/>
 
-<main class="container" style="height: 100vh">
-    <div class="block-heading">
-        <h2 class="text-info">Meet the Team</h2>
-        <p></p>
-    </div>
-    <section class="clean-block about-us">
-        <section class="team-grid">
-            <div class="container">
-                <div class="row people">
-                    <div class="col-md-4 col-lg-3 item">
-                        <div class="box" style="background-image: url(static/img/william-resize.jpg);">
-                            <div class="cover">
-                                <h3 class="name">William Baldridge</h3>
-                                <p class="title">Developer</p>
-                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
-                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
-                                        class="fa fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-3 item">
-                        <div class="box" style="background-image: url(static/img/audi-pic.jpg);">
-                            <div class="cover">
-                                <h3 class="name">Audi Brattin</h3>
-                                <p class="title">Developer/Designer</p>
-                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
-                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
-                                        class="fa fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-3 item">
-                        <div class="box" style="background-image: url(static/img/sam-resize.png);">
-                            <div class="cover">
-                                <h3 class="name">Sam Lansford</h3>
-                                <p class="title">Development/ Data Base management</p>
-                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
-                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
-                                        class="fa fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-3 item">
-                        <div class="box" style="background-image: url(static/img/sergio.jpeg);">
-                            <div class="cover">
-                                <h3 class="name">Sergio Cazaresmuniz</h3>
-                                <p class="title"><strong>DEVELOPMENT/ DATA BASE MANAGEMENT</strong></p>
-                                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
-                                        href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
-                                        class="fa fa-instagram"></i></a></div>
-                            </div>
+
+<section class="clean-block about-us" style="height: 100vh">
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info">About Us</h2>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" style="border-radius: 25%"
+                                                              src="img/sam-resize.png">
+                    <div class="card-body info">
+                        <h4 class="card-title">Sam Lansford</h4>
+                        <p class="card-text">Software Developer</p>
+                        <div class="icons"><a href="https://www.linkedin.com/in/sam-lansford/" target="_blank"><i
+                                class="fa fa-linkedin mr-1"></i></a><a href="https://github.com/SamLansford" target="_blank"><i
+                                class="fa fa-github mr-1"></i></a><a
+                                href="https://alumni.codeup.com/students/1186" target="_blank"><i
+                                class="fas fa-chevron-circle-up"
+                                style="transform: rotate(37deg); display: inline-block"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </section>
-</main>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" style="border-radius: 50%" src="img/audi-pic.jpg">
+                    <div class="card-body info">
+                        <h4 class="card-title">Audi Brattin</h4>
+                        <p class="card-text">Software Developer</p>
+                        <div class="icons"><a href="https://www.linkedin.com/in/audibrattin/" target="_blank"><i
+                                class="fa fa-linkedin mr-1"></i></a><a href="https://github.com/b-audiesha"
+                                                                  target="_blank"><i
+                                class="fa fa-github mr-1"></i></a><a
+                                href="https://alumni.codeup.com/students/1197" target="_blank"><i
+                                class="fas fa-chevron-circle-up"
+                                style="transform: rotate(37deg); display: inline-block"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-center">
+                <div class="card text-center clean-card d-flex align-items-center"><img class="card-img-top w-200 d-block" style="border-radius: 50%; width: 200px; height: 200px" src="img/sergio.jpeg">
+                    <div class="card-body info">
+                        <h4 class="card-title">Sergio Cazaresmuniz</h4>
+                        <p class="card-text">Software Developer</p>
+                        <div class="icons"><a href="https://www.linkedin.com/in/sergio-cazaresmuniz/" target="_blank"><i
+                                class="fa fa-linkedin mr-1"></i></a><a href="https://github.com/Sergiocazares"
+                                                                  target="_blank"><i
+                                class="fa fa-github mr-1"></i></a><a href="#"><a
+                                href="https://alumni.codeup.com/students/1199" target="_blank"><i
+                                class="fas fa-chevron-circle-up"
+                                style="transform: rotate(37deg); display: inline-block"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card text-center clean-card d-flex align-items-center"><img class="card-img-top w-100 d-block"
+                                                              src="img/william-resize.jpg">
+                    <div class="card-body info">
+                        <h4 class="card-title">William Baldridge</h4>
+                        <p class="card-text">Software Developer</p>
+                        <div class="icons"><a href="https://www.linkedin.com/in/william-baldridge/" target="_blank"><i
+                                class="fa fa-linkedin mr-1"></i></a><a href="https://github.com/WilliamBaldridge"
+                                                                  target="_blank"><i
+                                class="fa fa-github mr-1"></i></a><a
+                                href="https://alumni.codeup.com/students/1183" target="_blank"><i
+                                class="fas fa-chevron-circle-up"
+                                style="transform: rotate(37deg); display: inline-block"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <th:block th:replace="partials/footer :: footer"/>
 <th:block th:replace="partials/scripts :: scripts"/>
