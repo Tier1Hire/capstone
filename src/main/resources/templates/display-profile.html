@@ -4,11 +4,10 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<main class="page profile-page">
+<main class="page profile-page container">
     <section class="clean-block clean-form dark">
-        <div class="container">
+        <h2 class="text-info">Profile</h2>
             <div class="block-heading">
-                <h2 class="text-info">Profile</h2>
                 <div class="warning" th:if="${currentUser.isAdmin()}">
                     <form th:action="${'/profile/admin/' + user.id}" method="POST">
                         <button type="submit">Admin</button>
@@ -23,11 +22,11 @@
             </div>
             <div class="card">
                 <h3 class="card-header"><img th:src="*{user.profileImage}" alt="Profile Image"></h3>
-              <div class="card">
-                <div th:if="*{user.verified}">
-                  <span class="badge badge-success">Verified User</span>
+                <div class="card">
+                    <div th:if="*{user.verified}">
+                        <span class="badge badge-success">Verified User</span>
+                    </div>
                 </div>
-              </div>
                 <div class="card-body">
                     <p class="card-text" th:text="*{user.username}"></p>
                     <p class="card-text" th:text="*{user.firstName}"></p>
