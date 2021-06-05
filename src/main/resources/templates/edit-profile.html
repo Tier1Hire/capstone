@@ -7,75 +7,82 @@
 <nav th:replace="partials/navbar :: navbar"/>
 <main>
     <div class="container">
-        <h1 class="text-center">Edit Profile Form</h1>
-        <div class="row d-flex justify-content-center">
-            <div class="card col-6" sec:authorize="isAuthenticated()">
-                <form th:action="@{/profile/edit}" method="POST" th:object="${user}">
+        <section class="clean-block about-us">
+            <h1 class="text-center">Edit Profile</h1>
+            <div class="row d-flex justify-content-center">
+                <div class="card col-6" sec:authorize="isAuthenticated()">
+                    <form th:action="@{/profile/edit}" method="POST" th:object="${user}">
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">User Name</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{username}">
-                    </div>
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <label class="form-label">User Name</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{username}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">First Name</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{firstName}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">First Name</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{firstName}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Last Name</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{lastName}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Last Name</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{lastName}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Phone Number</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{phoneNumber}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Phone Number</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{phoneNumber}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Email</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{email}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Email</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{email}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Alias</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{alias}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Alias</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{alias}">
+                            </div>
+                        </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Street Address</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{streetAddress}">
-                    </div>
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Street Address</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{streetAddress}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">City</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{city}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">City</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{city}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">State</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{state}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">State</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{state}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <label class="form-label">Zipcode</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{zipcode}">
-                    </div>
+                            <div class="col-6 mt-3">
+                                <label class="form-label">Zipcode</label>
+                                <input class="form-control form-control-lg" type="text" th:field="*{zipcode}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <button class="btn btn-pill btn-info" type="button" id="picker">Upload Profile Picture</button>
-                        <input class="form-control form-control-lg" type="hidden" th:field="*{profileImage}">
-                    </div>
+                            <div class="col-12 mt-3">
+                                <button class="btn btn-pill mb-2 col-12 btn-info" type="button" id="picker">Upload Profile Picture
+                                </button>
+                                <input class="form-control form-control-lg" type="hidden" th:field="*{profileImage}">
+                            </div>
 
-                    <div class="col-12 mt-3">
-                        <button class="btn btn-primary mb-2" type="submit">Update Profile</button>
-                    </div>
-                </form>
+                            <div class="col-12 mt-3">
+                                <button class="btn btn-primary mb-2 col-12" type="submit">Send form</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </main>
-<!--<th:block th:replace="partials/footer :: footer"/>-->
+
 <th:block th:replace="partials/scripts :: scripts"/>
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 <script src="/keys.js"></script>
