@@ -6,7 +6,7 @@
 
 <main class="page profile-page container">
     <section class="clean-block clean-form dark">
-        <h2 class="text-info">Profile</h2>
+        <h2 th:text="${user.firstName}" class="text-info">Profile</h2>
             <div class="block-heading">
                 <div class="warning" th:if="${currentUser.isAdmin()}">
                     <form th:action="${'/profile/admin/' + user.id}" method="POST">

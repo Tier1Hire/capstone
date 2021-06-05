@@ -7,89 +7,98 @@
 <nav th:replace="partials/navbar :: navbar"/>
 
 <div class="container">
-    <h1 class="text-center">Education Experience Form</h1>
-    <div class="row d-flex justify-content-center">
-        <div class="card col-12">
-            <form th:action="@{|/edit/education/${education.id}|}" method="POST" th:object="${education}">
+    <section class="clean-block">
+        <h1 class="text-center">Education Experience Form</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="card col-12">
+                <form th:action="@{|/edit/education/${education.id}|}" method="POST" th:object="${education}">
 
-                <div class="row">
-                    <div class="col-6 mt-3">
-                        <label class="form-label">School</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{school}">
+                    <div class="row">
+                        <div class="col-6 mt-3">
+                            <label class="form-label">School</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{school}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">Street Address</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{streetAddress}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">City</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{city}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">State</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{state}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">Zipcode</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{zipcode}">
+                        </div>
                     </div>
 
-                    <div class="col-6 mt-3">
-                        <label class="form-label">Street Address</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{streetAddress}">
+                    <div class="row">
+                        <div class="col-6 mt-3">
+                            <label class="form-label"  th:if="${education.startDate != null}">Start
+                                Date</label>
+                            <input class="form-control form-control-lg" type="date" name="educationStartDate"
+                                   th:if="${education.startDate != null}"
+                                   th:value="${education.getFormattedStartDate()}">
+                        </div>
+
+                        <div class="col-6 mt-3" style="display: none">
+                            <label class="form-label" style="display: none" th:if="${education.startDate == null}">Start
+                                Date</label>
+                            <input class="form-control form-control-lg" style="display: none" type="date"
+                                   name="educationStartDate"
+                                   th:if="${education.startDate == null}" th:value="*{startDate}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label" th:if="${education.endDate != null}">End
+                                Date</label>
+                            <input class="form-control form-control-lg" type="date" name="educationEndDate"
+                                   th:if="${education.endDate != null}" th:value="${education.getFormattedEndDate()}">
+                        </div>
+
+                        <div class="col-6 mt-3" style="display: none;">
+                            <label class="form-label" style="display: none" th:if="${education.endDate == null}">End
+                                Date</label>
+                            <input class="form-control form-control-lg" type="date" name="educationEndDate"
+                                   style="display: none"
+                                   th:if="${education.endDate == null}" th:value="*{endDate}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">Degree</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{degree}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">Major</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{major}">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <label class="form-label">Graduated</label>
+                            <input class="form-control form-control-lg" type="text" th:field="*{graduated}">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-primary mb-2 col-12" type="submit">Send form</button>
+                        </div>
                     </div>
 
-                    <div class="col-6 mt-3">
-                        <label class="form-label">City</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{city}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label">State</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{state}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label">Zipcode</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{zipcode}">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 mt-3">
-                        <label class="form-label" style="display: none" th:if="${education.startDate != null}">Start Date</label>
-                        <input class="form-control form-control-lg" type="date" name="educationStartDate" style="display: none"
-                               th:if="${education.startDate != null}" th:value="${education.getFormattedStartDate()}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label" style="display: none" th:if="${education.startDate == null}">Start Date</label>
-                        <input class="form-control form-control-lg" style="display: none" type="date" name="educationStartDate"
-                               th:if="${education.startDate == null}" th:value="*{startDate}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label" style="display: none" th:if="${education.endDate != null}">End Date</label>
-                        <input class="form-control form-control-lg" type="date" name="educationEndDate" style="display: none"
-                               th:if="${education.endDate != null}"  th:value="${education.getFormattedEndDate()}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label" style="display: none" th:if="${education.endDate == null}">End Date</label>
-                        <input class="form-control form-control-lg" type="date" name="educationEndDate" style="display: none"
-                               th:if="${education.endDate == null}" th:value="*{endDate}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label">Degree</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{degree}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label">Major</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{major}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <label class="form-label">Graduated</label>
-                        <input class="form-control form-control-lg" type="text" th:field="*{graduated}">
-                    </div>
-
-                    <div class="col-6 mt-3">
-                        <button class="btn btn-primary mb-2" type="submit">Send form</button>
-                    </div>
-                </div>
-
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 
-<!--<th:block th:replace="partials/footer :: footer"/>-->
+
 <th:block th:replace="partials/scripts :: scripts"/>
 </body>
 </html>
