@@ -2,8 +2,275 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="partials/head :: head('User Profile')"></head>
+  }
+
+  .activity span {
+    float: left;
+  }
+
+  .activity.alt span {
+    float: right;
+  }
+  .activity span, .activity.alt span {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: #eee;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .activity.terques span {
+    background: #8dd7d6;
+  }
+
+  .activity.terques h4 {
+    color: #8dd7d6;
+  }
+  .activity.purple span {
+    background: #b984dc;
+  }
+
+  .activity.purple h4 {
+    color: #b984dc;
+  }
+  .activity.blue span {
+    background: #90b4e6;
+  }
+
+  .activity.blue h4 {
+    color: #90b4e6;
+  }
+  .activity.green span {
+    background: #aec785;
+  }
+
+  .activity.green h4 {
+    color: #aec785;
+  }
+
+  .activity h4 {
+    margin-top:0 ;
+    font-size: 16px;
+  }
+
+  .activity p {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+
+  .activity .activity-desk i, .activity.alt .activity-desk i {
+    float: left;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #bebebe;
+  }
+
+  .activity .activity-desk {
+    margin-left: 70px;
+    position: relative;
+  }
+
+  .activity.alt .activity-desk {
+    margin-right: 70px;
+    position: relative;
+  }
+
+  .activity.alt .activity-desk .panel {
+    float: right;
+    position: relative;
+  }
+
+  .activity-desk .panel {
+    background: #F4F4F4 ;
+    display: inline-block;
+  }
+
+
+  .activity .activity-desk .arrow {
+    border-right: 8px solid #F4F4F4 !important;
+  }
+  .activity .activity-desk .arrow {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    display: block;
+    height: 0;
+    left: -7px;
+    position: absolute;
+    top: 13px;
+    width: 0;
+  }
+
+  .activity-desk .arrow-alt {
+    border-left: 8px solid #F4F4F4 !important;
+  }
+
+  .activity-desk .arrow-alt {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    display: block;
+    height: 0;
+    right: -7px;
+    position: absolute;
+    top: 13px;
+    width: 0;
+  }
+
+  .activity-desk .album {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .activity-desk .album a{
+    margin-right: 10px;
+  }
+
+  .activity-desk .album a:last-child{
+    margin-right: 0px;
+  }
+</style>
+
+//new code here
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="main-container">
+  <div class="row">
+    <div class="profile-nav col-md-3">
+      <div class="panel">
+        <div class="user-heading round">
+          <a href="#">
+            <img th:src="*{user.profileImage}" style="border-radius: 50%; width: 200px; height: 200px" alt="Profile Image"/>
+          </a>
+          <h1 class="card-text" th:text="|*{user.firstName}  *{user.lastName}|"></h1>
+          <p class="card-text" th:text="*{user.email}"></p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+          <li><a href="#"> <i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">9</span></a></li>
+          <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="bio-graph-heading">
+  <span class="panel-icon">
+                <i class="fa fa-star"></i>
+                <span class="panel-title card" sec:authorize="isAuthenticated()">
+                </span>    </span>    </div>
+      <div class="panel-body bio-graph-info">
+        <h1>Bio Graph</h1>
+        <div class="row">
+          <div class="bio-row">
+            <p class="card-text" th:text="|*{user.firstName}  *{user.lastName}|"></p>
+          </div>
+          <div class="bio-row">
+            <p><span>Occupation </span>: UI Designer</p>
+          </div>
+          <div class="bio-row">
+            <p class="card-text" th:text="*{user.email}"></p>
+          </div>
+          <div class="bio-row">
+            <p class="card-text" th:text="*{user.getFormattedPhone()}"></p>
+          </div>
+          <div class="bio-row">
+            <p class="card-text" th:text="*{user.getFormattedPhone()}"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel">
+            <div class="panel-body">
+              <!--                <div class="bio-chart">-->
+              <!--                  <div style="display:inline;width:100px;height:100px;"><canvas width="100" height="100px"></canvas><input class="knob" data-width="100" data-height="100" data-displayprevious="true" data-thickness=".2" value="35" data-fgcolor="#e06b7d" data-bgcolor="#e8e8e8" style="width: 54px; height: 33px; position: absolute; vertical-align: middle; margin-top: 33px; margin-left: -77px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 20px; line-height: normal; font-family: Arial; text-align: center; color: rgb(224, 107, 125); padding: 0px; -webkit-appearance: none; background: none;"></div>-->
+              <!--                </div>-->
+              <div class="bio-desk">
+                <label>Add Job</label>
+              </div>
+              <div class="col-md-6">
+                <form th:action="${'/profile/add/job'}"
+                      method="POST">
+                  <button type="submit">Submit Job</button>
+                </form>                                </div>
+              <div class="col-md-12" th:each="employment : ${user.employmentHistory}">
+                <h5 class="card-title" th:text="*{employment.employer}"></h5>
+                <p class="card-text" th:text="*{employment.streetAddress}"></p>
+                <p class="card-text" th:text="*{employment.city}"></p>
+                <p class="card-text" th:text="*{employment.state}"></p>
+                <p class="card-text" th:text="*{employment.zipcode}"></p>
+                <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>
+                <p class="card-text" th:if="*{employment.startDate != null}" th:text="*{employment.getFormattedStartDate()}"></p>
+                <p class="card-text" th:if="*{employment.startDate == null}" th:text="*{employment.startDate}"></p>
+                <p class="card-text" th:if="*{employment.endDate != null}" th:text="*{employment.getFormattedEndDate()}"></p>
+                <p class="card-text" th:if="*{employment.endDate == null}" th:text="*{employment.endDate}"></p>
+                <p class="card-text" th:text="*{employment.positions}"></p>
+                <p class="card-text" th:text="*{employment.supervisor}"></p>
+                <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>
+                <p class="card-text" th:text="*{employment.okToCall}"></p>
+                <div class="col-md-12" th:each="employment : ${user.employmentHistory}">
+                  <form class="alert alert-danger" th:action="${'/profile/delete/job/' + employment.id}"
+                        method="POST">
+                    <button type="submit">Remove Job</button>
+                  </form>
+
+                  <form class="alert alert-danger" th:action="${'/profile/edit/job/' + employment.id}"
+                        method="GET">
+                    <button type="submit">Edit Job</button>
+                  </form>
+                  <div class="col-md-6">
+                    <form th:action="${'/profile/add/education'}"
+                          method="POST">
+                      <button type="submit">Add Education</button>
+                    </form>                                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-6">
+          <div class="panel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section id="content" class="container">
   <div class="page-heading">
@@ -160,7 +427,6 @@
                                               method="POST">
                                             <button type="submit">Remove Job</button>
                                         </form>
-
                                         <form class="alert alert-danger" th:action="${'/profile/edit/job/' + employment.id}"
                                               method="GET">
                                             <button type="submit">Edit Job</button>
