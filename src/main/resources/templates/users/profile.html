@@ -50,58 +50,58 @@
                 </ul>
                 <div class="tab-content profile-tab col-12 text-center" id="myTabContent">
                     <div class="tab-pane fade show active" id="about" role="tabpanel"
-                         aria-labelledby="about-tab">
+                         aria-h6ledby="about-tab">
                         <div class="row">
                             <div class="col-6 mt-4">
-                                <label>Username</label>
+                                <h6>Username</h6>
                             </div>
                             <div class="col-6 mt-4 text-left">
                                 <p class="card-text" th:text="*{user.username}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Name</label>
+                                <h6>Name</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="|*{user.firstName}  *{user.lastName}|"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Alias</label>
+                                <h6>Alias</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.alias}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Email</label>
+                                <h6>Email</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.email}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Phone</label>
+                                <h6>Phone</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.getFormattedPhone()}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Street Address</label>
+                                <h6>Street Address</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.streetAddress}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>City</label>
+                                <h6>City</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.city}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>State</label>
+                                <h6>State</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.state}"></p>
                             </div>
                             <div class="col-6 mt-2">
-                                <label>Zipcode</label>
+                                <h6>Zipcode</h6>
                             </div>
                             <div class="col-6 mt-2 text-left">
                                 <p class="card-text" th:text="*{user.zipcode}"></p>
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="employment" role="tabpanel"
-                         aria-labelledby="employment-tab">
+                         aria-h6ledby="employment-tab">
                         <div class="col-12 d-flex justify-content-left mt-4">
                             <form th:action="${'/profile/add/job'}"
                                   method="POST">
@@ -120,25 +120,97 @@
 
                         <div class="row" th:each="employment : ${user.employmentHistory}">
                             <div class="col-10">
+                                <hr style="width: 100%; border-color: darkblue">
                                 <div class="row">
-                                    <p class="col-6 mt-2 card-title" th:text="*{employment.employer}"></p>
-                                    <p class="col-6 mt-2 card-text" th:text="*{employment.streetAddress}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.city}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.state}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.zipcode}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.getFormattedPhone()}"></p>
-                                    <p class="col-6 card-text" th:if="*{employment.startDate != null}"
-                                       th:text="*{employment.getFormattedStartDate()}"></p>
-                                    <p class="col-6 card-text" th:if="*{employment.startDate == null}"
-                                       th:text="*{employment.startDate}"></p>
-                                    <p class="col-6 card-text" th:if="*{employment.endDate != null}"
-                                       th:text="*{employment.getFormattedEndDate()}"></p>
-                                    <p class="col-6 card-text" th:if="*{employment.endDate == null}"
-                                       th:text="*{employment.endDate}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.positions}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.supervisor}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.reasonForLeaving}"></p>
-                                    <p class="col-6 card-text" th:text="*{employment.okToCall}"></p>
+                                    <div class="col-6 mt-2">
+                                        <h6>Employer:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.employer}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Street Address:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.streetAddress}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>City:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.city}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>State:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.state}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Zipcode:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.zipcode}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Phone Number:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Start Date:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:if="*{employment.startDate != null}"
+                                           th:text="*{employment.getFormattedStartDate()}"></p>
+                                        <p class="col-6 card-text" th:if="*{employment.startDate == null}"
+                                           th:text="*{employment.startDate}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>End Date:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:if="*{employment.startDate != null}"
+                                           th:text="*{employment.getFormattedStartDate()}"></p>
+                                        <p class="col-6 card-text" th:if="*{employment.startDate == null}"
+                                           th:text="*{employment.startDate}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Positions:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:text="*{employment.positions}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Supervisor:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:text="*{employment.supervisor}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Reasons For Leaving:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:text="*{employment.reasonForLeaving}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Ok to Call:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:text="*{employment.okToCall}"></p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-2 align-self-center">
@@ -155,7 +227,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="education" role="tabpanel"
-                         aria-labelledby="education-tab">
+                         aria-h6ledby="education-tab">
                         <div class="col-12 d-flex justify-content-left mt-4">
                             <form th:action="${'/profile/add/education'}"
                                   method="POST">
@@ -165,23 +237,90 @@
 
                         <div class="row" th:each="education : ${user.educationHistory}">
                             <div class="col-10">
+                                <hr style="width: 100%; border-color: darkblue">
                                 <div class="row">
-                                    <p class="col-6 mt-2 card-title" th:text="*{education.school}"></p>
-                                    <p class="col-6 mt-2 card-text" th:text="*{education.streetAddress}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.city}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.state}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.zipcode}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.degree}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.major}"></p>
-                                    <p class="col-6 card-text" th:if="*{education.startDate != null}"
-                                       th:text="*{education.getFormattedStartDate()}"></p>
-                                    <p class="col-6 card-text" th:if="*{education.startDate == null}"
-                                       th:text="*{education.startDate}"></p>
-                                    <p class="col-6 card-text" th:if="*{education.endDate != null}"
-                                       th:text="*{education.getFormattedEndDate()}"></p>
-                                    <p class="col-6 card-text" th:if="*{education.endDate == null}"
-                                       th:text="*{education.endDate}"></p>
-                                    <p class="col-6 card-text" th:text="*{education.graduated}"></p>
+                                    <div class="col-6 mt-2">
+                                        <h6>School:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.school}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Street Address:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.streetAddress}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>City:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.city}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>State:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.state}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Zipcode:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.zipcode}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>School:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.school}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Degree:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.degree}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Major:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.major}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Start Date:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:if="*{education.startDate != null}"
+                                           th:text="*{education.getFormattedStartDate()}"></p>
+                                        <p class="col-6 card-text" th:if="*{education.startDate == null}"
+                                           th:text="*{education.startDate}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>End Date:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 card-text" th:if="*{education.endDate != null}"
+                                           th:text="*{education.getFormattedEndDate()}"></p>
+                                        <p class="col-6 card-text" th:if="*{education.endDate == null}"
+                                           th:text="*{education.endDate}"></p>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <h6>Graduated:</h6>
+                                    </div>
+                                    <div class="col-6 mt-2 text-left">
+                                        <p class="col-6 mt-2 card-title" th:text="*{education.graduated}"></p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-2 align-self-center">
