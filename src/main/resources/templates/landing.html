@@ -7,10 +7,10 @@
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 
-<main class="container-fluid">
+<main class="container-fluid ">
     <section class="clean-block clean-hero text-center"
-             style="background: rgba(9, 162, 255, 0.5); background-size: cover, auto; width: 75%">
-        <img src="img/tech/interview-pic.jpeg" alt="" width="65%"/>
+             style="background-size: cover, auto;">
+        <img src="img/tech/interview-pic.jpeg" alt="" width="60%"/>
         <div class="text">
             <h2 class="mt-2"><strong>Welcome to the future of hiring and career services</strong></h2>
             <p class="pb-4">Pre-screening top tier candidates to get people to work quicker.<br/></p>
@@ -26,19 +26,19 @@
             <div class="col-md-6">
                 <h3 style="text-align: center">Job Seekers</h3>
                 <div class="getting-started-info">
-                    <p style="text-align: center">Save time by creating one universal job application portfolio. Upload and verify credentials and transcripts, pre-screen background checks for hiring managers and recruiters, being Tier One certified helps you take care of the important things instead of spending hours applying for new jobs.&nbsp;</p>
+                    <p style="text-align: center">Save time by creating one universal job application portfolio. Upload and verify credentials and transcripts, pre-screen background checks for hiring managers and recruiters.</p>
                 </div>
-                <form th:action="@{/register}" method="GET">
-                    <button class="btn btn-outline-primary btn-lg" type="submit">Join Now</button>
-                </form>
             </div>
             <div class="col-md-6">
                 <h3 style="text-align: center">Companies</h3>
                 <div class="getting-started-info">
-                    <p style="text-align: center">Save time by filtering straight to candidates who meet your qualifications. Saving time vetting resumes and screening candidates who may not meet company expectations or qualifications. Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>
+                    <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>
                 </div>
             </div>
         </div>
+        <form th:action="@{/register}" method="GET">
+            <button class="btn btn-outline-primary btn-lg" type="submit">Join Now</button>
+        </form>
     </section>
     <hr>
     <section class="clean-block features text-center">
@@ -46,13 +46,13 @@
             <h2 class="text-info">Features</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+            <div class="col-md-5 feature-box"><i class="icon-star icon fas fa-user-check"></i>
                 <h4>Credential Verification</h4>
             </div>
-            <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+            <div class="col-md-5 feature-box"><i class="icon-pencil icon fas fa-clipboard-check"></i>
                 <h4>Pre-Background Check</h4>
             </div>
-            <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+            <div class="col-md-5 feature-box"><i class="icon-refresh icon fas fa-file-upload"></i>
                 <h4>Upload Transcripts and Certifications</h4>
             </div>
         </div>
