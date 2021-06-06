@@ -8,7 +8,7 @@
 <nav th:replace="partials/navbar :: navbar"/>
 
 <main class="container-fluid">
-    <h1 class="text-center">Registration</h1>
+    <h1 class="text-center text-info">Registration</h1>
     <div class="row d-flex justify-content-center">
         <div class="card col-6">
             <form th:action="@{/register}" method="POST" th:object="${user}">
