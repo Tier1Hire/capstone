@@ -9,3 +9,16 @@ body {
 #card-names {
     color: darkblue;
 }
+
+.fa {
+    font-size: 2rem;
+}
+
+.fa-github {
+    color: black;
+}
+
+.fas {
+    font-size: 2rem;
+    color: forestgreen;
+}
