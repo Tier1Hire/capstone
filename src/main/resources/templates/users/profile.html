@@ -5,95 +5,6 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<!--<main class="page profile-page">-->
-<!--    <section class="clean-block clean-form dark">-->
-<!--        <div class="container">-->
-<!--            <div class="block-heading">-->
-<!--                <h2 class="text-info">Profile</h2>-->
-<!--                <p>Some fun text courtesy of Audi, do we want words here or a logo?.</p>-->
-<!--            </div>-->
-<!--            <div class="card" sec:authorize="isAuthenticated()">-->
-<!--                <h3><img th:src="*{user.profileImage}"  style="border-radius: 50%; width: 200px; height: 200px" alt="Profile Image" ></h3>-->
-<!--&lt;!&ndash;                <form th:action="${'/profile/edit'}"&ndash;&gt;-->
-<!--&lt;!&ndash;                      method="GET">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <button type="submit">Edit Profile</button>&ndash;&gt;-->
-<!--&lt;!&ndash;                </form>&ndash;&gt;-->
-<!--                <div class="col-4">-->
-<!--                    <p class="card-text" th:text="*{user.username}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.firstName}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.lastName}"></p>-->
-<!--                    <h5 class="card-title" th:text="*{user.alias}"></h5>-->
-<!--                    <p class="card-text" th:text="*{user.getFormattedPhone()}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.email}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.streetAddress}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.city}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.state}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.zipcode}"></p>-->
-<!--                    <p class="card-text" th:text="*{user.dateOfBirth}"></p>-->
-<!--                </div>-->
-<!--                <div class="col-6" ><h3>Employment History</h3>-->
-<!--                <form class="success btn-success" th:action="${'/profile/add/job'}"-->
-<!--                      method="POST">-->
-<!--                    <button type="submit">Add Job</button>-->
-<!--                </form>-->
-<!--                </div>-->
-<!--                <div class="card" th:each="employment : ${user.employmentHistory}">-->
-<!--                    <form class="alert alert-danger" th:action="${'/profile/delete/job/' + employment.id}"-->
-<!--                          method="POST">-->
-<!--                        <button type="submit">Remove Job</button>-->
-<!--                    </form>-->
-
-<!--                    <form class="alert alert-danger" th:action="${'/profile/edit/job/' + employment.id}"-->
-<!--                          method="GET">-->
-<!--                        <button type="submit">Edit Job</button>-->
-<!--                    </form>-->
-<!--                    <h5 class="card-title" th:text="*{employment.employer}"></h5>-->
-<!--                    <p class="card-text" th:text="*{employment.streetAddress}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.city}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.state}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.zipcode}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.getFormattedPhone()}"></p>-->
-<!--                    <p class="card-text" th:if="*{employment.startDate != null}" th:text="*{employment.getFormattedStartDate()}"></p>-->
-<!--                    <p class="card-text" th:if="*{employment.startDate == null}" th:text="*{employment.startDate}"></p>-->
-<!--                    <p class="card-text" th:if="*{employment.endDate != null}" th:text="*{employment.getFormattedEndDate()}"></p>-->
-<!--                    <p class="card-text" th:if="*{employment.endDate == null}" th:text="*{employment.endDate}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.positions}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.supervisor}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>-->
-<!--                    <p class="card-text" th:text="*{employment.okToCall}"></p>-->
-<!--                </div>-->
-<!--                <h3>Education</h3>-->
-<!--                <form class="success btn-success" th:action="${'/profile/add/education'}"-->
-<!--                      method="POST">-->
-<!--                    <button type="submit">Add Education</button>-->
-<!--                </form>-->
-<!--                <div class="card" th:each="education : ${user.educationHistory}">-->
-<!--                    <form class="alert alert-danger" th:action="${'/profile/delete/education/' + education.id}"-->
-<!--                          method="POST">-->
-<!--                        <button type="submit">Remove Education</button>-->
-<!--                    </form>-->
-<!--                    <form class="alert alert-danger" th:action="${'/profile/edit/education/' + education.id}"-->
-<!--                          method="GET">-->
-<!--                        <button type="submit">Edit Education</button>-->
-<!--                    </form>-->
-<!--                    <h5 class="card-title" th:text="*{education.school}"></h5>-->
-<!--                    <p class="card-text" th:text="*{education.streetAddress}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.city}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.state}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.zipcode}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.degree}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.major}"></p>-->
-<!--                    <p class="card-text" th:if="*{education.startDate != null}" th:text="*{education.getFormattedStartDate()}"></p>-->
-<!--                    <p class="card-text" th:if="*{education.startDate == null}" th:text="*{education.startDate}"></p>-->
-<!--                    <p class="card-text" th:if="*{education.endDate != null}" th:text="*{education.getFormattedEndDate()}"></p>-->
-<!--                    <p class="card-text" th:if="*{education.endDate == null}" th:text="*{education.endDate}"></p>-->
-<!--                    <p class="card-text" th:text="*{education.graduated}"></p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </section>-->
-
 <main class="container emp-profile">
     <section class="clean-block clean-form dark">
         <div class="row" sec:authorize="isAuthenticated()">
@@ -292,7 +203,6 @@
 </main>
 
 
-<!--<th:block th:replace="partials/footer :: footer"/>-->
 <th:block th:replace="partials/scripts :: scripts"/>
 
 </body>
