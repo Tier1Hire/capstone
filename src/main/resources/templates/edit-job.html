@@ -8,7 +8,7 @@
 
 <div class="container">
     <section class="clean-block">
-        <h1 class="text-center text-info mt-3 mb-3">Edit Job Experience</h1>
+        <h1 class="text-center text-info mt-4 mb-3">Edit Job Experience</h1>
         <div class="row d-flex justify-content-center">
             <div class="card col-12" sec:authorize="isAuthenticated()">
                 <form th:action="@{|/edit/job/${job.id}|}" method="POST" th:object="${job}">
