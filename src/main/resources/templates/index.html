@@ -10,12 +10,12 @@
     <section class="clean-block about-us">
         <h1 class="text-center text-info">All Job Seekers</h1>
         <div class="row justify-content-around">
-            <div class="col-sm-6 col-md-5 col-lg-3 card bg-secondary mt-2 mr-2 ml-2 mb-2 border border-dark"
+            <div class="card col-sm-6 col-md-5 col-lg-3 mt-2 mr-2 ml-2 mb-2 border border-dark"
                  th:each="user : ${users}">
                 <div class="card-header">
                     <h3 class="card-title">
                         <a th:href="'/profile/' + ${user.id}" th:text="${user.firstName} + ' ' + ${user.lastName}"
-                           class="stretched-link text-white"></a>
+                           class="stretched-link" id="card-names"></a>
                     </h3>
                 </div>
                 <div class="card-body">
@@ -23,7 +23,7 @@
                     <p class="card-text" th:text="${user.email}"></p>
                 </div>
                 <div th:if="${user.verified}">
-                    <span class="badge badge-success">Verified User</span>
+                    <span class="badge badge-dark text-white">Verified User</span>
                 </div>
             </div>
 
