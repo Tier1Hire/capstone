@@ -1,16 +1,16 @@
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-  <meta charset="UTF-8"/>
-  <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-  </head>
-<body>
-<div class="card">
-  <div sec:authorize="isVerified()" th:if="${user.isVerified}">
-    <span class="badge badge-success">Verified User</span>
-  </div>
-</div>
-</body>
-</html>
+<!--<html xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8"/>-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--  </head>-->
+<!--<body>-->
+<!--<div class="card">-->
+<!--  <div sec:authorize="isVerified()" th:if="${user.isVerified}">-->
+<!--    <span class="badge badge-success">Verified User</span>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
