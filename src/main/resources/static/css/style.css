@@ -1,7 +1,11 @@
 body {
-    background-color: floralwhite;
+    background-color: #EBEEF1;
 }
 
-#footer {
-    background-color: gainsboro;
+.card {
+    background-color: #E7F2F8;
+}
+
+#card-names {
+    color: darkblue;
 }
