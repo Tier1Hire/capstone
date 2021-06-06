@@ -9,7 +9,7 @@
     <section class="clean-block clean-form dark">
         <div class="row" sec:authorize="isAuthenticated()">
             <div class="col-12 block-heading">
-                <h2 class="mt-4 ml-5 text-info">Profile</h2>
+                <h2 class="mt-4 mb-3 ml-5 text-info">Profile</h2>
             </div>
             <div class="col-md-4">
                 <div class="profile-img">
@@ -216,11 +216,11 @@
                             <div class="col-2 align-self-center">
                                 <form th:action="${'/profile/delete/job/' + employment.id}"
                                       method="POST">
-                                    <button class="btn btn-danger" type="submit">Remove Job</button>
+                                    <button class="btn btn-danger" type="submit">Remove</button>
                                 </form>
                                 <form th:action="${'/profile/edit/job/' + employment.id}"
                                       method="GET">
-                                    <button class="btn btn-dark" type="submit">Edit Job</button>
+                                    <button class="btn btn-dark" type="submit">Edit</button>
                                 </form>
                             </div>
                         </div>
@@ -326,11 +326,11 @@
                             <div class="col-2 align-self-center">
                                 <form th:action="${'/profile/delete/education/' + education.id}"
                                       method="POST">
-                                    <button class="btn btn-danger" type="submit">Remove Education</button>
+                                    <button class="btn btn-danger" type="submit">Remove</button>
                                 </form>
                                 <form th:action="${'/profile/edit/education/' + education.id}"
                                       method="GET">
-                                    <button class="btn btn-dark" type="submit">Edit Education</button>
+                                    <button class="btn btn-dark" type="submit">Edit</button>
                                 </form>
                             </div>
                         </div>
