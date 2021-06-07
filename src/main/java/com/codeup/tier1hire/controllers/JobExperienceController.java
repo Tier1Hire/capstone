@@ -54,12 +54,11 @@ public class JobExperienceController {
         return "redirect:/profile";
     }
 
-    // Edit button does not have designated action like add job, might be reason styling is broken some
     @GetMapping("/profile/edit/job/{id}")
     public String editJobForm(@PathVariable long id, Model model) {
 
-        EmploymentDetail job = employmentDetailDao.getOne(id);
-        System.out.println("Testing edit job button or path" + " " + job);
+//        EmploymentDetail job = employmentDetailDao.getOne(id);
+//        System.out.println("Testing edit job button or path" + " " + job);
 
         model.addAttribute("job", employmentDetailDao.getOne(id));
         return "edit-job";
