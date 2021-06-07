@@ -73,7 +73,7 @@ public class EducationController {
 
         education.setStartDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationStartDate));
         education.setEndDate(new SimpleDateFormat("yyyy-MM-dd").parse(educationEndDate));
-        System.out.println(educationEndDate);
+
         Education educationToUpdate = educationDao.getOne(id);
         educationToUpdate.updateContents(education);
         educationDao.save(educationToUpdate);
