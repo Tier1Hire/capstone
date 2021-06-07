@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&family=Seaweed+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Playfair+Display:ital,wght@1,800&family=Seaweed+Script&display=swap');
+
+.card {
+  background-color: #E7F2F8;
+}
+
+#card-names {
+  color: darkblue;
+}
+
+.fa {
+  font-size: 2rem;
+}
+
+.fa-github {
+  color: black;
+}
+
+.fas {
+  font-size: 2rem;
+  color: forestgreen;
+}
+
 .header-top {
   font-family: 'Playfair Display', serif;
 }.big-logo {
