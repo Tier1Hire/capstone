@@ -5,26 +5,17 @@
 </head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-2">
-      <h3 style="text-align: center">Job Seekers</h3>
-      <div class="getting-started-info">
-        <p style="text-align: center">Save time by creating one universal job application portfolio.</p>
-      </div>
-    </div>
-    <div class="col-md-auto">
-      <a th:href="@{/}"><img id="big-logo"
-                             src="img/tech/Big-logo.png"
-                             alt="Tier One" width="300"></a>
-    </div>
-    <div class="col col-lg-2">
-      <h3 style="text-align: center">Companies</h3>
-      <div class="getting-started-info">
-        <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>
-      </div>
-    </div>
+
+
+  <div class = "jumbotron">
+    <img src="img/tech/Big-logo.png"width="80%"/>
+
+    <div class = "container">
+      <a class = "btn btn-primary btn-lg" role = "button">Learn more</a>
+      <a class = "btn btn-primary btn-lg" role = "button">Learn more</a>
   </div>
+
+</div>
 
 <!--<section class="clean-block clean-info dark text-center">-->
 <!--  <a th:href="@{/}"><img id="big-logo"-->
@@ -45,18 +36,38 @@
 <!--  </div>-->
 <!--</div>-->
 <!--  <hr>-->
-<main class="container-fluid ">
-    <section class="main-block clean-hero text-center"
-             style="background-size: cover, auto;">
-        <img src="img/tech/interview-pic.jpeg" alt="" width="60%"/>
-    </section>
-        <div class="text welcome-block">
-            <h2 class="mt-2"><strong>Welcome to the future of hiring and career services</strong></h2>
-            <p class="pb-4">Pre-screening top tier candidates to get people to work quicker.<br/></p>
-          </div>
-        </div>
-    </section>
-    <hr>
+<div class="text welcome-block">
+  <h2 class="mt-0 mr-auto ml-auto"><strong>Welcome to the future of hiring and career services</strong></h2>
+  <p class="pb-2 mr-auto ml-auto">Pre-screening top tier candidates to get people to work quicker.<br/></p>
+</div>
+<!--<main class="container-fluid main ">-->
+<!--    <section class="main-block clean-hero text-center"-->
+<!--             style="background-size: cover, auto;">-->
+<!--        <img src="img/tech/interview-pic.jpeg" alt="" width="80%"/>-->
+<!--    </section>-->
+
+<!--  </main>-->
+<!--  <div class="container">-->
+<!--    <div class="row justify-content-md-center">-->
+<!--      <div class="col col-lg-2">-->
+<!--        <h3 style="text-align: center">Job Seekers</h3>-->
+<!--        <div class="getting-started-info">-->
+<!--          <p style="text-align: center">Save time by creating one universal job application portfolio.</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-auto">-->
+<!--        <a th:href="@{/}"><img id="big-logo"-->
+<!--                               src="img/tech/Big-logo.png"-->
+<!--                               alt="Tier One" width="300"></a>-->
+<!--      </div>-->
+<!--      <div class="col col-lg-2">-->
+<!--        <h3 style="text-align: center">Companies</h3>-->
+<!--        <div class="getting-started-info">-->
+<!--          <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <hr>-->
 <!--    <section class="clean-block clean-info dark text-center">-->
 <!--        <div class="block-heading">-->
 <!--            <h2 class="text-info">What is Tier-1 Certified?</h2>-->
@@ -78,7 +89,7 @@
         <form th:action="@{/register}" method="GET">
             <button class="btn btn-outline-primary btn-lg btn-dark" type="submit">Join Now</button>
         </form>
-    </section>
+    </div>
     <hr>
     <section class="clean-block features text-center">
         <div class="block-heading">
