@@ -62,7 +62,8 @@ public class JobExperienceController {
         System.out.println("Testing edit job button or path" + " " + job);
 
         model.addAttribute("job", employmentDetailDao.getOne(id));
-        return "edit-job";
+//        return "edit-job";
+        return "job-experience";
     }
 
     @PostMapping("/edit/job/{id}")
