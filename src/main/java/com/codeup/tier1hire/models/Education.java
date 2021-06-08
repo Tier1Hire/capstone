@@ -203,13 +203,13 @@ public class Education {
 
     public String getFormattedStartDate() {
 
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
         return format.format(this.startDate);
     }
 
     public String getFormattedEndDate() {
 
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
         return format.format(this.endDate);
     }
 }
