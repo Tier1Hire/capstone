@@ -8,12 +8,15 @@
 
 
   <div class = "jumbotron">
-    <img src="img/tech/Big-logo.png"width="80%"/>
-
-    <div class = "container">
-      <a class = "btn btn-primary btn-lg" role = "button">Learn more</a>
-      <a class = "btn btn-primary btn-lg" role = "button">Learn more</a>
-  </div>
+    <div class="image-container">
+    <img src="img/tech/Big-logo.png"width="60%"/>
+    <form th:action="@{/register}" method="GET">
+      <button class="btn btn-md btn-dark" type="submit">Join Now</button>
+    </form>
+      <form th:action="@{/login}" method="GET">
+        <button class="btn  btn-md btn-dark" type="submit">Login</button>
+      </form>
+      </div>
 
 </div>
 
@@ -86,10 +89,6 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <form th:action="@{/register}" method="GET">
-            <button class="btn btn-outline-primary btn-lg btn-dark" type="submit">Join Now</button>
-        </form>
-    </div>
     <hr>
     <section class="clean-block features text-center">
         <div class="block-heading">
