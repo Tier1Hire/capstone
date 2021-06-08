@@ -7,106 +7,43 @@
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 
-  <div class = "jumbotron">
+<div class="jumbotron">
     <div class="image-container">
-    <img src="img/tech/Big-logo.png"width="60%"/>
-    <form th:action="@{/register}" method="GET">
-      <button class="btn btn-md btn-dark" type="submit">Join Now</button>
-    </form>
-      <form th:action="@{/login}" method="GET">
-        <button class="btn  btn-md btn-dark" type="submit">Login</button>
-      </form>
-      </div>
-
+        <img src="img/tech/Big-logo.png" width="60%"/>
+        <div>
+            <form class="d-flex justify-content-center" th:action="@{/register}" method="GET">
+                <button class="btn btn-md btn-dark" type="submit">Join Now</button>
+            </form>
+        </div>
+        <div>
+            <form class="d-flex justify-content-center" th:action="@{/login}" method="GET">
+                <button class="btn  btn-md btn-dark" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 </div>
 
-<!--<section class="clean-block clean-info dark text-center">-->
-<!--  <a th:href="@{/}"><img id="big-logo"-->
-<!--                         src="img/tech/Big-logo.png"-->
-<!--                         alt="Tier One" width="300"></a>-->
-<!--<div class="row align-items-center">-->
-<!--  <div class="col-md-3">-->
-<!--    <h3 style="text-align: center">Job Seekers</h3>-->
-<!--    <div class="getting-started-info">-->
-<!--      <p style="text-align: center">Save time by creating one universal job application portfolio.</p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-3">-->
-<!--    <h3 style="text-align: center">Companies</h3>-->
-<!--    <div class="getting-started-info">-->
-<!--      <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--  <hr>-->
-<div class="text welcome-block">
-  <h2 class="mt-0 mr-auto ml-auto"><strong>Welcome to the future of hiring and career services</strong></h2>
-  <p class="pb-2 mr-auto ml-auto">Pre-screening top tier candidates to get people to work quicker.<br/></p>
+<div class="mt-2 mb-4 text welcome-block">
+    <h2 class="mt-0 mr-auto ml-auto"><strong>Welcome to the future of hiring and career services</strong></h2>
+    <p class="pb-2 mr-auto ml-auto">Pre-screening top tier candidates to get people to work quicker.<br/></p>
 </div>
-<!--<main class="container-fluid main ">-->
-<!--    <section class="main-block clean-hero text-center"-->
-<!--             style="background-size: cover, auto;">-->
-<!--        <img src="img/tech/interview-pic.jpeg" alt="" width="80%"/>-->
-<!--    </section>-->
-
-<!--  </main>-->
-<!--  <div class="container">-->
-<!--    <div class="row justify-content-md-center">-->
-<!--      <div class="col col-lg-2">-->
-<!--        <h3 style="text-align: center">Job Seekers</h3>-->
-<!--        <div class="getting-started-info">-->
-<!--          <p style="text-align: center">Save time by creating one universal job application portfolio.</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-auto">-->
-<!--        <a th:href="@{/}"><img id="big-logo"-->
-<!--                               src="img/tech/Big-logo.png"-->
-<!--                               alt="Tier One" width="300"></a>-->
-<!--      </div>-->
-<!--      <div class="col col-lg-2">-->
-<!--        <h3 style="text-align: center">Companies</h3>-->
-<!--        <div class="getting-started-info">-->
-<!--          <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <hr>-->
-<!--    <section class="clean-block clean-info dark text-center">-->
-<!--        <div class="block-heading">-->
-<!--            <h2 class="text-info">What is Tier-1 Certified?</h2>-->
-<!--        </div>-->
-<!--        <div class="row align-items-center">-->
-<!--            <div class="col-md-6">-->
-<!--                <h3 style="text-align: center">Job Seekers</h3>-->
-<!--                <div class="getting-started-info">-->
-<!--                    <p style="text-align: center">Save time by creating one universal job application portfolio. Upload and verify credentials and transcripts, pre-screen background checks for hiring managers and recruiters.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-6">-->
-<!--                <h3 style="text-align: center">Companies</h3>-->
-<!--                <div class="getting-started-info">-->
-<!--                    <p style="text-align: center">Search our library of candidates who already have background checks and verified education and credentials.&nbsp;</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-    <hr>
-    <section class="clean-block features text-center">
-        <div class="block-heading">
-            <h2 class="text-info">Features</h2>
+<hr>
+<section class="mt-4 mb-5 clean-block features text-center">
+    <div class="block-heading">
+        <h2 class="text-info">Features</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5 feature-box"><i class="icon-star icon fas fa-user-check"></i>
+            <h4>Credential Verification</h4>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 feature-box"><i class="icon-star icon fas fa-user-check"></i>
-                <h4>Credential Verification</h4>
-            </div>
-            <div class="col-md-5 feature-box"><i class="icon-pencil icon fas fa-clipboard-check"></i>
-                <h4>Pre-Background Check</h4>
-            </div>
-            <div class="col-md-5 feature-box"><i class="icon-refresh icon fas fa-file-upload"></i>
-                <h4>Upload Transcripts and Certifications</h4>
-            </div>
+        <div class="col-md-5 feature-box"><i class="icon-pencil icon fas fa-clipboard-check"></i>
+            <h4>Pre-Background Check</h4>
         </div>
-    </section>
-</main>
+        <div class="mb-3 col-md-5 feature-box"><i class="icon-refresh icon fas fa-file-upload"></i>
+            <h4>Upload Transcripts and Certifications</h4>
+        </div>
+    </div>
+</section>
 
 
 <th:block th:replace="partials/scripts :: scripts"/>
