@@ -6,27 +6,26 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-
 <div class="jumbotron">
     <div class="image-container">
-        <img src="img/tech/Big-logo.png" width="60%"/>
-        <div>
-            <form class="d-flex justify-content-center" th:action="@{/register}" method="GET">
-                <button class="btn btn-md btn-dark" type="submit">Join Now</button>
+        <img src="img/tech/Big-logo.png" width="40%"/>
+        <div class="row">
+            <form class="col-6 mb-5 d-flex justify-content-end" th:action="@{/register}" method="GET">
+                <button class="btn btn-dark" type="submit">Join Now</button>
             </form>
-        </div>
-        <div>
-            <form class="d-flex justify-content-center" th:action="@{/login}" method="GET">
-                <button class="btn  btn-md btn-dark" type="submit">Login</button>
+            <form class="col-6 mb-5 d-flex justify-content-start" th:action="@{/login}" method="GET">
+                <button class="btn btn-dark" type="submit">Login</button>
             </form>
         </div>
     </div>
 </div>
 
-<div class="mt-2 mb-4 text welcome-block">
-    <h2 class="mt-0 mr-auto ml-auto"><strong>Welcome to the future of hiring and career services</strong></h2>
-    <p class="pb-2 mr-auto ml-auto">Pre-screening top tier candidates to get people to work quicker.<br/></p>
-</div>
+<section>
+    <div class="mt-2 mb-4 text welcome-block">
+        <h2 class="mt-0 mr-auto ml-auto"><strong>Welcome to the future of hiring and career services</strong></h2>
+        <p class="pb-2 mr-auto ml-auto">Pre-screening top tier candidates to get people to work quicker.<br/></p>
+    </div>
+</section>
 <hr>
 <section class="mt-4 mb-5 clean-block features text-center">
     <div class="block-heading">

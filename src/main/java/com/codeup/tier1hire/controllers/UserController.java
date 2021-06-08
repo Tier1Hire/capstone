@@ -4,7 +4,6 @@ import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
 import com.codeup.tier1hire.repositories.UserRepo;
-import com.codeup.tier1hire.services.MailtrapService;
 import com.codeup.tier1hire.services.SendGridService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,18 +27,16 @@ public class UserController {
     private final EducationDetailRepo educationDao;
     private final EmploymentDetailRepo employmentDao;
     private final PasswordEncoder passwordEncoder;
-    private final MailtrapService mailtrapService;
 
 
 
 
 
-    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder, MailtrapService mailtrapService, SendGridService sendGridService) {
+    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder, SendGridService sendGridService) {
         this.usersDao = usersDao;
         this.educationDao = educationDao;
         this.employmentDao = employmentDao;
         this.passwordEncoder = passwordEncoder;
-        this.mailtrapService = mailtrapService;
         this.sendGridService = sendGridService;
 
 
