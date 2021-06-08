@@ -91,7 +91,10 @@ body {
 .jumbotron {
   background-image: url(/img/tech/interview-pic.jpeg);
   background-attachment: fixed;
-  background-position: center;
+  /*background-position: center;*/
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: inherit;
+}
+.btn {
+  background-color: #e09f3e;
 }
