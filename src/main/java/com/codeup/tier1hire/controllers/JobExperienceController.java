@@ -57,9 +57,6 @@ public class JobExperienceController {
     @GetMapping("/profile/edit/job/{id}")
     public String editJobForm(@PathVariable long id, Model model) {
 
-//        EmploymentDetail job = employmentDetailDao.getOne(id);
-//        System.out.println("Testing edit job button or path" + " " + job);
-
         model.addAttribute("job", employmentDetailDao.getOne(id));
         return "edit-job";
     }
