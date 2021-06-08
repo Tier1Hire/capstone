@@ -19,11 +19,13 @@
                     </h3>
                 </div>
                 <div class="card-body">
-                    Phone<p class="card-text" th:text="${user.phoneNumber}"></p>
-                    Email<p class="card-text" th:text="${user.email}"></p>
-                </div>
-                <div th:if="${user.verified}">
-                    <span class="badge badge-dark text-white">Verified User</span>
+                    <h6>Phone:</h6>
+                    <p class="card-text" th:text="${user.getFormattedPhone()}"></p>
+                    <h6>Email:</h6>
+                    <p class="card-text" th:text="${user.email}"></p>
+                    <div th:if="${user.verified}">
+                        <span class="badge badge-dark text-white">Verified User</span>
+                    </div>
                 </div>
             </div>
         </div>
