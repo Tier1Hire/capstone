@@ -28,10 +28,11 @@
 </nav>
 
 <nav sec:authorize="isAuthenticated()" th:fragment="navbar"
-     class="navbar navbar-dark navbar-expand-lg bg-dark clean-navbar">
-    <div class="container-fluid navbar-brand logo"><a th:href="@{/}"><img
-            src="/img/word-logo.png"
-            alt="Tier One" width="250"></a>
+     class="navbar navbar-light navbar-expand-lg  bg-white clean-navbar">
+  <div class="container-fluid navbar-brand justify-content-left">
+    <a th:href="@{/}"><img id="logoTwo"
+                           src="img/tech/newLogo.jpg"
+                           alt="Tier One" width="180"></a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarContent" aria-controls="navbarContent"
                 aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
