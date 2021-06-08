@@ -25,33 +25,24 @@
 
 .header-top {
   font-family: 'Playfair Display', serif;
-}.big-logo {
-  padding: 0;
- }
+}
+
 .sub-head {
   font-family: 'Seaweed Script', cursive;
 }
+
 body {
     background-color: #FFFFFF;
 }
+
 .navbarsupport {
  background-color: #d28a3c;
 }
+
 .main-block{
     background-color: #580701;
 }
 
-#card-names {
-    color: darkblue;
-}
-
-.fa {
-    font-size: 2rem;
-}
-
-.fa-github {
-    color: black;
-}
 .container-fluid  {
   width: 90%;
   /*max-width:400px;*/
@@ -61,10 +52,12 @@ body {
   /*background: #DDD;*/
   position:relative;
 }
+
 .big-logo{
   position: absolute;
   bottom: 20px;
   right: 20px;
+  padding: 0;
 }
 
 #logo {
@@ -73,8 +66,8 @@ body {
 }
 .word-logo{
   align-content: center;
-
 }
+
 .navbar-brand {
   margin: 0;
   padding: 0;
@@ -85,9 +78,11 @@ body {
   text-decoration-color: black;
   font-weight: bold;
 }
+
 .welcome-block {
   text-align: center;
 }
+
 .jumbotron {
   background-image: url(/img/tech/interview-pic.jpeg);
   background-attachment: fixed;
@@ -95,6 +90,19 @@ body {
   background-repeat: no-repeat;
   background-size: inherit;
 }
+
 .btn {
   background-color: #e09f3e;
+}
+
+.icon-refresh {
+  color: #e09f3e;
+}
+
+.icon-pencil {
+  color: #e09f3e;
+}
+
+.icon-star {
+  color: #e09f3e;
 }

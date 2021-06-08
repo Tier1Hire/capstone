@@ -4,6 +4,7 @@ import com.codeup.tier1hire.models.User;
 import com.codeup.tier1hire.repositories.EducationDetailRepo;
 import com.codeup.tier1hire.repositories.EmploymentDetailRepo;
 import com.codeup.tier1hire.repositories.UserRepo;
+import com.codeup.tier1hire.services.SendGridService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +18,11 @@ public class UserController {
     @Value("${filestack_key}")
     private String fileStackApiKey;
 
+    @Value("spring.sendgrid.api-key")
+    private String sendgridApiKey;
+
+    SendGridService sendGridService;
+
     private final UserRepo usersDao;
     private final EducationDetailRepo educationDao;
     private final EmploymentDetailRepo employmentDao;
@@ -24,11 +30,16 @@ public class UserController {
 
 
 
-    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder) {
+
+
+    public UserController(UserRepo usersDao, EducationDetailRepo educationDao, EmploymentDetailRepo employmentDao, PasswordEncoder passwordEncoder, SendGridService sendGridService) {
         this.usersDao = usersDao;
         this.educationDao = educationDao;
         this.employmentDao = employmentDao;
         this.passwordEncoder = passwordEncoder;
+        this.sendGridService = sendGridService;
+
+
     }
 
     @GetMapping("/index")
@@ -92,6 +103,31 @@ public class UserController {
         model.addAttribute("user", usersDao.getOne(id));
         model.addAttribute("fileStackApiKey", fileStackApiKey);
         return "display-profile";
+    }
+
+    @GetMapping("/profile/send-email/{id}")
+    public String email(@PathVariable long id, Model model) {
+        // Get selected image profile owner and pass it forward
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User currentUser = usersDao.getOne(id);
+        model.addAttribute("user", usersDao.getOne(user.getId()));
+        model.addAttribute("currentUser", currentUser);
+        return "send-email";
+    }
+
+    @PostMapping("/send-email")
+    public String sendEmail(
+            @ModelAttribute User profileOwner,
+            @RequestParam(name = "ownerUsername") String username,
+            @RequestParam(name = "emailSubject") String emailSubject,
+            @RequestParam(name = "emailBody") String emailBody
+    ) {
+        User owner = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        User emailFrom = userDao.getOne(owner.getId());
+        String emailFrom = "tieronehire@gmail.com";
+        String userToEmail = usersDao.findByUsername(username).getEmail();
+        sendGridService.sendEmail(emailFrom, userToEmail, emailSubject, emailBody);
+        return "redirect:/profile";
     }
 
 }
