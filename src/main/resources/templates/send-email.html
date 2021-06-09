@@ -15,6 +15,7 @@
             <h2 class="gallery-heading">Contact</h2>
         </div>
 
+        <section class="container card">
         <div class="container mb-4" sec:authorize="isAuthenticated()">
             <form th:action="@{/send-email}" method="POST" class="form-padding">
 
@@ -32,6 +33,7 @@
 
             </form>
         </div>
+        </section>
     </div>
 </div>
 
