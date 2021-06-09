@@ -15,6 +15,7 @@
             <h2 class="gallery-heading">Contact</h2>
         </div>
 
+        <section class="container card">
         <div class="container mb-4" sec:authorize="isAuthenticated()">
             <form th:action="@{/send-email}" method="POST" class="form-padding">
 
@@ -27,11 +28,12 @@
                 <textarea id="emailBody" name="emailBody" class="form-control mb-4" rows="6" cols="20"></textarea>
 
                 <div class="d-flex justify-content-center">
-                    <button class="button type1" type="submit">Send</button>
+                    <button class="btn btn-primary mb-2 col-12" type="submit">Send</button>
                 </div>
 
             </form>
         </div>
+        </section>
     </div>
 </div>
 

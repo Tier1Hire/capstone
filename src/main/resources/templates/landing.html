@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <th:block th:replace="partials/head :: head('Landing')"/>
 </head>
@@ -9,7 +10,7 @@
 <div class="jumbotron">
     <div class="image-container">
         <img src="img/tech/Big-logo.png" width="40%"/>
-        <div class="row">
+        <div class="row" sec:authorize="!isAuthenticated()">
             <form class="col-6 mb-5 d-flex justify-content-end" th:action="@{/register}" method="GET">
                 <button class="btn btn-dark" type="submit">Join Now</button>
             </form>
