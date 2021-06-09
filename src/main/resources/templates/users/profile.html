@@ -110,31 +110,12 @@
                                         </div>
 
                                         <div class="col-6 mt-2">
-                                            <p><strong>Street Address:</strong></p>
+                                            <p><strong>Address:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
                                             <p class="card-text" th:text="*{employment.streetAddress}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>City:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{employment.city}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>State:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{employment.state}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>Zipcode:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{employment.zipcode}"></p>
+                                            <p class="card-text"
+                                               th:text="*{employment.city + ', ' + employment.state + ' ' + employment.zipcode}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
@@ -227,32 +208,12 @@
                                         </div>
 
                                         <div class="col-6 mt-2">
-                                            <p><strong>Street Address:</strong></p>
+                                            <p><strong>Address:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.streetAddress}"></p>
                                             <p class="card-text"
-                                               th:text="*{education.streetAddress}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>City:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{education.city}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>State:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{education.state}"></p>
-                                        </div>
-
-                                        <div class="col-6 mt-2">
-                                            <p><strong>Zipcode:</strong></p>
-                                        </div>
-                                        <div class="col-6 mt-2">
-                                            <p class="card-text" th:text="*{education.zipcode}"></p>
+                                               th:text="*{education.city + ', ' + education.state + ' ' + education.zipcode}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
