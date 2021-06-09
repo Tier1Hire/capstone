@@ -190,7 +190,7 @@
                                         </form>
                                         <form class="col-8" th:action="${'/profile/delete/job/' + employment.id}"
                                               method="POST">
-                                            <button class="btn btn-danger" type="submit">Remove</button>
+                                            <button onclick="return confirm('Are you sure you want to remove Job?')" class="btn btn-danger" type="submit">Remove</button>
                                         </form>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@
                                         </form>
                                         <form class="col-8" th:action="${'/profile/delete/education/' + education.id}"
                                               method="POST">
-                                            <button class="btn btn-danger" type="submit">Remove</button>
+                                            <button onclick="return confirm('Are you sure you want to remove this Education?')" class="btn btn-danger" type="submit">Remove</button>
                                         </form>
                                     </div>
                                 </div>
