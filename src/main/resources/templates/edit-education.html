@@ -46,7 +46,7 @@
                                 Date</label>
                             <input class="form-control form-control-lg" type="date" name="educationStartDate"
                                    th:if="${education.startDate != null}"
-                                   th:value="${education.getFormattedStartDate()}">
+                                   th:value="${education.getFormattedStartDate()}" required>
                         </div>
 
                         <div class="col-6 mt-3" style="display: none">
@@ -54,22 +54,22 @@
                                 Date</label>
                             <input class="form-control form-control-lg" style="display: none" type="date"
                                    name="educationStartDate"
-                                   th:if="${education.startDate == null}" th:value="*{startDate}">
+                                   th:if="${education.startDate == null}" th:value="*{startDate}" required>
                         </div>
 
                         <div class="col-6 mt-3">
                             <label class="form-label" th:if="${education.endDate != null}">End
                                 Date</label>
                             <input class="form-control form-control-lg" type="date" name="educationEndDate"
-                                   th:if="${education.endDate != null}" th:value="${education.getFormattedEndDate()}">
+                                   th:if="${education.endDate != null}" th:value="${education.getFormattedEndDate()}" required>
                         </div>
 
-                        <div class="col-6 mt-3" style="display: none;">
+                        <div class="col-6 mt-3" style="display: none">
                             <label class="form-label" style="display: none" th:if="${education.endDate == null}">End
                                 Date</label>
                             <input class="form-control form-control-lg" type="date" name="educationEndDate"
                                    style="display: none"
-                                   th:if="${education.endDate == null}" th:value="*{endDate}">
+                                   th:if="${education.endDate == null}" th:value="*{endDate}" required>
                         </div>
 
                         <div class="col-6 mt-3">

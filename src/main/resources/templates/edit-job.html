@@ -43,27 +43,27 @@
                             <label class="form-label" th:if="${job.startDate != null}">Start Date</label>
                             <input class="form-control form-control-lg" type="date" name="jobStartDate"
                                    th:if="${job.startDate != null}"
-                                   th:value="${job.getFormattedStartDate()}">
+                                   th:value="${job.getFormattedStartDate()}" required>
                         </div>
                         <div class="col-6 mt-3" style="display: none">
                             <label class="form-label" style="display: none" th:if="${job.startDate == null}">Start
                                 Date</label>
                             <input class="form-control form-control-lg" style="display: none" type="date"
                                    name="jobStartDate"
-                                   th:if="${job.startDate == null}" th:value="*{startDate}">
+                                   th:if="${job.startDate == null}" th:value="*{startDate}" required>
                         </div>
                         <div class="col-6 mt-3">
                             <label class="form-label" th:if="${job.endDate != null}">End
                                 Date</label>
                             <input class="form-control form-control-lg" type="date" name="jobEndDate"
-                                   th:if="${job.endDate != null}" th:value="${job.getFormattedEndDate()}">
+                                   th:if="${job.endDate != null}" th:value="${job.getFormattedEndDate()}" required>
                         </div>
                         <div class="col-6 mt-3" style="display: none">
                             <label class="form-label" style="display: none" th:if="${job.endDate == null}">End
                                 Date</label>
                             <input class="form-control form-control-lg" type="date" name="jobEndDate"
                                    style="display: none"
-                                   th:if="${job.endDate == null}" th:value="*{endDate}">
+                                   th:if="${job.endDate == null}" th:value="*{endDate}" required>
                         </div>
                         <div class="col-6 mt-3">
                             <label class="form-label">Supervisor</label>
