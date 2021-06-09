@@ -20,11 +20,13 @@
                         </div>
                         <div class="row mt-3 text-center" th:if="${currentUser.isAdmin()}">
                             <form class="col-5" th:action="${'/profile/admin/' + user.id}" method="POST">
-                                <button class="btn btn-dark" type="submit">Make Admin</button>
+                                <button class="btn btn-dark" th:if="*{user.admin == false}" type="submit">Make Admin</button>
+                                <button class="btn btn-dark" th:if="*{user.admin == true}" type="submit">Remove Admin</button>
                             </form>
                             <br>
                             <form class="col-4" th:action="${'/profile/verify/' + user.id}" method="POST">
-                                <button class="btn btn-success" type="submit">Verify User</button>
+                                <button class="btn btn-success" th:if="*{user.verified == false}" type="submit">Verify User</button>
+                                <button class="btn btn-success" th:if="*{user.verified == true}" type="submit">Un-verify User</button>
                             </form>
                             <br>
                             <form class="col-3" th:action="${'/profile/delete/' + user.id}" method="POST">
