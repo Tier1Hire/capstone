@@ -149,10 +149,10 @@
                                             <p><strong>End Date:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="card-text" th:if="*{employment.startDate != null}"
-                                               th:text="*{employment.getFormattedStartDate()}"></p>
-                                            <p class="card-text" th:if="*{employment.startDate == null}"
-                                               th:text="*{employment.startDate}"></p>
+                                            <p class="card-text" th:if="*{employment.endDate != null}"
+                                               th:text="*{employment.getFormattedEndDate()}"></p>
+                                            <p class="card-text" th:if="*{employment.endDate == null}"
+                                               th:text="*{employment.endDate}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
