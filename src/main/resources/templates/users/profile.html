@@ -9,28 +9,23 @@
     <section class="clean-block clean-form dark">
         <div class="row" sec:authorize="isAuthenticated()">
             <div class="col-4 block-heading">
-                <h2 class="mt-4 mb-3 ml-5 text-info">Profile</h2>
+                <h1 class="mt-4 mb-3 ml-5 text-info">Profile</h1>
             </div>
             <div class="col-6 align-self-center">
                 <div class="profile-head">
-                    <h5 class="card-text"
-                        th:text="'Welcome, ' + |*{user.firstName}  *{user.lastName} *{user.alias}|"></h5>
+                    <h3 class="card-text"
+                        th:text="'Welcome, ' + |*{user.firstName} &quot;*{user.alias}&quot; *{user.lastName}|"></h3>
                 </div>
             </div>
-            <div class="col-md-2 align-self-center">
-                <form th:action="${'/profile/edit'}" method="GET">
-                    <button class="btn btn-dark" type="submit">Edit Profile</button>
-                </form>
-            </div>
             <div class="container row">
-                <div class="col-4">
+                <div class="col-4 mt-4">
                     <div class="row">
-                        <div class="col-12 mt-3 profile-img">
+                        <div class="col-12 profile-img">
                             <img th:src="*{user.profileImage}"
                                  style="border-radius: 50%; width: 200px; height: 200px"
                                  alt="Profile Image"/>
                         </div>
-                        <div class="col-12 mt-3">
+                        <div class="col-12 mt-4">
                             <div class="row">
                                 <div class="col-4 mt-4 ">
                                     <p><strong>Username:</strong></p>
@@ -70,6 +65,11 @@
                                     <p class="card-text"
                                        th:text="*{user.city + ', ' + user.state + ' ' + user.zipcode}"></p>
                                 </div>
+                                <div class="col-12 mt-4 text-center">
+                                    <form th:action="${'/profile/edit'}" method="GET">
+                                        <button class="btn btn-dark" type="submit">Edit Profile</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <div class="tab-pane fade show active" id="employment" role="tabpanel"
                              aria-handledby="employment-tab">
                             <div class="row">
-                                <div class="col-12 d-flex justify-content-left mt-4">
+                                <div class="col-12 d-flex justify-content-end mt-4">
                                     <form th:action="${'/profile/add/job'}"
                                           method="POST">
                                         <button class="btn btn-dark" type="submit">Add Job</button>
@@ -148,9 +148,9 @@
                                             <p><strong>Start Date:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:if="*{employment.startDate != null}"
+                                            <p class="card-text" th:if="*{employment.startDate != null}"
                                                th:text="*{employment.getFormattedStartDate()}"></p>
-                                            <p class="col-6 card-text" th:if="*{employment.startDate == null}"
+                                            <p class="card-text" th:if="*{employment.startDate == null}"
                                                th:text="*{employment.startDate}"></p>
                                         </div>
 
@@ -158,9 +158,9 @@
                                             <p><strong>End Date:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:if="*{employment.startDate != null}"
+                                            <p class="card-text" th:if="*{employment.startDate != null}"
                                                th:text="*{employment.getFormattedStartDate()}"></p>
-                                            <p class="col-6 card-text" th:if="*{employment.startDate == null}"
+                                            <p class="card-text" th:if="*{employment.startDate == null}"
                                                th:text="*{employment.startDate}"></p>
                                         </div>
 
@@ -168,28 +168,28 @@
                                             <p><strong>Positions:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:text="*{employment.positions}"></p>
+                                            <p class="card-text" th:text="*{employment.positions}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Supervisor:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:text="*{employment.supervisor}"></p>
+                                            <p class="card-text" th:text="*{employment.supervisor}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Reasons For Leaving:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:text="*{employment.reasonForLeaving}"></p>
+                                            <p class="card-text" th:text="*{employment.reasonForLeaving}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Ok to Call:</strong></p>
                                         </div>
                                         <div class="col-6 mt-2">
-                                            <p class="col-6 card-text" th:text="*{employment.okToCall}"></p>
+                                            <p class="card-text" th:text="*{employment.okToCall}"></p>
                                         </div>
                                     </div>
                                     <div class="row mb-4 align-self-center">
@@ -208,112 +208,112 @@
 
                         <div class="tab-pane fade" id="education" role="tabpanel"
                              aria-handledby="education-tab">
-                            <div class="col-12 d-flex justify-content-left mt-4">
-                                <form th:action="${'/profile/add/education'}"
-                                      method="POST">
-                                    <button class="btn btn-dark" type="submit">Add Education</button>
-                                </form>
-                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-end mt-4">
+                                    <form th:action="${'/profile/add/education'}"
+                                          method="POST">
+                                        <button class="btn btn-dark" type="submit">Add Education</button>
+                                    </form>
+                                </div>
 
-                            <div class="row" th:each="education : ${user.educationHistory}">
-                                <div class="col-10">
+                                <div class="col-12 text-left" th:each="education : ${user.educationHistory}">
                                     <hr style="width: 100%; border-color: darkblue">
                                     <div class="row">
                                         <div class="col-6 mt-2">
                                             <p><strong>School:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.school}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.school}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Street Address:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title"
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text"
                                                th:text="*{education.streetAddress}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>City:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.city}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.city}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>State:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.state}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.state}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Zipcode:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.zipcode}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.zipcode}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>School:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.school}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.school}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Degree:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.degree}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.degree}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Major:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title" th:text="*{education.major}"></p>
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:text="*{education.major}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>Start Date:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 card-text" th:if="*{education.startDate != null}"
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:if="*{education.startDate != null}"
                                                th:text="*{education.getFormattedStartDate()}"></p>
-                                            <p class="col-6 card-text" th:if="*{education.startDate == null}"
+                                            <p class="card-text" th:if="*{education.startDate == null}"
                                                th:text="*{education.startDate}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
                                             <p><strong>End Date:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 card-text" th:if="*{education.endDate != null}"
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text" th:if="*{education.endDate != null}"
                                                th:text="*{education.getFormattedEndDate()}"></p>
-                                            <p class="col-6 card-text" th:if="*{education.endDate == null}"
+                                            <p class="card-text" th:if="*{education.endDate == null}"
                                                th:text="*{education.endDate}"></p>
                                         </div>
 
                                         <div class="col-6 mt-2">
-                                            <p><strong></strong></p>Graduated:</strong></p>
+                                            <p><strong>Graduated:</strong></p>
                                         </div>
-                                        <div class="col-6 mt-2 text-left">
-                                            <p class="col-6 mt-2 card-title"
+                                        <div class="col-6 mt-2">
+                                            <p class="card-text"
                                                th:text="*{education.graduated}"></p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-2 align-self-center">
-                                    <form th:action="${'/profile/delete/education/' + education.id}"
-                                          method="POST">
-                                        <button class="btn btn-danger" type="submit">Remove</button>
-                                    </form>
-                                    <form th:action="${'/profile/edit/education/' + education.id}"
-                                          method="GET">
-                                        <button class="btn btn-dark" type="submit">Edit</button>
-                                    </form>
+                                    <div class="row mb-4 align-self-center">
+                                        <form class="col-4" th:action="${'/profile/edit/education/' + education.id}"
+                                              method="GET">
+                                            <button class="btn btn-dark" type="submit">Edit</button>
+                                        </form>
+                                        <form class="col-8" th:action="${'/profile/delete/education/' + education.id}"
+                                              method="POST">
+                                            <button class="btn btn-danger" type="submit">Remove</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
