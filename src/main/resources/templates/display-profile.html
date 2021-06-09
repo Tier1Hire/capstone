@@ -22,19 +22,19 @@
 
                     <div class="col-12 text-right" th:if="${currentUser.isAdmin()}">
                         <div>
-                            <form class="mx-2" th:action="${'/profile/admin/' + user.id}" method="POST">
+                            <form class="ml-2" th:action="${'/profile/admin/' + user.id}" method="POST">
                                 <button class="btn btn-dark" type="submit">Make Admin</button>
                             </form>
                         </div>
 
                         <div>
-                            <form class="mx-2" th:action="${'/profile/verify/' + user.id}" method="POST">
+                            <form class="ml-2" th:action="${'/profile/verify/' + user.id}" method="POST">
                                 <button class="btn btn-success" type="submit">Verify User</button>
                             </form>
                         </div>
 
                         <div>
-                            <form class="mx-2" th:action="${'/profile/delete/' + user.id}" method="POST">
+                            <form class="ml-2" th:action="${'/profile/delete/' + user.id}" method="POST">
                                 <button class="btn btn-danger" type="submit">Delete User</button>
                             </form>
                         </div>
